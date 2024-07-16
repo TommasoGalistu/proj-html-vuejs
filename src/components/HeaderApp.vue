@@ -12,16 +12,99 @@ export default {
 
 <template>
   <header>
-    <ul>
-      <li v-for="(route, index) in routes" :key="index">
-        <router-link :to="{ name: route.name }">{{ route.name }}</router-link>
-      </li>
-    </ul>
+    <div class="container">
+      <div class="contImg">immagine</div>
+      <ul>
+        <li v-for="(route, index) in routes" :key="index">
+          <router-link class="link" :to="{ name: route.name }">{{
+            route.name
+          }}</router-link>
+          <div class="window">
+            <ul>
+              <li v-for="(route, index) in routes" :key="index">
+                <router-link class="link" :to="{ name: route.name }">{{
+                  route.name
+                }}</router-link>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
   </header>
+
+  <!-- scaricare fount asome per arrow -->
+  <!-- npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/vue-fontawesome -->
+  <!-- yarn add @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/vue-fontawesome -->
+  <!-- import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faArrowDown)
+
+createApp(App)
+  .component('font-awesome-icon', FontAwesomeIcon)
+  .mount('#app') -->
+  <!-- <font-awesome-icon icon="arrow-down" /> -->
 </template>
 
 <style lang="scss" scoped>
 @use "../style/partials/variable.scss" as *;
 @use "../style/partials/mixin.scss" as *;
 @use "../style/general.scss" as *;
+header {
+  // background-color: red;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .contImg {
+      // debug
+      width: 100%;
+    }
+    ul {
+      display: flex;
+      list-style: none;
+
+      li {
+        padding: 1rem;
+        position: relative;
+        &:hover .window {
+          display: block;
+        }
+
+        .link {
+          text-decoration: none;
+          padding: 1rem 2rem;
+
+          &:hover {
+            color: #88b6c9;
+          }
+        }
+        .window {
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          border-top-right-radius: 10px;
+          border-bottom-right-radius: 10px;
+          position: absolute;
+          display: none;
+
+          ul {
+            display: block;
+            li {
+              padding: 0.5rem 1rem;
+              border-left: 4px solid rgb(218, 218, 218);
+              &:hover {
+                border-left: 4px solid #88b6c9;
+              }
+              .link {
+                padding: 0.5rem 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 </style>
