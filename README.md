@@ -1,0 +1,1 @@
+Lavoro a team di metà corso boolean
