@@ -19,7 +19,9 @@ export default {
       </div>
     </div>
     <div class="container">
-      <div class="contImg">immagine</div>
+      <div class="contImg">
+        <img src="/logo.svg" alt="foto logo nexgen" />
+      </div>
       <div class="flexa">
         <ul>
           <li v-for="(route, index) in routes" :key="index">
@@ -76,6 +78,13 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    .contImg {
+      height: 2.8rem;
+
+      img {
+        height: 100%;
+      }
+    }
     .flexa {
       display: flex;
       align-items: center;
@@ -89,10 +98,7 @@ header {
           cursor: pointer;
         }
       }
-      .contImg {
-        // debug
-        width: 100%;
-      }
+
       ul {
         display: flex;
         list-style: none;
