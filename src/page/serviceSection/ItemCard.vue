@@ -78,6 +78,11 @@ export default {
       align-items: center;
     }
 
+     &:hover {
+    transform: translateY(-5px);
+   
+  }
+
     .fa-solid,
     .fas{
         color: #158a8b;

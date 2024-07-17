@@ -7,9 +7,14 @@ export default {
 <template>
   <section>
     <div class="container">
-        
-            <h2>Excellence in Services</h2>
+        <div class="container title">
+            <h6 class="pre-title">
+                OUR BUSINESS AREAS
+            </h6>
+             <h2>Excellence in Services</h2>
             <p>We are leaders in providing consultancy services with a set of cutting-edge technologies and a team of experienced and renowned professionals. These are some options that you can hire.</p>
+        </div>
+           
         
         <div class="business-areas">
           <div class="business-area">
@@ -50,8 +55,8 @@ export default {
 <style lang="scss" scoped>
 @use "src/style/general.scss" as *;
 
-.container {
-  
+.container  .title {
+  text-align: center;
   padding: 2rem;
   color: #fff;
   
@@ -68,7 +73,7 @@ export default {
   background-color: #19191f;
   color: #fff;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 4px 4px 4px 4px;
   transition: transform 0.3s, background-color 0.3s;
   flex: 0 1 calc(50% - 20px); 
 
@@ -96,6 +101,11 @@ h2 {
 section {
   background-color: #111117;
   padding: 3rem 0;
+}
+
+.pre-title{
+    font-weight: 600;
+    color: #00a6a6;
 }
 
 </style>
