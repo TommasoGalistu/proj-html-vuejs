@@ -38,26 +38,13 @@ export default {
                 </li>
               </ul>
             </div>
+            <font-awesome-icon :icon="['fas', 'angle-down']" />
           </li>
         </ul>
         <span class="button">Shop</span>
       </div>
     </div>
   </header>
-
-  <!-- scaricare fount asome per arrow -->
-  <!-- npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/vue-fontawesome -->
-  <!-- yarn add @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/vue-fontawesome -->
-  <!-- import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
-
-library.add(faArrowDown)
-
-createApp(App)
-  .component('font-awesome-icon', FontAwesomeIcon)
-  .mount('#app') -->
-  <!-- <font-awesome-icon icon="arrow-down" /> -->
 </template>
 
 <style lang="scss" scoped>

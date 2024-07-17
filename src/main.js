@@ -1,15 +1,22 @@
-
 import { createApp } from 'vue';
-// importo la pagina
 import App from './App.vue';
-
-// importo router per la gestione dei link
 import { router } from './router';
 
+// Importa FontAwesome
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faArrowDown, faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
+// Aggiungi le icone che vuoi usare nella libreria
+library.add(faArrowDown, faAngleDown);
 
 const app = createApp(App);
-// collego il router per i link
+
+// Registra il componente FontAwesomeIcon globalmente
+app.component('font-awesome-icon', FontAwesomeIcon);
+
+// Usa il router
 app.use(router);
-// monto l'app
+
+// Monta l'app
 app.mount('#app');
