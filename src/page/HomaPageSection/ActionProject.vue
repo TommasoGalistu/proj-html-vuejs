@@ -11,7 +11,16 @@ export default {
   components: {
     CardActionProj,
   },
-  methods: {},
+  methods: {
+    activeMenu(valore) {
+      let array = store.menu;
+      let elementoCliccato = store.menu[valore];
+      array.forEach((element) => {
+        element.active = false;
+      });
+      elementoCliccato.active = true;
+    },
+  },
 };
 </script>
 
@@ -20,8 +29,13 @@ export default {
     <h2>Action & Project</h2>
     <div class="contMenu">
       <ul>
-        <li v-for="(titoli, index) in store.menu" :key="index" class="active">
-          {{ titoli.toUpperCase() }}
+        <li
+          v-for="(voceMenu, index) in store.menu"
+          :key="index"
+          @click="activeMenu(index)"
+          :class="{ active: voceMenu.active }"
+        >
+          {{ voceMenu.titolo.toUpperCase() }}
         </li>
       </ul>
     </div>
