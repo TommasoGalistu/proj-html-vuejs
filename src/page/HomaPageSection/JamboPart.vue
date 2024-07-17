@@ -70,7 +70,7 @@ export default {
     <div class="container">
       <div class="jambo">
         <div class="contImg" :style="jamboPos1">
-          <img src="/public/bg-parallax.png" alt="" />
+          <img src="/bg-parallax.png" alt="" />
         </div>
         <div class="contText" :style="TextPos1">
           <h2>We Share</h2>

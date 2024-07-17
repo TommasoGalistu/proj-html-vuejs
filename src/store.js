@@ -6,7 +6,7 @@ export const store = reactive({
         
         {
             ricerca: ['events','social','technology'],
-            path:'/public/cuffie.avif',
+            path:'/cuffie.avif',
             tipo: 'Coding',
             tempo: '3 years',
             titolo: 'Portfolio item with intro with sidebar',
@@ -15,7 +15,7 @@ export const store = reactive({
         },
         {
             ricerca: ['enviroment','innovation'],
-            path:'/public/cuffie2.avif',
+            path:'/cuffie2.avif',
             tipo: 'Coding',
             tempo: '3 years',
             titolo: 'Portfolio item with intro with sidebar',
@@ -24,7 +24,7 @@ export const store = reactive({
         },
         {
             ricerca: ['social','technology', 'innovation'],
-            path:'/public/fiore.avif',
+            path:'/fiore.avif',
             tipo: 'Coding',
             tempo: '3 years',
             titolo: 'Portfolio item with intro with sidebar',
@@ -33,7 +33,7 @@ export const store = reactive({
         },
         {
             ricerca:['istitutional','technology'],
-            path:'/public/ciliegie.jpg',
+            path:'/ciliegie.jpg',
             tipo: 'Coding',
             tempo: '3 years',
             titolo: 'Portfolio item with intro with sidebar',
@@ -42,7 +42,7 @@ export const store = reactive({
         },
         {
             ricerca: ['enviroment', 'events', 'istitutional'],
-            path:'/public/vaso.avif',
+            path:'/vaso.avif',
             tipo: 'Coding',
             tempo: '3 years',
             titolo: 'Portfolio item with intro with sidebar',
@@ -51,7 +51,7 @@ export const store = reactive({
         },
         {
             ricerca: ['enviroment','innovation'],
-            path:'/public/avocado.jpg',
+            path:'/avocado.jpg',
             tipo: 'Coding',
             tempo: '3 years',
             titolo: 'Portfolio item with intro with sidebar',
