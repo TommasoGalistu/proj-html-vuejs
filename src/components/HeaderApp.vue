@@ -55,9 +55,11 @@ header {
   position: fixed;
   width: 100%;
   z-index: 100;
+
   .cont.banner {
     color: grey;
     background-color: #0e1e2e;
+
     height: 3rem;
     margin-bottom: 1rem;
   }

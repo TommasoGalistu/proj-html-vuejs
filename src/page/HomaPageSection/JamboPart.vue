@@ -4,7 +4,13 @@ export default {
   data() {
     return {
       jamboPos1: {
-        right: "-92rem",
+        right: "-98rem",
+        left: "",
+      },
+      TextPos1: {
+        top: "15rem",
+        left: "0",
+        textAlign: "",
       },
     };
   },
@@ -25,19 +31,31 @@ export default {
       // Ottieni il numero dell'elemento cliccato
       let numeroPulsante =
         Array.from(container.children).indexOf(elementoCliccato) + 1;
-      console.log("Elemento cliccato:", elementoCliccato);
-      console.log("Numero pulsante:", numeroPulsante);
+      // console.log("Elemento cliccato:", elementoCliccato);
+      // console.log("Numero pulsante:", numeroPulsante);
 
       // Switch statement per eseguire azioni basate sul numero del pulsante
       switch (numeroPulsante) {
         case 1:
-          console.log("1");
+          this.jamboPos1.right = "-98rem";
+          this.jamboPos1.left = "";
+          this.TextPos1.top = "15rem";
+          this.TextPos1.left = "0";
+          this.TextPos1.textAlign = "left";
           break;
         case 2:
-          console.log("2");
+          this.jamboPos1.right = "-48rem";
+          this.jamboPos1.left = "";
+          this.TextPos1.top = "7rem";
+          this.TextPos1.left = "18rem";
+          this.TextPos1.textAlign = "center";
           break;
         case 3:
-          console.log("3");
+          this.jamboPos1.right = "";
+          this.jamboPos1.left = "-98rem";
+          this.TextPos1.top = "15rem";
+          this.TextPos1.left = "39rem";
+          this.TextPos1.textAlign = "left";
           break;
         default:
           console.log("non lo so");
@@ -54,7 +72,7 @@ export default {
         <div class="contImg" :style="jamboPos1">
           <img src="/public/bg-parallax.png" alt="" />
         </div>
-        <div class="contText">
+        <div class="contText" :style="TextPos1">
           <h2>We Share</h2>
           <h2 class="colorGreen">Good Ideas</h2>
           <p class="colorGreen">
@@ -87,7 +105,7 @@ export default {
       height: 100vh;
       color: black;
       .contImg {
-        height: 110%;
+        height: 115%;
         position: absolute;
         bottom: 0;
 
@@ -97,8 +115,8 @@ export default {
       }
       .contText {
         position: absolute;
-        top: 15rem;
-        width: 40%;
+
+        width: 47%;
         .colorGreen {
           color: $colorStyleJambo;
           padding-bottom: 1.5rem;
