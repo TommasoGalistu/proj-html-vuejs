@@ -29,6 +29,7 @@ export default {
       <div class="card">
         <div class="icon">
           <font-awesome-icon :icon="['fas', 'chart-simple']" />
+          <!-- <font-awesome-icon :icon="['fas', 'chart-simple']" /> -->
         </div>
         <h3>Professional</h3>
         <p class="price">$890</p>
