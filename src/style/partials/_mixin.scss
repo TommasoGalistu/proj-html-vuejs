@@ -1,3 +1,4 @@
+@use './variable' as *;
 // ALESSANDRA DALLA 1 ALLA 9
 
 
@@ -8,14 +9,31 @@
 
 
 // TOMMASO DALLA 10 ALLA 19
-
-
-
-
-
-
-
-
+@mixin button-styles($padding, $span-padding) {
+    display: inline;
+    background-color: $colorStyleJambo;
+    color: white;
+    padding: $padding;
+    border-radius: 10px;
+    border: none;
+  
+    &:hover {
+      cursor: pointer;
+      background-color: $colorStyleJambo;
+    }
+  
+    &:hover span {
+      padding: $span-padding;
+      border-radius: 30px;
+      background-color: $colorStyleJamboHover;
+    }
+  
+    span {
+      padding: $span-padding;
+      border-radius: 30px;
+      background-color: $colorStyleJambo;
+    }
+  }
 
 // PAOLO DALLA 20 ALLA 30
 

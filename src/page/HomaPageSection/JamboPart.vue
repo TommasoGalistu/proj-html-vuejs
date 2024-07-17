@@ -129,27 +129,7 @@ export default {
           padding-bottom: 3rem;
         }
         .button {
-          display: inline;
-          background-color: $colorStyleJambo;
-          color: white;
-          padding: 0.5rem 0.7rem;
-          border-radius: 10px;
-          border: none;
-
-          &:hover {
-            cursor: pointer;
-            background-color: $colorStyleJambo;
-          }
-          &:hover span {
-            padding: 0.4rem 1rem;
-            border-radius: 30px;
-            background-color: $colorStyleJamboHover;
-          }
-          span {
-            padding: 0.4rem 1rem;
-            border-radius: 30px;
-            background-color: $colorStyleJambo;
-          }
+          @include button-styles(0.5rem 1rem, 0.4rem 1);
         }
       }
     }

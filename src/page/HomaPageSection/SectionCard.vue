@@ -19,7 +19,7 @@ export default {
           cutting-edge technologies and a team of experienced and renowned
           professionals. These are some otions that you can hire.
         </p>
-        <div class="button">SEE ALL</div>
+        <div class="button"><span>SEE ALL</span></div>
       </div>
     </div>
   </div>
@@ -48,12 +48,20 @@ export default {
     }
   }
   .contFlex {
+    padding: 1.5rem 0;
     display: flex;
     gap: 2rem;
     justify-content: space-between;
+
     p {
       flex: 0 0 80%;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
+    }
+    .button {
+      @include button-styles(0.5rem 1rem, 0.4rem 1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }

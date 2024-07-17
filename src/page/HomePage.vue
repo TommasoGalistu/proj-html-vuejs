@@ -1,11 +1,13 @@
 <script >
 import JamboPart from "./HomaPageSection/JamboPart.vue";
 import SectionCard from "./HomaPageSection/SectionCard.vue";
+import SecondSection from "./HomaPageSection/SecondSection.vue";
 export default {
   name: "HomePage",
   components: {
     JamboPart,
     SectionCard,
+    SecondSection,
   },
 };
 </script>
@@ -13,6 +15,7 @@ export default {
 <template>
   <JamboPart />
   <SectionCard />
+  <SecondSection />
 </template>
 
 <style lang="scss" scoped>
