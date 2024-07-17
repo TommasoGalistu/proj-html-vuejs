@@ -55,9 +55,11 @@ header {
   position: fixed;
   width: 100%;
   z-index: 100;
+
   .cont.banner {
     color: grey;
     background-color: #0e1e2e;
+
     height: 3rem;
     margin-bottom: 1rem;
   }
@@ -106,6 +108,8 @@ header {
             }
           }
           .window {
+            background-color: white;
+            z-index: 100;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
               0 6px 20px 0 rgba(0, 0, 0, 0.19);
             border-top-right-radius: 10px;
