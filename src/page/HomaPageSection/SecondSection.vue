@@ -34,12 +34,22 @@ export default {
   color: grey;
   .container {
     display: flex;
+    .contText {
+      width: 50%;
+      padding: 3rem 0;
+      padding-right: 2rem;
+      h2 {
+        font-size: 3rem;
+      }
+    }
     .contImg {
       width: 50%;
       position: relative;
       overflow-y: scroll;
       height: 80vh;
       .sfuocatura {
+        top: 0;
+        left: 64px;
         position: absolute;
         z-index: 1;
         background: rgba(
