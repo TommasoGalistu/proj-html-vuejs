@@ -39,7 +39,9 @@ export default {
         </li>
       </ul>
     </div>
-    <CardActionProj />
+    <div class="contCard">
+      <CardActionProj />
+    </div>
   </div>
 </template>
 
@@ -50,7 +52,13 @@ export default {
 
 .container {
   text-align: center;
+  padding: 4rem 0;
+  h2 {
+    font-size: 3rem;
+  }
   .contMenu {
+    padding: 2rem 0;
+    padding-bottom: 3rem;
     ul {
       display: flex;
       justify-content: center;
@@ -69,6 +77,9 @@ export default {
         background-color: $colorStyleJambo;
       }
     }
+  }
+  .contCard {
+    width: 100%;
   }
 }
 </style>
