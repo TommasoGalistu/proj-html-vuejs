@@ -3,6 +3,7 @@
 import Jumbotron from './serviceSection/Jumbotron.vue';
 import ItemCard from './serviceSection/ItemCard.vue';
 import BusinessAreas from './serviceSection/BusinessAreas.vue';
+import MonthlyPlans from './serviceSection/MonthlyPlans.vue';
 
 export default {
   name: "ServicesPage",
@@ -10,6 +11,7 @@ export default {
     Jumbotron,
     ItemCard,
     BusinessAreas,
+    MonthlyPlans,
   }
 };
 </script>
@@ -19,6 +21,7 @@ export default {
   <Jumbotron/>
   <ItemCard />
   <BusinessAreas />
+  <MonthlyPlans/>
 </template>
 
 <style lang="scss" scoped>
