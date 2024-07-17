@@ -1,31 +1,37 @@
 <script>
+import { store } from "../../store";
 export default {
   name: "CardActionProj",
+  data() {
+    return {
+      card: store.cardHomePage,
+    };
+  },
 };
 </script>
 
 <template>
-  <div class="card">
+  <div v-for="(element, index) in card" :key="index" class="card">
     <div class="contText">
       <div class="upPart">
-        <div>
+        <div class="nascondi">
           <font-awesome-icon :icon="['far', 'user']" />
-          <span>Coding</span>
+          <span>{{ element.tipo }}</span>
         </div>
-        <div>
+        <div class="nascondi">
           <font-awesome-icon :icon="['far', 'clock']" />
-          <span>3 Years</span>
+          <span>{{ element.tempo }}</span>
         </div>
       </div>
       <div class="bottomPart">
-        <h2>Portfolio e sti cazzi non so scrivo dopo</h2>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate..
+        <h2>{{ element.titolo }}</h2>
+        <p class="nascondi">
+          {{ element.text }}
         </p>
       </div>
     </div>
     <div class="contImg">
-      <img src="/public/avocado.jpg" alt="avocado" />
+      <img :src="element.path" alt="" />
     </div>
   </div>
 </template>
@@ -42,6 +48,12 @@ export default {
   background-color: grey;
   border-radius: 10px;
   color: rgb(180, 180, 180);
+  &:hover .nascondi {
+    display: block;
+  }
+  &:hover {
+    cursor: pointer;
+  }
   .contText {
     position: absolute;
 
@@ -55,6 +67,7 @@ export default {
     flex-direction: column;
     justify-content: space-between;
     padding: 2rem 0;
+
     .upPart {
       display: flex;
       gap: 1rem;
@@ -64,6 +77,7 @@ export default {
     .bottomPart {
       h2 {
         padding: 1rem 0;
+        color: white;
       }
     }
   }
@@ -77,5 +91,8 @@ export default {
       width: 100%;
     }
   }
+}
+.nascondi {
+  display: none;
 }
 </style>
