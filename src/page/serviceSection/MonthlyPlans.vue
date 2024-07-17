@@ -11,8 +11,11 @@ export default {
       <h6 class="pre-title">MONTHLY PLANS</h6>
       <h2>Pricing Table</h2>
       <p>We can help you deliver and execute your future, wherever you compete, using the latest technologies, from strategy development to implementation.</p>
+
+      <!-- card -->
       <div class="plans">
         <div class="plan">
+          <div class="arrow">&rarr;</div>
           <div class="icon">
            
           </div>
@@ -26,7 +29,10 @@ export default {
             <li class="not-included">Personal Assistance</li>
           </ul>
         </div>
+
+        <!-- card -->
         <div class="plan">
+          <div class="arrow">&rarr;</div>
           <div class="icon">
             
           </div>
@@ -40,12 +46,15 @@ export default {
             <li class="not-included">Personal Assistance</li>
           </ul>
         </div>
+
+        <!-- card -->
         <div class="plan">
+          <div class="arrow">&rarr;</div>
           <div class="icon">
             
           </div>
           <h3>Ultimate</h3>
-          <div class="price"><b>$1390 / mo</b></div>
+          <div class="price">$1390 / mo</div>
           <ul>
             <li>Standard Accounting</li>
             <li>Platform Access</li>
@@ -65,6 +74,14 @@ export default {
 .container {
   padding: 20px;
   text-align: center;
+}
+
+.arrow {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #00a6a6;
 }
 
 .pre-title {
@@ -103,6 +120,7 @@ p {
   width: 300px;
   text-align: left;
   margin: 10px;
+  position: relative;
 }
 
 .icon {
