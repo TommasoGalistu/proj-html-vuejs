@@ -51,15 +51,15 @@ export default {
         top: 0;
         left: 64px;
         position: absolute;
+        filter: grayscale(70%);
         z-index: 1;
-        background: rgba(
-          255,
-          255,
-          255,
-          0.8
-        ); /* Sfondo semitrasparente per il contenuto */
-        padding: 20px;
-        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          42deg,
+          rgba(22, 22, 22, 0.5) 52%,
+          rgba(203, 203, 203, 0) 70%
+        );
       }
       .fixed-image {
         position: absolute;
