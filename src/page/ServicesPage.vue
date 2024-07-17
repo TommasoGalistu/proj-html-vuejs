@@ -1,11 +1,13 @@
 <script >
 
 import Jumbotron from './serviceSection/Jumbotron.vue';
+import ItemCard from './serviceSection/ItemCard.vue';
 
 export default {
   name: "ServicesPage",
   components: {
     Jumbotron,
+    ItemCard,
   }
 };
 </script>
@@ -13,6 +15,7 @@ export default {
 <template>
   <h1>Services Page</h1>
   <Jumbotron/>
+  <ItemCard />
 </template>
 
 <style lang="scss" scoped>
