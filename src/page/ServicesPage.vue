@@ -1,11 +1,18 @@
 <script >
+
+import Jumbotron from './serviceSection/Jumbotron.vue';
+
 export default {
   name: "ServicesPage",
+  components: {
+    Jumbotron,
+  }
 };
 </script>
 
 <template>
   <h1>Services Page</h1>
+  <Jumbotron/>
 </template>
 
 <style lang="scss" scoped>
