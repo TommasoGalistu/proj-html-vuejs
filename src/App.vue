@@ -24,7 +24,7 @@ export default {
   <FooterApp />
 </template>
 
-<style lang="scss">
+<style lang="scss" spoped>
 @use "./style/general.scss" as *;
 @use "./style/partials/mixin.scss" as *;
 @use "./style/partials/variable.scss" as *;
