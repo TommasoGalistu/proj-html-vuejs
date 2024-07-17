@@ -1,19 +1,27 @@
 <script >
+import ArticlesCards from "./shopSection/ArticlesCards.vue";
+
 export default {
   name: "ShopPage",
+  components: {
+    ArticlesCards,
+  }
 };
 
 </script>
 
 <template>
+  
   <div class="container">
+    
     <section class="articles">
       <div class="results">
-
+        
       </div>
-      <ul></ul>
+      <!-- <ul></ul> -->
     </section>
     <section class="prices">
+    
 
     </section>
   </div>
@@ -45,4 +53,6 @@ section{
   width: 30%;
   background-color: green;
 }
+
+
 </style>
