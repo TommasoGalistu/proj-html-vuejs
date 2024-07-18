@@ -1,58 +1,68 @@
 <script>
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 export default {
   name: "MonthlyPlans",
 };
 </script>
 
 <template>
-  <section>
-    <div class="container-title">
-        <h6>MONTHLY PLANS</h6>
-        <H2>Pricing Table</H2>
-        <p>We can help you deliver and execute your future, wherever you compete, using the latest technologies, from strategy development to implementation</p>
-    </div>
-    <div class="container flex">
-      <div class="card">
-        <div class="icon">
-          <font-awesome-icon :icon="['fas', 'chart-simple']" />
+  <section class="pricing-table">
+    <div class="container">
+      <h6 class="pre-title">MONTHLY PLANS</h6>
+      <h2>Pricing Table</h2>
+      <p>We can help you deliver and execute your future, wherever you compete, using the latest technologies, from strategy development to implementation.</p>
+
+      <!-- card -->
+      <div class="plans">
+        <div class="plan">
+          <div class="arrow">&rarr;</div>
+          <div class="icon">
+           
+          </div>
+          <h3>Standard</h3>
+          <div class="price">$490 / mo</div>
+          <ul>
+            <li>Standard Accounting</li>
+            <li>Platform Access</li>
+            <li class="not-included">Business Orientation</li>
+            <li class="not-included">Dedicated Consultant</li>
+            <li class="not-included">Personal Assistance</li>
+          </ul>
         </div>
-        <h3>Standard</h3>
-        <p class="price">$490</p>
-        <ul class="features">
-          <li>Standard Account</li>
-          <li>Platform Access</li>
-          <li>Business Orientation</li>
-          <li>Dedicated Consultant</li>
-          <li>Personal Assistance</li>
-        </ul>
-      </div>
-      <div class="card">
-        <div class="icon">
-          <font-awesome-icon :icon="['fas', 'chart-simple']" />
+
+        <!-- card -->
+        <div class="plan">
+          <div class="arrow">&rarr;</div>
+          <div class="icon">
+            
+          </div>
+          <h3>Professional</h3>
+          <div class="price">$890 / mo</div>
+          <ul>
+            <li>Standard Accounting</li>
+            <li>Platform Access</li>
+            <li>Business Orientation</li>
+            <li class="not-included">Dedicated Consultant</li>
+            <li class="not-included">Personal Assistance</li>
+          </ul>
         </div>
-        <h3>Professional</h3>
-        <p class="price">$890</p>
-        <ul class="features">
-          <li>Standard Account</li>
-          <li>Platform Access</li>
-          <li>Business Orientation</li>
-          <li>Dedicated Consultant</li>
-          <li>Personal Assistance</li>
-        </ul>
-      </div>
-      <div class="card">
-        <div class="icon">
-          <font-awesome-icon :icon="['fas', 'chart-simple']" />
+
+        <!-- card -->
+        <div class="plan">
+          <div class="arrow">&rarr;</div>
+          <div class="icon">
+            
+          </div>
+          <h3>Ultimate</h3>
+          <div class="price">$1390 / mo</div>
+          <ul>
+            <li>Standard Accounting</li>
+            <li>Platform Access</li>
+            <li>Business Orientation</li>
+            <li>Dedicated Consultant</li>
+            <li>Personal Assistance</li>
+          </ul>
         </div>
-        <h3>Ultimate</h3>
-        <p class="price">$1390</p>
-        <ul class="features">
-          <li>Standard Account</li>
-          <li>Platform Access</li>
-          <li>Business Orientation</li>
-          <li>Dedicated Consultant</li>
-          <li>Personal Assistance</li>
-        </ul>
       </div>
     </div>
   </section>
@@ -61,64 +71,108 @@ export default {
 
 <style lang="scss" scoped>
 @use "src/style/general.scss" as *;
-.container{
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 20px;
+.container {
   padding: 20px;
-  
-}
-.container-title{
-    text-align: center;
-    padding: 4rem;
-}
-.card {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  width: 300px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-.icon {
-  font-size: 2em;
+.arrow {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #00a6a6;
+}
+
+.pre-title {
+  font-weight: bold;
   color: #00a6a6;
   margin-bottom: 10px;
 }
 
+h2 {
+  margin-bottom: 20px;
+  font-weight: 800;
+  color: #21333E;
+  font-family: Inter,sans-serif;
+  font-size: 3rem;
+  line-height: 1.2;
+}
+
+
+p {
+  margin-bottom: 40px;
+  color: #666;
+}
+
+.plans {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.plan {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  text-align: left;
+  margin: 10px;
+  position: relative;
+}
+
+.icon {
+  background-color: #e6f9fa;
+  border-radius: 50%;
+  display: inline-block;
+  padding: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.icon img {
+  width: 40px;
+  height: 40px;
+}
+
 h3 {
-  margin: 10px 0;
-  font-size: 1.5em;
+  margin-bottom: 10px;
   color: #333;
+  font-size: 1.5rem;
 }
 
 .price {
-  font-size: 1.2em;
+  font-family: Inter,sans-serif;
+  margin-bottom: 20px;
   color: #00a6a6;
-  margin: 10px 0;
+  font-size: 2rem;
+  font-weight: 300;
 }
 
-.features {
+ul {
   list-style: none;
   padding: 0;
-  margin: 20px 0 0;
-  text-align: left;
+  margin: 0;
+  color: #666;
 }
 
-.features li {
-  padding: 5px 0;
-  border-bottom: 1px solid #ddd;
-  color: #555;
+ul li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-right: 25px; 
 }
 
-.features li:last-child {
-  border-bottom: none;
+ul li::after {
+  content: '✔';
+  color: #00a6a6;
+  position: absolute;
+  right: 0;
 }
 
-section{
-    background-color: #eef4ed;
+ul li.not-included::after {
+  content: '✘';
+  color: #00a6a6;
 }
 </style>

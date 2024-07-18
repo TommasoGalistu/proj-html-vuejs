@@ -1,7 +1,7 @@
 <script>
 export default {
-    name: "ArticlesCards",
-}; 
+  name: "ArticlesCards",
+};
 </script>
 
 <template>
@@ -47,10 +47,10 @@ export default {
         border-radius: 10px;
     }
 
-    .upper-img{
-        height: 70%;
-        width: 100%;
-    }
+.upper-img {
+  height: 70%;
+  width: 100%;
+}
 
     .lower-price h2{
         padding-top: 20px;

@@ -80,6 +80,10 @@ export default {
   }
   .contCard {
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
   }
 }
 </style>
