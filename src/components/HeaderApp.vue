@@ -7,14 +7,36 @@ export default {
     return {
       routes: router.options.routes,
       store,
+      isHidden: false,
     };
+  },
+  methods: {
+    handleScroll() {
+      if (window.scrollY > 70) {
+        this.isHidden = true;
+        this.isFixed = true;
+        console.log("true");
+      } else {
+        this.isHidden = false;
+        this.isFixed = false;
+        console.log("false");
+      }
+    },
+  },
+  mounted() {
+    // Aggiungi un listener per l'evento scroll sulla finestra
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  beforeUnmount() {
+    // Rimuovi il listener per l'evento scroll dalla finestra
+    window.removeEventListener("scroll", this.handleScroll);
   },
 };
 </script>
 
 <template>
-  <header>
-    <div class="cont banner">
+  <header :class="{ fixed: isHidden }">
+    <div class="cont banner" v-if="!isHidden">
       <div class="container">
         <div class="text">
           <span class="contDetails"
@@ -78,15 +100,21 @@ export default {
 @use "../style/partials/variable.scss" as *;
 @use "../style/partials/mixin.scss" as *;
 @use "../style/general.scss" as *;
+.fixed {
+  background-color: #0e1e2e;
+  color: grey;
+}
+
 header {
   position: fixed;
-  width: 100%;
+  top: 0;
   z-index: 100;
+
+  width: 100%;
 
   .cont.banner {
     color: grey;
     background-color: #0e1e2e;
-
     height: 3rem;
     margin-bottom: 1rem;
     display: flex;
@@ -139,6 +167,7 @@ header {
         li {
           padding: 1rem;
           position: relative;
+
           &:hover .window {
             display: block;
           }
@@ -146,7 +175,7 @@ header {
           .link {
             text-decoration: none;
             padding: 1rem 2rem;
-
+            color: grey;
             &:hover {
               color: #88b6c9;
             }
