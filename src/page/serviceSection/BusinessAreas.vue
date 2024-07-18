@@ -79,7 +79,7 @@ export default {
 <style lang="scss" scoped>
 @use "src/style/general.scss" as *;
 
-body {
+.services {
   font-family: Arial, sans-serif;
   background-color: #1a1a1a;
   color: #fff;

@@ -5,7 +5,7 @@ import { router } from './router';
 
 // Importa FontAwesome
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faArrowDown, faAngleDown, faChartPie, faUsers, faChartSimple } from '@fortawesome/free-solid-svg-icons';
+import { faArrowDown, faAngleDown, faChartPie, faUsers, faChartSimple, faBagShopping } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 // Importa il CSS di FontAwesome
@@ -14,7 +14,7 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 config.autoAddCss = false; // Disabilita l'inclusione automatica del CSS
 
 // Aggiungi le icone che vuoi usare nella libreria
-library.add(faArrowDown, faAngleDown, faChartPie, faUsers, faChartSimple);
+library.add(faArrowDown, faAngleDown, faChartPie, faUsers, faChartSimple, faBagShopping);
 
 const app = createApp(App);
 
