@@ -1,5 +1,5 @@
 <script>
-import { store } from "../../store";
+import { store } from "../../store.js";
 import ServiceCard from './ServiceCard.vue';
 
 export default {
@@ -9,7 +9,7 @@ export default {
   },
   data() {
     return {
-      services
+     services: store.services
     };
   }
 };
