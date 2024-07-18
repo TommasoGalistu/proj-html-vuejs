@@ -31,8 +31,6 @@ export default {
       // Ottieni il numero dell'elemento cliccato
       let numeroPulsante =
         Array.from(container.children).indexOf(elementoCliccato) + 1;
-      // console.log("Elemento cliccato:", elementoCliccato);
-      // console.log("Numero pulsante:", numeroPulsante);
 
       // Switch statement per eseguire azioni basate sul numero del pulsante
       switch (numeroPulsante) {
@@ -94,17 +92,29 @@ export default {
         square.style.top = `${posY}px`;
         square.style.left = `${posX}px`;
 
-        // Imposta una durata di animazione casuale e un ritardo iniziale
+        background.appendChild(square);
+
+        // Crea l'animazione usando il metodo animate
         const duration = Math.random() * 10 + 5; // da 5 a 15 secondi
         const delay = Math.random() * 5; // da 0 a 5 secondi
-        square.style.animation = `move ${duration}s linear infinite`;
-        square.style.animationDelay = `${delay}s`;
 
-        // Aggiungi le proprietà CSS custom per la direzione del movimento
-        square.style.setProperty("--distanceX", `${distanceX}px`);
-        square.style.setProperty("--distanceY", `${distanceY}px`);
+        square.animate(
+          [
+            { transform: "translate(0, 0)" },
+            { transform: `translate(${distanceX}px, ${distanceY}px)` },
+          ],
+          {
+            duration: duration * 1000, // converti in millisecondi
+            delay: delay * 1000, // converti in millisecondi
+            iterations: Infinity,
+            easing: "linear",
+            fill: "forwards",
+          }
+        );
 
-        background.appendChild(square);
+        setTimeout(() => {
+          background.removeChild(square);
+        }, (duration + delay + 3) * 1000); // Rimuove il quadrato dopo che ha terminato l'animazione più il delay
       }
     },
   },
@@ -114,9 +124,10 @@ export default {
 };
 </script>
 
+
+
 <template>
   <div ref="sfondoAnimato" class="sfondoAnimato">
-    <!-- <div class="square"></div> -->
     <div class="container">
       <div class="jambo">
         <div class="contImg" :style="jamboPos1">
@@ -158,12 +169,7 @@ export default {
 }
 
 .square {
-  position: absolute; /* Posizionamento assoluto */
-  width: 5rem;
-  height: 5rem;
-  background-color: black; /* Colore del quadrato */
-  opacity: 0.8;
-  animation: move linear infinite;
+  will-change: transform;
 }
 
 @keyframes move {
