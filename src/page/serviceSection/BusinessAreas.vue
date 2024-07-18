@@ -1,4 +1,5 @@
 <script>
+import { store } from "../../store";
 import ServiceCard from './ServiceCard.vue';
 
 export default {
@@ -8,38 +9,7 @@ export default {
   },
   data() {
     return {
-      service: [
-        {
-          icon: "📊",
-          title: "Audit & Assurance",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
-        },
-        {
-          icon: "📊",
-          title: "Financial Advisory",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
-        },
-        {
-          icon: "📊",
-          title: "Analytics and M&A",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
-        },
-        {
-          icon: "📊",
-          title: "Middle Marketing",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
-        },
-        {
-          icon: "📊",
-          title: "Legal Consulting",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
-        },
-        {
-          icon: "📊",
-          title: "Regulatory Risk",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
-        }
-      ]
+      services
     };
   }
 };

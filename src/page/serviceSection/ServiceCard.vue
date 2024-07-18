@@ -3,16 +3,13 @@ export default {
   name: "ServiceCard",
   props: {
     icon: {
-      type: String,
-      required: true
+        type: String,
     },
     title: {
       type: String,
-      required: true
     },
     description: {
       type: String,
-      required: true
     }
   }
 };
@@ -20,7 +17,8 @@ export default {
 
 <template>
   <div class="card">
-    <div class="icon">{{ icon }}</div>
+    <!-- <div class="icon">{{ icon }}</div> -->
+     <img :src="icon" class="icon-svg" alt="Icon" />
     <div class="content">
       <h3>{{ title }}</h3>
       <p>{{ description }}</p>
@@ -43,9 +41,9 @@ export default {
   gap: 10px;
 }
 
-.icon {
-  font-size: 2rem;
-  color: #00a6a6;
+.icon-svg {
+  width: 50px;
+  height: auto;
 }
 
 .content {
