@@ -1,4 +1,4 @@
-<script >
+<script>
 export default {
   name: "JamboPart",
   data() {
@@ -25,7 +25,7 @@ export default {
         }
       }
 
-      //   aggiungo l'active
+      // aggiungo l'active
       elementoCliccato.classList.add("active");
 
       // Ottieni il numero dell'elemento cliccato
@@ -63,40 +63,60 @@ export default {
     },
 
     animazione(number) {
-      const background = this.$el.querySelector(".sfondoAnimato");
-      console.log(this.$el.querySelector(".sfondoAnimato"));
-      if (!background) {
-        console.error("Elemento sfondoAnimato non trovato");
-        return;
-      }
+      const background = this.$refs.sfondoAnimato;
+
       for (let i = 0; i < number; i++) {
         const square = document.createElement("div");
         square.classList.add("square");
 
+        // Genera dimensioni casuali tra 2rem e 7rem
+        const size = Math.random() * 5 + 2; // da 2 a 7
+        const sizeRem = `${size}rem`;
+
         // Posizionamento iniziale casuale
-        const posX = Math.random() * window.innerWidth;
-        const posY = Math.random() * window.innerHeight;
-        square.style.transform = `translate(${posX}px, ${posY}px)`;
+        const posX = Math.random() * background.clientWidth;
+        const posY = Math.random() * background.clientHeight;
+
+        // Calcola la direzione in base alla posizione iniziale
+        const directionX = posX > background.clientWidth / 2 ? -1 : 1;
+        const directionY = posY > background.clientHeight / 2 ? -1 : 1;
+
+        // Calcola la distanza da percorrere per uscire dallo schermo
+        const distanceX = directionX * (background.clientWidth + 100);
+        const distanceY = directionY * (background.clientHeight + 100);
+
+        // Imposta gli stili
+        square.style.position = "absolute";
+        square.style.width = sizeRem;
+        square.style.height = sizeRem;
+        square.style.backgroundColor = "black";
+        square.style.opacity = "0.8";
+        square.style.top = `${posY}px`;
+        square.style.left = `${posX}px`;
 
         // Imposta una durata di animazione casuale e un ritardo iniziale
         const duration = Math.random() * 10 + 5; // da 5 a 15 secondi
         const delay = Math.random() * 5; // da 0 a 5 secondi
-        square.style.animationDuration = `${duration}s`;
+        square.style.animation = `move ${duration}s linear infinite`;
         square.style.animationDelay = `${delay}s`;
+
+        // Aggiungi le proprietà CSS custom per la direzione del movimento
+        square.style.setProperty("--distanceX", `${distanceX}px`);
+        square.style.setProperty("--distanceY", `${distanceY}px`);
 
         background.appendChild(square);
       }
     },
   },
   mounted() {
-    this.animazione(10);
+    this.animazione(30);
   },
 };
 </script>
 
 <template>
-  <div class="sfondoAnimato">
-    <div class="square"></div>
+  <div ref="sfondoAnimato" class="sfondoAnimato">
+    <!-- <div class="square"></div> -->
     <div class="container">
       <div class="jambo">
         <div class="contImg" :style="jamboPos1">
@@ -127,84 +147,88 @@ export default {
 @use "../../style/partials/variable.scss" as *;
 @use "../../style/partials/mixin.scss" as *;
 @use "../../style/general.scss" as *;
+
+.sfondoAnimato {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f1f1f1; /* Colore di sfondo */
+
+  overflow: hidden; /* Nasconde qualsiasi overflow */
+}
+
 .square {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  top: 10rem;
-  left: 10rem;
+  position: absolute; /* Posizionamento assoluto */
+  width: 5rem;
+  height: 5rem;
   background-color: black; /* Colore del quadrato */
   opacity: 0.8;
-  animation: move 20s linear infinite;
+  animation: move linear infinite;
 }
-// // style per le animazioni
+
 @keyframes move {
   0% {
     transform: translate(0, 0);
   }
   100% {
-    transform: translate(100vw, 100vh);
+    transform: translate(var(--distanceX), var(--distanceY));
   }
 }
-.sfondoAnimato {
-  background-color: #f1f1f1;
 
-  position: relative;
-  .container {
-    .jambo {
-      position: relative;
-      height: 100vh;
-      color: black;
-      .contImg {
-        height: 108%;
-        position: absolute;
-        bottom: 0;
+.container {
+  .jambo {
+    position: relative;
+    height: 100vh;
+    color: black;
+    .contImg {
+      height: 108%;
+      position: absolute;
+      bottom: 0;
 
-        img {
-          height: 100%;
-        }
+      img {
+        height: 100%;
       }
-      .contText {
-        position: absolute;
-
-        width: 47%;
-        .colorGreen {
-          color: $colorStyleJambo;
-          padding-bottom: 1.5rem;
-        }
-        h2 {
-          font-size: 5rem;
-        }
-        p {
-          font-size: 1.35rem;
-          padding-bottom: 3rem;
-        }
-        .button {
-          @include button-styles(0.5rem 1rem, 0.4rem 1);
-        }
+    }
+    .contText {
+      position: absolute;
+      width: 47%;
+      .colorGreen {
+        color: $colorStyleJambo;
+        padding-bottom: 1.5rem;
+      }
+      h2 {
+        font-size: 5rem;
+      }
+      p {
+        font-size: 1.35rem;
+        padding-bottom: 3rem;
+      }
+      .button {
+        @include button-styles(0.5rem 1rem, 0.4rem 1);
       }
     }
   }
-  .contPulsanti {
-    position: absolute;
-    right: 2rem;
-    top: 50%;
-    transform: translate(0, -50%);
-    .pulsanti {
-      height: 2rem;
-      width: 0.7rem;
-      background-color: grey;
-      border-radius: 30px;
-      margin-bottom: 0.5rem;
+}
 
-      &:hover {
-        cursor: pointer;
-        background-color: $colorStyleJamboHover;
-      }
+.contPulsanti {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translate(0, -50%);
+  .pulsanti {
+    height: 2rem;
+    width: 0.7rem;
+    background-color: grey;
+    border-radius: 30px;
+    margin-bottom: 0.5rem;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $colorStyleJamboHover;
     }
-    .pulsanti.active {
-      background-color: $colorStyleJambo;
-    }
+  }
+  .pulsanti.active {
+    background-color: $colorStyleJambo;
   }
 }
 </style>
