@@ -3,6 +3,7 @@ import JamboPart from "./HomaPageSection/JamboPart.vue";
 import SectionCard from "./HomaPageSection/SectionCard.vue";
 import SecondSection from "./HomaPageSection/SecondSection.vue";
 import ActionProject from "./HomaPageSection/ActionProject.vue";
+import BannerSection from "./HomaPageSection/BannerSection.vue";
 export default {
   name: "HomePage",
   components: {
@@ -10,6 +11,7 @@ export default {
     SectionCard,
     SecondSection,
     ActionProject,
+    BannerSection,
   },
 };
 </script>
@@ -19,6 +21,7 @@ export default {
   <SectionCard />
   <SecondSection />
   <ActionProject />
+  <BannerSection />
 </template>
 
 <style lang="scss" scoped>
