@@ -87,7 +87,7 @@ export default {
         square.style.position = "absolute";
         square.style.width = sizeRem;
         square.style.height = sizeRem;
-        square.style.backgroundColor = "black";
+        square.style.backgroundColor = "rgba(190, 190, 190, 0.4)";
         square.style.opacity = "0.8";
         square.style.top = `${posY}px`;
         square.style.left = `${posX}px`;
@@ -95,8 +95,8 @@ export default {
         background.appendChild(square);
 
         // Crea l'animazione usando il metodo animate
-        const duration = Math.random() * 10 + 5; // da 5 a 15 secondi
-        const delay = Math.random() * 5; // da 0 a 5 secondi
+        const duration = Math.random() * 30 + 20; // da 20 a 30 secondi
+        const delay = Math.random() * 1; // da 0 a 5 secondi
 
         square.animate(
           [
@@ -111,10 +111,6 @@ export default {
             fill: "forwards",
           }
         );
-
-        setTimeout(() => {
-          background.removeChild(square);
-        }, (duration + delay + 3) * 1000); // Rimuove il quadrato dopo che ha terminato l'animazione più il delay
       }
     },
   },
@@ -168,34 +164,24 @@ export default {
   overflow: hidden; /* Nasconde qualsiasi overflow */
 }
 
-.square {
-  will-change: transform;
-}
-
-@keyframes move {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(var(--distanceX), var(--distanceY));
-  }
-}
-
 .container {
   .jambo {
     position: relative;
     height: 100vh;
     color: black;
+
     .contImg {
       height: 108%;
       position: absolute;
       bottom: 0;
+      z-index: 10;
 
       img {
         height: 100%;
       }
     }
     .contText {
+      z-index: 10;
       position: absolute;
       width: 47%;
       .colorGreen {
