@@ -15,11 +15,9 @@ export default {
       if (window.scrollY > 70) {
         this.isHidden = true;
         this.isFixed = true;
-        console.log("true");
       } else {
         this.isHidden = false;
         this.isFixed = false;
-        console.log("false");
       }
     },
   },
