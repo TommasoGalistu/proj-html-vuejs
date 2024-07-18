@@ -179,17 +179,31 @@ export default {
           border-radius: 5px;
           border: 1px solid #ccc;
           font-size: 16px;
+          background-color: #ececec;
+          border: none;
+          &:focus {
+            outline: none;
+            box-shadow: none;
+            border-color: transparent;
+          }
         }
       }
 
       input,
       select {
+        border: none;
+        background-color: #ececec;
         width: 100%;
         padding: 10px;
         margin-top: 5px;
         border-radius: 5px;
         border: 1px solid #ccc;
         font-size: 16px;
+        &:focus {
+          outline: none;
+          box-shadow: none;
+          border-color: transparent;
+        }
       }
 
       button {
@@ -210,7 +224,11 @@ export default {
     }
     .contContact {
       width: 30%;
-      padding: 1rem;
+      h2,
+      p {
+        padding-bottom: 1rem;
+      }
+
       .button {
         @include button-styles(0.5rem 1rem, 0.4rem 1);
       }
