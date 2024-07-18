@@ -108,10 +108,16 @@ export default {
       <div class="contContact">
         <h2>Example Inc.</h2>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-        <div class="contatti">icona <span>numero</span></div>
-        <div class="contatti">icona <span>email</span></div>
-        <div class="contatti">icona <span>via</span></div>
-        <div class="contatti">icona <span>via</span></div>
+        <div class="contatti">
+          <font-awesome-icon :icon="['fas', 'phone']" /><span>numero</span>
+        </div>
+        <div class="contatti">
+          <font-awesome-icon :icon="['fas', 'envelope']" /><span>email</span>
+        </div>
+        <div class="contatti">
+          <font-awesome-icon :icon="['fas', 'location-dot']" /><span>via</span>
+        </div>
+
         <div class="button"><span>VIEW MAP</span></div>
       </div>
     </div>
