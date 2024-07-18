@@ -109,13 +109,22 @@ export default {
         <h2>Example Inc.</h2>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
         <div class="contatti">
-          <font-awesome-icon :icon="['fas', 'phone']" /><span>numero</span>
+          <div class="iconStyle">
+            <font-awesome-icon :icon="['fas', 'phone']" />
+          </div>
+          <span>numero</span>
         </div>
         <div class="contatti">
-          <font-awesome-icon :icon="['fas', 'envelope']" /><span>email</span>
+          <div class="iconStyle">
+            <font-awesome-icon :icon="['fas', 'envelope']" />
+          </div>
+          <span>email</span>
         </div>
         <div class="contatti">
-          <font-awesome-icon :icon="['fas', 'location-dot']" /><span>via</span>
+          <div class="iconStyle">
+            <font-awesome-icon :icon="['fas', 'location-dot']" />
+          </div>
+          <span>via</span>
         </div>
 
         <div class="button"><span>VIEW MAP</span></div>
@@ -132,7 +141,6 @@ export default {
 .sfondo {
   background-color: white;
   width: 100%;
-  height: 100vh;
 
   .container {
     padding: 4rem 0;
@@ -143,7 +151,7 @@ export default {
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      width: 60%;
+      width: 70%;
       span {
         color: $colorStyleJambo;
       }
@@ -201,13 +209,31 @@ export default {
       }
     }
     .contContact {
-      width: 40%;
+      width: 30%;
       padding: 1rem;
       .button {
         @include button-styles(0.5rem 1rem, 0.4rem 1);
       }
       .contatti {
         padding: 1rem 0;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: $colorStyleJambo;
+        cursor: pointer;
+        .iconStyle {
+          display: flex;
+          align-items: center;
+          font-size: 1.3rem;
+
+          padding: 0.7rem;
+          background-color: #d9f2f2;
+          border-radius: 50%;
+          &:hover {
+            color: white;
+            background-color: $colorStyleJambo;
+          }
+        }
       }
     }
   }
