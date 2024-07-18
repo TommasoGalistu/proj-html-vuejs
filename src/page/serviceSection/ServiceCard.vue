@@ -11,14 +11,15 @@ export default {
     description: {
       type: String,
     }
-  }
+  },
+  
 };
 </script>
 
 <template>
   <div class="card">
     <!-- <div class="icon">{{ icon }}</div> -->
-     <img :src="icon" class="icon-svg" alt="Icon" />
+    <img :src="icon" class="svg-icon" alt="Icon" />
     <div class="content">
       <h3>{{ title }}</h3>
       <p>{{ description }}</p>
@@ -41,7 +42,7 @@ export default {
   gap: 10px;
 }
 
-.icon-svg {
+.svg-icon {
   width: 50px;
   height: auto;
 }
