@@ -61,12 +61,42 @@ export default {
           console.log("non lo so");
       }
     },
+
+    animazione(number) {
+      const background = this.$el.querySelector(".sfondoAnimato");
+      console.log(this.$el.querySelector(".sfondoAnimato"));
+      if (!background) {
+        console.error("Elemento sfondoAnimato non trovato");
+        return;
+      }
+      for (let i = 0; i < number; i++) {
+        const square = document.createElement("div");
+        square.classList.add("square");
+
+        // Posizionamento iniziale casuale
+        const posX = Math.random() * window.innerWidth;
+        const posY = Math.random() * window.innerHeight;
+        square.style.transform = `translate(${posX}px, ${posY}px)`;
+
+        // Imposta una durata di animazione casuale e un ritardo iniziale
+        const duration = Math.random() * 10 + 5; // da 5 a 15 secondi
+        const delay = Math.random() * 5; // da 0 a 5 secondi
+        square.style.animationDuration = `${duration}s`;
+        square.style.animationDelay = `${delay}s`;
+
+        background.appendChild(square);
+      }
+    },
+  },
+  mounted() {
+    this.animazione(10);
   },
 };
 </script>
 
 <template>
   <div class="sfondoAnimato">
+    <div class="square"></div>
     <div class="container">
       <div class="jambo">
         <div class="contImg" :style="jamboPos1">
@@ -97,8 +127,29 @@ export default {
 @use "../../style/partials/variable.scss" as *;
 @use "../../style/partials/mixin.scss" as *;
 @use "../../style/general.scss" as *;
+.square {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 10rem;
+  left: 10rem;
+  background-color: black; /* Colore del quadrato */
+  opacity: 0.8;
+  animation: move 20s linear infinite;
+}
+// // style per le animazioni
+@keyframes move {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(100vw, 100vh);
+  }
+}
 .sfondoAnimato {
   background-color: #f1f1f1;
+
+  position: relative;
   .container {
     .jambo {
       position: relative;
