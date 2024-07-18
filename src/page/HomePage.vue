@@ -4,6 +4,7 @@ import SectionCard from "./HomaPageSection/SectionCard.vue";
 import SecondSection from "./HomaPageSection/SecondSection.vue";
 import ActionProject from "./HomaPageSection/ActionProject.vue";
 import BannerSection from "./HomaPageSection/BannerSection.vue";
+import FormSection from "./HomaPageSection/FormSection.vue";
 export default {
   name: "HomePage",
   components: {
@@ -12,6 +13,7 @@ export default {
     SecondSection,
     ActionProject,
     BannerSection,
+    FormSection,
   },
 };
 </script>
@@ -22,6 +24,7 @@ export default {
   <SecondSection />
   <ActionProject />
   <BannerSection />
+  <FormSection />
 </template>
 
 <style lang="scss" scoped>
