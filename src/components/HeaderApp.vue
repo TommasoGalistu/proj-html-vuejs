@@ -23,7 +23,11 @@ export default {
         <div class="contact">
           <span><font-awesome-icon :icon="['fas', 'phone']" /></span>
           <span>{{ store.infoAzienda[0].telefono }}</span>
+          <font-awesome-icon :icon="['fas', 'envelope']" />
           <span>{{ store.infoAzienda[0].email }}</span>
+          <font-awesome-icon :icon="['fab', 'facebook-f']" />
+          <font-awesome-icon :icon="['fab', 'twitter']" />
+          <font-awesome-icon :icon="['fab', 'linkedin-in']" />
         </div>
       </div>
     </div>
