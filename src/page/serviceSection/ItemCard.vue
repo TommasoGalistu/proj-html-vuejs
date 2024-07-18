@@ -10,7 +10,9 @@ export default {
     <div class="container">
       <!-- card human capital -->
       <div class="service-card">
-        <div class="icon"><i class="fa-solid fa-user-group"></i></div>
+        <div class="icon">
+          <font-awesome-icon icon="fa-solid fa-user-group" />
+        </div>
         <h2>Human Capital</h2>
         <p>
           Humanizing business: Harness the power of technology to improve the
