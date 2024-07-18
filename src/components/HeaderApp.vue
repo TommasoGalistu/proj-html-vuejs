@@ -1,10 +1,12 @@
 <script >
 import { router } from "../router";
+import { store } from "../store";
 export default {
   name: "HeaderApp",
   data() {
     return {
       routes: router.options.routes,
+      store,
     };
   },
 };
@@ -14,8 +16,15 @@ export default {
   <header>
     <div class="cont banner">
       <div class="container">
-        <div class="text">orario</div>
-        <div class="contact">contatti</div>
+        <div class="text">
+          <font-awesome-icon :icon="['fas', 'clock']" />
+          <span>Open Hours: {{ store.infoAzienda[0].orariApertura }}</span>
+        </div>
+        <div class="contact">
+          <span><font-awesome-icon :icon="['fas', 'phone']" /></span>
+          <span>{{ store.infoAzienda[0].telefono }}</span>
+          <span>{{ store.infoAzienda[0].email }}</span>
+        </div>
       </div>
     </div>
     <div class="container">
@@ -62,6 +71,12 @@ header {
 
     height: 3rem;
     margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    .contact {
+      display: flex;
+      gap: 1rem;
+    }
   }
   .container {
     display: flex;

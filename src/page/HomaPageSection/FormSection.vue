@@ -161,6 +161,7 @@ export default {
       .row {
         display: flex;
         gap: 1rem;
+        padding-bottom: 1rem;
 
         & > div {
           flex: 1;
