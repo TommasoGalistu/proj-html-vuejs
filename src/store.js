@@ -89,6 +89,15 @@ export const store = reactive({
             active: false
         }
     ],
+
+
+
+
+
+
+
+
+    // inizio paolo da 100 a 200 compreso
     clothes: [
         {
             nome: "Black hooded sweatshirt",
@@ -150,6 +159,46 @@ export const store = reactive({
             img: "/public/clothes/white_ninja_print.jpg",
         }
     ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // inizio ale da 201 
 });
 
 
