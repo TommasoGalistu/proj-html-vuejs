@@ -1,6 +1,13 @@
 import { reactive } from 'vue'
 
 export const store = reactive({
+    infoAzienda: [
+        {
+            telefono: '+1(305) 1234-5678',
+            email: 'hello@example.com',
+            orariApertura: 'Mon - Sat - 9:00 - 18:00',
+        }
+    ],
     // card nella terza sezione di home chiamate da metodo
     cardHomePage: [
 
@@ -90,14 +97,7 @@ export const store = reactive({
         }
     ],
 
-
-
-
-
-
-
-
-    // inizio paolo da 100 a 200 compreso
+// inizio paolo da 100 a 200 compreso
     clothes: [
         {
             nome: "Black hooded sweatshirt",

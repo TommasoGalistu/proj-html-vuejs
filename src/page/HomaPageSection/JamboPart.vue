@@ -4,7 +4,7 @@ export default {
   data() {
     return {
       jamboPos1: {
-        right: "-98rem",
+        right: "-94rem",
         left: "",
       },
       TextPos1: {
@@ -37,14 +37,14 @@ export default {
       // Switch statement per eseguire azioni basate sul numero del pulsante
       switch (numeroPulsante) {
         case 1:
-          this.jamboPos1.right = "-98rem";
+          this.jamboPos1.right = "-94rem";
           this.jamboPos1.left = "";
           this.TextPos1.top = "15rem";
           this.TextPos1.left = "0";
           this.TextPos1.textAlign = "left";
           break;
         case 2:
-          this.jamboPos1.right = "-48rem";
+          this.jamboPos1.right = "-43rem";
           this.jamboPos1.left = "";
           this.TextPos1.top = "7rem";
           this.TextPos1.left = "18rem";
@@ -52,7 +52,7 @@ export default {
           break;
         case 3:
           this.jamboPos1.right = "";
-          this.jamboPos1.left = "-98rem";
+          this.jamboPos1.left = "-94rem";
           this.TextPos1.top = "15rem";
           this.TextPos1.left = "39rem";
           this.TextPos1.textAlign = "left";
@@ -105,7 +105,7 @@ export default {
       height: 100vh;
       color: black;
       .contImg {
-        height: 115%;
+        height: 108%;
         position: absolute;
         bottom: 0;
 
@@ -125,7 +125,7 @@ export default {
           font-size: 5rem;
         }
         p {
-          font-size: 1.5rem;
+          font-size: 1.35rem;
           padding-bottom: 3rem;
         }
         .button {
