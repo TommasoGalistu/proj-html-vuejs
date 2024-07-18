@@ -17,17 +17,31 @@ export default {
     <div class="cont banner">
       <div class="container">
         <div class="text">
-          <font-awesome-icon :icon="['fas', 'clock']" />
-          <span>Open Hours: {{ store.infoAzienda[0].orariApertura }}</span>
+          <span class="contDetails"
+            ><font-awesome-icon :icon="['fas', 'clock']" /><span
+              >Open Hours: {{ store.infoAzienda[0].orariApertura }}</span
+            ></span
+          >
         </div>
         <div class="contact">
-          <span><font-awesome-icon :icon="['fas', 'phone']" /></span>
-          <span>{{ store.infoAzienda[0].telefono }}</span>
-          <font-awesome-icon :icon="['fas', 'envelope']" />
-          <span>{{ store.infoAzienda[0].email }}</span>
-          <font-awesome-icon :icon="['fab', 'facebook-f']" />
-          <font-awesome-icon :icon="['fab', 'twitter']" />
-          <font-awesome-icon :icon="['fab', 'linkedin-in']" />
+          <span class="contDetails"
+            ><font-awesome-icon :icon="['fas', 'phone']" /><span>{{
+              store.infoAzienda[0].telefono
+            }}</span></span
+          >
+
+          <span class="contDetails"
+            ><font-awesome-icon :icon="['fas', 'envelope']" /><span>{{
+              store.infoAzienda[0].email
+            }}</span></span
+          >
+
+          <font-awesome-icon class="hoverClass" :icon="['fab', 'facebook-f']" />
+          <font-awesome-icon class="hoverClass" :icon="['fab', 'twitter']" />
+          <font-awesome-icon
+            class="hoverClass"
+            :icon="['fab', 'linkedin-in']"
+          />
         </div>
       </div>
     </div>
@@ -77,9 +91,20 @@ header {
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
+    .contDetails {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .contDetails,
+    .hoverClass {
+      &:hover {
+        color: $colorStyleJamboHover;
+        cursor: pointer;
+      }
+    }
     .contact {
       display: flex;
-      gap: 1rem;
+      gap: 1.5rem;
     }
   }
   .container {
