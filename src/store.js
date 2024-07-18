@@ -5,8 +5,8 @@ export const store = reactive({
     cardHomePage: [
 
         {
-            ricerca: ['events','social','technology'],
-            path:'/cuffie.avif',
+            ricerca: ['events', 'social', 'technology'],
+            path: '/public/cuffie.avif',
             tipo: 'Coding',
             tempo: '3 years',
             titolo: 'Portfolio item with intro with sidebar',
@@ -14,8 +14,8 @@ export const store = reactive({
 
         },
         {
-            ricerca: ['enviroment','innovation'],
-            path:'/cuffie2.avif',
+            ricerca: ['enviroment', 'innovation'],
+            path: '/public/cuffie2.avif',
             tipo: 'Coding',
             tempo: '3 years',
             titolo: 'Portfolio item with intro with sidebar',
@@ -23,8 +23,8 @@ export const store = reactive({
 
         },
         {
-            ricerca: ['social','technology', 'innovation'],
-            path:'/fiore.avif',
+            ricerca: ['social', 'technology', 'innovation'],
+            path: '/public/fiore.avif',
             tipo: 'Coding',
             tempo: '3 years',
             titolo: 'Portfolio item with intro with sidebar',
@@ -32,8 +32,8 @@ export const store = reactive({
 
         },
         {
-            ricerca:['istitutional','technology'],
-            path:'/ciliegie.jpg',
+            ricerca: ['istitutional', 'technology'],
+            path: '/public/ciliegie.jpg',
             tipo: 'Coding',
             tempo: '3 years',
             titolo: 'Portfolio item with intro with sidebar',
@@ -42,7 +42,7 @@ export const store = reactive({
         },
         {
             ricerca: ['enviroment', 'events', 'istitutional'],
-            path:'/vaso.avif',
+            path: '/public/vaso.avif',
             tipo: 'Coding',
             tempo: '3 years',
             titolo: 'Portfolio item with intro with sidebar',
@@ -50,8 +50,8 @@ export const store = reactive({
 
         },
         {
-            ricerca: ['enviroment','innovation'],
-            path:'/avocado.jpg',
+            ricerca: ['enviroment', 'innovation'],
+            path: '/public/avocado.jpg',
             tipo: 'Coding',
             tempo: '3 years',
             titolo: 'Portfolio item with intro with sidebar',
