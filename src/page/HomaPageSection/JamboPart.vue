@@ -1,20 +1,68 @@
 <script>
+import { store } from "../../store";
 export default {
   name: "JamboPart",
   data() {
     return {
+      store,
       jamboPos1: {
-        right: "-94rem",
+        right: "-110rem",
         left: "",
       },
       TextPos1: {
-        top: "15rem",
+        top: "12rem",
         left: "0",
         textAlign: "",
       },
+
+      textInsert: {
+        title: store.textJambo[0].title,
+        titleEvidenziato: store.textJambo[0].titleEvidenziato,
+        text: store.textJambo[0].text,
+      },
     };
   },
+
   methods: {
+    caroselloAuto(numPulsante) {
+      switch (numPulsante) {
+        case 1:
+          this.jamboPos1.right = "-110rem";
+          this.jamboPos1.left = "";
+          this.TextPos1.top = "12rem";
+          this.TextPos1.left = "0";
+          this.TextPos1.textAlign = "left";
+          this.textInsert.title = this.store.textJambo[numPulsante - 1].title;
+          this.textInsert.titleEvidenziato =
+            this.store.textJambo[numPulsante - 1].titleEvidenziato;
+          this.textInsert.text = this.store.textJambo[numPulsante - 1].text;
+          break;
+        case 2:
+          this.jamboPos1.right = "-60.5rem";
+          this.jamboPos1.left = "";
+          this.TextPos1.top = "11rem";
+          this.TextPos1.left = "18rem";
+          this.TextPos1.textAlign = "center";
+          this.textInsert.title = this.store.textJambo[numPulsante - 1].title;
+          this.textInsert.titleEvidenziato =
+            this.store.textJambo[numPulsante - 1].titleEvidenziato;
+          this.textInsert.text = this.store.textJambo[numPulsante - 1].text;
+          break;
+        case 3:
+          this.jamboPos1.right = "";
+          this.jamboPos1.left = "-110rem";
+          this.TextPos1.top = "12rem";
+          this.TextPos1.left = "39rem";
+          this.TextPos1.textAlign = "left";
+          this.textInsert.title = this.store.textJambo[numPulsante - 1].title;
+          this.textInsert.titleEvidenziato =
+            this.store.textJambo[numPulsante - 1].titleEvidenziato;
+          this.textInsert.text = this.store.textJambo[numPulsante - 1].text;
+          break;
+        default:
+          console.log("non lo so");
+      }
+    },
     changePhoto(e) {
       const container = this.$refs.container;
       let elementoCliccato = e.target;
@@ -33,31 +81,7 @@ export default {
         Array.from(container.children).indexOf(elementoCliccato) + 1;
 
       // Switch statement per eseguire azioni basate sul numero del pulsante
-      switch (numeroPulsante) {
-        case 1:
-          this.jamboPos1.right = "-94rem";
-          this.jamboPos1.left = "";
-          this.TextPos1.top = "15rem";
-          this.TextPos1.left = "0";
-          this.TextPos1.textAlign = "left";
-          break;
-        case 2:
-          this.jamboPos1.right = "-43rem";
-          this.jamboPos1.left = "";
-          this.TextPos1.top = "7rem";
-          this.TextPos1.left = "18rem";
-          this.TextPos1.textAlign = "center";
-          break;
-        case 3:
-          this.jamboPos1.right = "";
-          this.jamboPos1.left = "-94rem";
-          this.TextPos1.top = "15rem";
-          this.TextPos1.left = "39rem";
-          this.TextPos1.textAlign = "left";
-          break;
-        default:
-          console.log("non lo so");
-      }
+      this.caroselloAuto(numeroPulsante);
     },
 
     animazione(number) {
@@ -130,11 +154,10 @@ export default {
           <img src="/bg-parallax.png" alt="" />
         </div>
         <div class="contText" :style="TextPos1">
-          <h2>We Share</h2>
-          <h2 class="colorGreen">Good Ideas</h2>
+          <h2>{{ textInsert.title }}</h2>
+          <h2 class="colorGreen">{{ textInsert.titleEvidenziato }}</h2>
           <p class="colorGreen">
-            Escape the comfort zone and achieve better results with the help of
-            experts who understand the subject
+            {{ textInsert.text }}
           </p>
           <div class="button"><span>Get in touch</span></div>
         </div>
@@ -171,9 +194,9 @@ export default {
     color: black;
 
     .contImg {
-      height: 108%;
+      height: 133%;
       position: absolute;
-      bottom: 0;
+      bottom: -147px;
       z-index: 10;
 
       img {
@@ -203,6 +226,7 @@ export default {
 }
 
 .contPulsanti {
+  z-index: 10;
   position: absolute;
   right: 2rem;
   top: 50%;

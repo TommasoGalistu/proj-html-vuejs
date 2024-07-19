@@ -129,7 +129,23 @@ export const store = reactive({
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
         }
       ],
-
+    textJambo: [
+        {
+            title: 'We Share',
+            titleEvidenziato: 'Good Ideas', 
+            text:'Escape the comfort zone and achieve better results with the help of experts who understand the subject '
+        },
+        {
+            title: 'Ready',
+            titleEvidenziato: 'Team', 
+            text:'No matter what what your company needs, we will ge ready to assist you in the best possible way. '
+        },
+        {
+            title: 'Talk to a',
+            titleEvidenziato: 'Consultant', 
+            text:'Do not miss the opportunity to achieve better results and solidity in the market.'
+        },
+    ],
 
 
 // inizio paolo da 134 a 200 compreso
