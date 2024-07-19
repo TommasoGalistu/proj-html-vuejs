@@ -1,5 +1,5 @@
 <script>
-    import MultiRangeSlider from "../../../node_modules/multi-range-slider-vue";
+    import MultiRangeSlider from "multi-range-slider-vue";
 
     export default{
         name: "Slider",
