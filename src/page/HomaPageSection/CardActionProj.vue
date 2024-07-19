@@ -13,23 +13,26 @@ export default {
 <template>
   <div v-for="(element, index) in card" :key="index" class="card">
     <div class="contText">
-      <div class="upPart">
-        <div class="nascondi up">
+      <!-- testo in cima -->
+      <div class="upPart nascondi up visibility">
+        <div>
           <font-awesome-icon :icon="['far', 'user']" />
           <span>{{ element.tipo }}</span>
         </div>
-        <div class="nascondi up">
+        <div>
           <font-awesome-icon :icon="['far', 'clock']" />
           <span>{{ element.tempo }}</span>
         </div>
       </div>
-      <div class="bottomPart">
+      <!-- testo sotto -->
+      <div class="bottomPart nascondi bottom">
         <h2>{{ element.titolo }}</h2>
-        <p class="nascondi bottom">
+        <p class="visibility">
           {{ element.text }}
         </p>
       </div>
     </div>
+    <!-- immagine di sfondo -->
     <div class="contImg">
       <img :src="element.path" alt="" />
     </div>
@@ -48,11 +51,46 @@ export default {
   background-color: grey;
   border-radius: 10px;
   color: rgb(180, 180, 180);
-  &:hover .nascondi {
-    display: block;
-    animation: visible 10s linear 1;
+  &:hover .contText {
+    filter: blur(100%);
   }
-  @keyframes visible {
+  &:hover .nascondi.up {
+    animation: up 0.5s ease-out;
+    animation-fill-mode: forwards;
+  }
+  &:hover .nascondi.bottom {
+    animation: bottom 0.5s ease-out;
+    animation-fill-mode: forwards;
+  }
+  &:hover .visibility {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s ease-out, visibility 1s ease-out;
+  }
+  @keyframes up {
+    0% {
+      top: -27px;
+      left: 50%;
+      transform: translate(-50%);
+    }
+    100% {
+      top: 30px;
+      left: 50%;
+      transform: translate(-50%);
+    }
+  }
+  @keyframes bottom {
+    0% {
+      bottom: -26px;
+      left: 50%;
+      transform: translate(-50%);
+    }
+    100% {
+      width: 80%;
+      bottom: 30px;
+      left: 50%;
+      transform: translate(-50%);
+    }
   }
   &:hover {
     cursor: pointer;
@@ -76,6 +114,9 @@ export default {
       gap: 1rem;
       justify-content: center;
       align-items: center;
+      span {
+        padding-left: 0.3rem;
+      }
     }
     .bottomPart {
       h2 {
@@ -96,6 +137,21 @@ export default {
   }
 }
 .nascondi {
-  // position: absolute;
+  position: absolute;
+}
+.nascondi.up {
+  top: -27px;
+  left: 50%;
+  transform: translate(-50%);
+}
+.nascondi.bottom {
+  width: 80%;
+  bottom: -26px;
+  left: 50%;
+  transform: translate(-50%);
+}
+.visibility {
+  visibility: hidden;
+  opacity: 0;
 }
 </style>
