@@ -121,6 +121,10 @@ p {
   text-align: left;
   margin: 10px;
   position: relative;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
 }
 
 .icon {
@@ -175,4 +179,5 @@ ul li.not-included::after {
   content: '✘';
   color: #00a6a6;
 }
+
 </style>
