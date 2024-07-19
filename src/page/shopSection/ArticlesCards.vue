@@ -6,27 +6,30 @@ export default {
   data() {
     return {
         store,
+        vestiti : store.clothes,
     };
   }
 };
+
 
 
 </script>
 
 <template>
 
-    <a href="#"><div class="ShopCards">
+    <a v-for="(vestito,index) in vestiti" :key="index" href="#"><div class="ShopCards">
         <div class="upper-img">
-            <div class="sale">
+            <div v-if="vestito.prezzoOriginale" class="sale">
                 
             </div>
-            <img src="/public/clothes/black_hoodie.jpg" alt="">
+            <img v-bind:src="vestito.img" alt="">
         </div>
+
         <div class="lower-price">
-            <h2>{{  }}</h2>
+                <h2> {{ vestito.nome }} </h2>
             <div class="scritte-container">
                 <span>200$ $129</span>
-                <a href="#"><font-awesome-icon icon="bag-shopping" /></a>
+                <a href="#"><font-awesome-icon icon="bag-shopping"/></a>
             </div>
 
         </div>
