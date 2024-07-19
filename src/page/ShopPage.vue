@@ -1,19 +1,20 @@
 <script >
 import ArticlesCards from "./shopSection/ArticlesCards.vue";
+import ArticlesSorting from "./shopSection/ArticlesSorting.vue";
+import Slider from "./shopSection/Slider.vue";
+
+
+
 
 export default {
   name: "ShopPage",
   methods: {
-    // slider: function() {
-    //   if (this.minPrice > this.maxPrice) {
-    //     var tmp = this.maxPrice;
-    //     this.maxPrice = this.minPrice;
-    //     this.minPrice = tmp;
-    //   }
-      
+        
   },
   components :{
-    ArticlesCards
+    ArticlesCards,
+    ArticlesSorting,
+    Slider,
   }
 };
 
@@ -26,20 +27,15 @@ export default {
     
     <section class="articles">
       <div class="results">
-
+        
+        <span><font-awesome-icon icon="fa-solid fa-bars" /> Showing N-N of N results </span>
+        <ArticlesSorting/>
       </div>
       <ArticlesCards/>
     </section>
     <section class="prices">
       <h3>Filter by price</h3>
-      <div class="sliderContainer">
-        <input type="range" min="20" max="150" step="10" v-model="sliderMin" id="slider1">
-        <input type="range" min="20" max="150" step="10" v-model="sliderMax" id="slider2">
-        
-    
-        <p>Price:$<span ref="priceValue1"></span>-<span ref="priceValue2"></span></p>
-      </div>
-
+      <Slider/>
     </section>
   </div>
 </template>
@@ -66,6 +62,20 @@ section{
 .articles{
   width: 70%;
   background-color: red;
+  display: flex;
+  flex-direction: column;
+}
+
+.results{
+  width: 100%;
+  height: 3%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.results span{
+  font-size: 20px;
 }
 
 .prices{

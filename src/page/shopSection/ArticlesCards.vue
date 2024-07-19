@@ -9,8 +9,7 @@ export default {
     <a href="#"><div class="ShopCards">
         <div class="upper-img">
             <div class="sale">
-                <div class="sale1"></div>
-                <div class="sale2"></div>
+                
             </div>
             <img src="/public/clothes/black_hoodie.jpg" alt="">
         </div>
@@ -28,6 +27,8 @@ export default {
 
 <style lang="scss" scoped>
     @use "src/style/general.scss" as *;
+
+    
 
     a{
         text-decoration: none;
@@ -84,21 +85,17 @@ export default {
     }
     
     .sale{
-        background-color: aqua;
+        
         width: 60px;
         height: 30px;
         position: absolute;
-        border-radius: 20%;
+        background-color: aqua;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius:8px;
         margin-top: 30px;
         display: flex;
         flex-direction: row;
     }
 
-    .sale1{
-        width: 90%;
-        height: 100%;
-    }
-    .sale2{
-        
-    }
+    
 </style>
