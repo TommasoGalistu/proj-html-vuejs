@@ -96,6 +96,55 @@ export const store = reactive({
             active: false
         }
     ],
+    card: [
+        {
+          icon: "/svg-1.svg",
+          title: "Audit & Assurance",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
+        },
+        {
+          icon: "/svg-2.svg",
+          title: "Financial Advisory",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
+        },
+        {
+          icon: "/svg-3.svg",
+          title: "Analytics and M&A",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
+        },
+        {
+          icon: "/svg-4.svg",
+          title: "Middle Marketing",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
+        },
+        {
+          icon: "/svg-5.svg",
+          title: "Legal Consulting",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
+        },
+        {
+          icon: "/svg-6.svg",
+          title: "Regulatory Risk",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
+        }
+      ],
+    textJambo: [
+        {
+            title: 'We Share',
+            titleEvidenziato: 'Good Ideas', 
+            text:'Escape the comfort zone and achieve better results with the help of experts who understand the subject '
+        },
+        {
+            title: 'Ready',
+            titleEvidenziato: 'Team', 
+            text:'No matter what what your company needs, we will ge ready to assist you in the best possible way. '
+        },
+        {
+            title: 'Talk to a',
+            titleEvidenziato: 'Consultant', 
+            text:'Do not miss the opportunity to achieve better results and solidity in the market.'
+        },
+    ],
 
 
 

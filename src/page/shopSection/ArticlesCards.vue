@@ -28,7 +28,7 @@ export default {
         <div class="lower-price">
                 <h2> {{ vestito.nome }} </h2>
             <div class="scritte-container">
-                <span>200$ $129</span>
+                <span class="scontato">{{ vestito.prezzoOriginale }}</span><span class="attuale">{{ vestito.prezzoAttuale }}</span>
                 <a href="#"><font-awesome-icon icon="bag-shopping"/></a>
             </div>
 
