@@ -20,15 +20,15 @@ export default {
           <p>Certifications</p>
         </div>
         <div class="number">
-          <span><strong>128</strong></span>
+          <span><strong>230</strong></span>
           <p>Certifications</p>
         </div>
         <div class="number">
-          <span><strong>128</strong></span>
+          <span><strong>517</strong></span>
           <p>Certifications</p>
         </div>
         <div class="number">
-          <span><strong>128</strong></span>
+          <span><strong>94</strong></span>
           <p>Certifications</p>
         </div>
       </div>

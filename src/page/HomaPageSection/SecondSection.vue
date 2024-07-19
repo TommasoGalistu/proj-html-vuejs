@@ -113,7 +113,7 @@ export default {
     .contImg {
       width: 50%;
       position: relative;
-      overflow-y: scroll;
+
       height: 80vh;
       .sfuocatura {
         top: 0;
