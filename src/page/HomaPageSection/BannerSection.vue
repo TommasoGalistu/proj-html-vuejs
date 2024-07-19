@@ -21,15 +21,15 @@ export default {
         </div>
         <div class="number">
           <span><strong>230</strong></span>
-          <p>Certifications</p>
+          <p>Employees</p>
         </div>
         <div class="number">
           <span><strong>517</strong></span>
-          <p>Certifications</p>
+          <p>Customers</p>
         </div>
         <div class="number">
           <span><strong>94</strong></span>
-          <p>Certifications</p>
+          <p>Countries Served</p>
         </div>
       </div>
     </div>
@@ -77,6 +77,7 @@ export default {
 
     .contText {
       h2 {
+        font-size: 3rem;
         padding: 1.5rem 0;
         color: white;
       }

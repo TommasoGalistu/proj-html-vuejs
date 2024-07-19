@@ -11,17 +11,21 @@
       }
     </style>
   </defs>
-  <path class="branch" d="M 100 500 Q 150 400, 200 300 T 300 200 T 400 100" />
-  <path class="branch" d="M 200 300 Q 250 250, 300 200" />
-  <path class="branch" d="M 300 200 Q 350 150, 400 100" />
-  <path class="branch" d="M 400 100 Q 450 50, 500 0" />
-  <path class="branch" d="M 150 400 Q 200 350, 250 300" />
-  <path class="branch" d="M 250 300 Q 300 250, 350 200" />
-  <circle class="leaf" cx="200" cy="300" r="10" />
-  <circle class="leaf" cx="250" cy="300" r="10" />
-  <circle class="leaf" cx="300" cy="200" r="10" />
-  <circle class="leaf" cx="350" cy="200" r="10" />
-  <circle class="leaf" cx="400" cy="100" r="10" />
-  <circle class="leaf" cx="450" cy="50" r="10" />
-  <circle class="leaf" cx="150" cy="400" r="10" />
+  <g transform="rotate(45 400 300)">
+    <path class="branch" d="M 100 500 Q 150 400, 200 300 T 300 200 T 400 100" />
+    <path class="branch" d="M 200 300 Q 250 250, 300 200" />
+    <path class="branch" d="M 300 200 Q 350 150, 400 100" />
+    <path class="branch" d="M 400 100 Q 450 50, 500 0" />
+    <path class="branch" d="M 150 400 Q 200 350, 250 300" />
+    <path class="branch" d="M 250 300 Q 300 250, 350 200" />
+    <circle class="leaf" cx="200" cy="300" r="10" />
+    <circle class="leaf" cx="250" cy="300" r="10" />
+    <circle class="leaf" cx="300" cy="200" r="10" />
+    <circle class="leaf" cx="350" cy="200" r="10" />
+    <circle class="leaf" cx="400" cy="100" r="10" />
+    <circle class="leaf" cx="450" cy="50" r="10" />
+    <circle class="leaf" cx="150" cy="400" r="10" />
+  </g>
 </svg>
+
+
