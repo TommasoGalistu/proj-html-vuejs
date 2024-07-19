@@ -6,7 +6,6 @@ export const store = reactive({
             telefono: '+1(305) 1234-5678',
             email: 'hello@example.com',
             orariApertura: 'Mon - Sat - 9:00 - 18:00',
-            luogo: ' Main Avenue, 123'
         }
     ],
     // card nella terza sezione di home chiamate da metodo
@@ -14,7 +13,7 @@ export const store = reactive({
 
         {
             ricerca: ['events', 'social', 'technology'],
-            path: '/card1.webp',
+            path: '/cuffie.avif',
             tipo: 'Coding',
             tempo: '3 years',
             titolo: 'Portfolio item with intro with sidebar',
@@ -22,7 +21,7 @@ export const store = reactive({
 
         },
         {
-            ricerca: ['enviroment', 'innovation', 'technology'],
+            ricerca: ['enviroment', 'innovation'],
             path: '/cuffie2.avif',
             tipo: 'Coding',
             tempo: '3 years',
@@ -35,13 +34,13 @@ export const store = reactive({
             path: '/fiore.avif',
             tipo: 'Coding',
             tempo: '3 years',
-            titolo: 'Portfolio item with intro without sidebar',
+            titolo: 'Portfolio item with intro with sidebar',
             text: 'lorem ipsum bla bla bla sit consectetur adisipsiscing elit. Vestibulu...',
 
         },
         {
-            ricerca: ['istitutional', 'technology', 'enviroment'],
-            path: '/card2.jpg',
+            ricerca: ['istitutional', 'technology'],
+            path: '/ciliegie.jpg',
             tipo: 'Coding',
             tempo: '3 years',
             titolo: 'Portfolio item with intro with sidebar',
@@ -53,7 +52,7 @@ export const store = reactive({
             path: '/vaso.avif',
             tipo: 'Coding',
             tempo: '3 years',
-            titolo: 'Portfolio item without intro with sidebar',
+            titolo: 'Portfolio item with intro with sidebar',
             text: 'lorem ipsum bla bla bla sit consectetur adisipsiscing elit. Vestibulu...',
 
         },
@@ -62,7 +61,7 @@ export const store = reactive({
             path: '/avocado.jpg',
             tipo: 'Coding',
             tempo: '3 years',
-            titolo: 'Portfolio item without intro with sidebar',
+            titolo: 'Portfolio item with intro with sidebar',
             text: 'lorem ipsum bla bla bla sit consectetur adisipsiscing elit. Vestibulu...',
 
         },
@@ -97,117 +96,128 @@ export const store = reactive({
             active: false
         }
     ],
-    card: [
-        {
-          icon: "/svg-1.svg",
-          title: "Audit & Assurance",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
-        },
-        {
-          icon: "/svg-2.svg",
-          title: "Financial Advisory",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
-        },
-        {
-          icon: "/svg-3.svg",
-          title: "Analytics and M&A",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
-        },
-        {
-          icon: "/svg-4.svg",
-          title: "Middle Marketing",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
-        },
-        {
-          icon: "/svg-5.svg",
-          title: "Legal Consulting",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
-        },
-        {
-          icon: "/svg-6.svg",
-          title: "Regulatory Risk",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
-        }
-      ],
-    textJambo: [
-        {
-            title: 'We Share',
-            titleEvidenziato: 'Good Ideas', 
-            text:'Escape the comfort zone and achieve better results with the help of experts who understand the subject '
-        },
-        {
-            title: 'Ready',
-            titleEvidenziato: 'Team', 
-            text:'No matter what what your company needs, we will ge ready to assist you in the best possible way. '
-        },
-        {
-            title: 'Talk to a',
-            titleEvidenziato: 'Consultant', 
-            text:'Do not miss the opportunity to achieve better results and solidity in the market.'
-        },
-    ],
 
 
-// inizio paolo da 134 a 200 compreso
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// inizio paolo da 100 a 200 compreso
     clothes: [
         {
             nome: "Black hooded sweatshirt",
             prezzoOriginale: "$200.00",
             prezzoAttuale: "$129.00",
-            img: "/clothes/black_hoodie.jpg",
+            img: "/public/clothes/black_hoodie.jpg",
+            rating: "10",
         },
         {
             nome: "Black t-shirt with lamp print",
             prezzoAttuale: "$45.00",
-            img: "/clothes/black_tshirt.jpg",
+            img: "/public/clothes/black_tshirt.jpg",
+            rating: "9",
         },
         {
             nome: "Blue hooded sweatshirt",
             prezzoOriginale: "$129.50",
             prezzoAttuale: "$89.90",
-            img: "/clothes/blue_hoodie.jpg",
+            img: "/public/clothes/blue_hoodie.jpg",
+            rating: "2",
         },
         {
             nome: "Brown hooded sweatshirt",
             prezzoOriginale: "$75.00",
             prezzoAttuale: "$39.50",
-            img: "/clothes/brown_hoodie.jpg",
+            img: "/public/clothes/brown_hoodie.jpg",
+            rating: "4",
         },
         {
             nome: "Gray hooded sweatshirt",
 
             prezzoAttuale: "$149.00",
-            img: "/clothes/gray_hoodie.jpg",
+            img: "/public/clothes/gray_hoodie.jpg",
+            rating: "1",
         },
         {
             nome: "Navy Blue hooded sweatshirt",
 
             prezzoAttuale: "$79.00",
-            img: "/clothes/navy_blue_hoodie.jpg",
+            img: "/public/clothes/navy_blue_hoodie.jpg",
+            rating: "5",
         },
         {
             nome: "Ninja square poster",
             prezzoOriginale: "$60.00",
             prezzoAttuale: "$35.00",
-            img: "/clothes/ninja_square_poster.jpg",
+            img: "/public/clothes/ninja_square_poster.jpg",
+            rating: "8",
         },
         {
             nome: "Red hooded sweatshirt",
 
             prezzoAttuale: "$45.90",
-            img: "/clothes/red_hoodie.jpg",
+            img: "/public/clothes/red_hoodie.jpg",
+            rating: "3",
         },
         {
             nome: "Skull square poster",
 
             prezzoAttuale: "$20.00",
-            img: "/clothes/skull_poster.jpg",
+            img: "/public/clothes/skull_poster.jpg",
+            rating: "7",
         },
         {
             nome: "White ninja print t-shirt",
 
             prezzoAttuale: "$90.00",
-            img: "/clothes/white_ninja_print.jpg",
+            img: "/public/clothes/white_ninja_print.jpg",
+            rating: "6",
         }
     ],
 
@@ -249,35 +259,35 @@ export const store = reactive({
 
 
 
-    // inizio ale da 235 
+    // inizio ale da 201 
     services: [
         {
-          icon: "/svg-1.svg",
+          icon: "/public/svg-1.svg",
           title: "Audit & Assurance",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
         },
         {
-          icon: "/svg-2.svg",
+          icon: "/public/svg-2.svg",
           title: "Financial Advisory",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
         },
         {
-          icon: "/svg-3.svg",
+          icon: "/public/svg-3.svg",
           title: "Analytics and M&A",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
         },
         {
-          icon: "/svg-4.svg",
+          icon: "/public/svg-4.svg",
           title: "Middle Marketing",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
         },
         {
-          icon: "/svg-5.svg",
+          icon: "/public/svg-5.svg",
           title: "Legal Consulting",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
         },
         {
-          icon: "/svg-6.svg",
+          icon: "/public/svg-6.svg",
           title: "Regulatory Risk",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
         }
