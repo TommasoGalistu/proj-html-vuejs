@@ -1,7 +1,16 @@
 <script>
+import { store } from "../../store";
+
 export default {
   name: "ArticlesCards",
+  data() {
+    return {
+        store,
+    };
+  }
 };
+
+
 </script>
 
 <template>
@@ -14,7 +23,7 @@ export default {
             <img src="/public/clothes/black_hoodie.jpg" alt="">
         </div>
         <div class="lower-price">
-            <h2>Black Hooded sweater</h2>
+            <h2>{{  }}</h2>
             <div class="scritte-container">
                 <span>200$ $129</span>
                 <a href="#"><font-awesome-icon icon="bag-shopping" /></a>
