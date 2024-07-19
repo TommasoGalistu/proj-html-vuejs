@@ -3,7 +3,8 @@ export default {
   name: "ServiceCard",
   props: {
     icon: {
-        type: String,
+      type: String,
+      number: Number,
     },
     title: {
       type: String,
@@ -12,6 +13,11 @@ export default {
       type: String,
     }
   },
+  data() {
+    return {
+      dividendo: this.icon.number,
+    }
+  }
   
 };
 </script>
@@ -33,7 +39,7 @@ export default {
   background-color: #19191f;
   border-radius: 8px;
   padding: 20px;
-  width: calc(50% - 20px);
+  width: calc((100% / 2) - 20px);
   position: relative; 
   text-align: left;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
