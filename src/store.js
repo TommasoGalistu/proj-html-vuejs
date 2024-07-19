@@ -209,6 +209,7 @@ export const store = reactive({
         {
             nome: "Black t-shirt with lamp print",
             prezzoAttuale: "$45.00",
+            prezzoOriginale: "",
             img: "/public/clothes/black_tshirt.jpg",
             rating: "9",
         },
@@ -228,14 +229,14 @@ export const store = reactive({
         },
         {
             nome: "Gray hooded sweatshirt",
-
+            prezzoOriginale: "",
             prezzoAttuale: "$149.00",
             img: "/public/clothes/gray_hoodie.jpg",
             rating: "1",
         },
         {
             nome: "Navy Blue hooded sweatshirt",
-
+            prezzoOriginale: "",
             prezzoAttuale: "$79.00",
             img: "/public/clothes/navy_blue_hoodie.jpg",
             rating: "5",
@@ -249,21 +250,21 @@ export const store = reactive({
         },
         {
             nome: "Red hooded sweatshirt",
-
+            prezzoOriginale: "",
             prezzoAttuale: "$45.90",
             img: "/public/clothes/red_hoodie.jpg",
             rating: "3",
         },
         {
             nome: "Skull square poster",
-
+            prezzoOriginale: "",
             prezzoAttuale: "$20.00",
             img: "/public/clothes/skull_poster.jpg",
             rating: "7",
         },
         {
             nome: "White ninja print t-shirt",
-
+            prezzoOriginale: "",
             prezzoAttuale: "$90.00",
             img: "/public/clothes/white_ninja_print.jpg",
             rating: "6",

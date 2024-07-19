@@ -2,6 +2,7 @@
 import ArticlesCards from "./shopSection/ArticlesCards.vue";
 import ArticlesSorting from "./shopSection/ArticlesSorting.vue";
 import Slider from "./shopSection/Slider.vue";
+import {store} from "../store";
 
 
 
@@ -15,8 +16,13 @@ export default {
     ArticlesCards,
     ArticlesSorting,
     Slider,
-  }
-};
+  },
+  data() {
+    return {
+        store,
+        vestiti : store.clothes,
+    };
+}};
 
 
 </script>
@@ -29,7 +35,7 @@ export default {
       <div class="results">
         
         <span><font-awesome-icon icon="fa-solid fa-bars" /> Showing N-N of N results </span>
-        <ArticlesSorting/>
+        <ArticlesSorting v-for="(vestito,index) in vestiti" :key="index" :elemento="vestito" />
       </div>
       <ArticlesCards/>
     </section>

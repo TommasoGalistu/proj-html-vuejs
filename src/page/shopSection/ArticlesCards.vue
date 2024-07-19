@@ -1,34 +1,29 @@
 <script>
-import { store } from "../../store";
-
 export default {
   name: "ArticlesCards",
-  data() {
-    return {
-        store,
-        vestiti : store.clothes,
-    };
-  }
+  props: {
+    elemento: {
+      type: Object,
+      required: true,
+    },
+  },
 };
-
-
-
 </script>
 
 <template>
 
-    <a v-for="(vestito,index) in vestiti" :key="index" href="#"><div class="ShopCards">
+    <a href="#"><div class="ShopCards">
         <div class="upper-img">
-            <div v-if="vestito.prezzoOriginale" class="sale">
+            <div v-if="elemento.prezzoOriginale" class="sale">
                 
             </div>
-            <img v-bind:src="vestito.img" alt="">
+            <img v-bind:src="elemento.img" alt="">
         </div>
 
         <div class="lower-price">
-                <h2> {{ vestito.nome }} </h2>
+                <h2> {{ elemento.nome }} </h2>
             <div class="scritte-container">
-                <span class="scontato">{{ vestito.prezzoOriginale }}</span><span class="attuale">{{ vestito.prezzoAttuale }}</span>
+                <span class="scontato">{{ elemento.prezzoOriginale }}</span><span class="attuale">{{ elemento.prezzoAttuale }}</span>
                 <a href="#"><font-awesome-icon icon="bag-shopping"/></a>
             </div>
 
@@ -83,6 +78,10 @@ export default {
         flex-direction: column;
     }
 
+    .lower-price h2{
+        font-size: 20px;
+    }
+
     .scritte-container{
         width: 100%;
         height: 100%;
@@ -93,7 +92,7 @@ export default {
     }
 
     .scritte-container span{
-        font-size: 22px;
+        font-size: 19px;
     }
     
     .sale{
@@ -109,5 +108,13 @@ export default {
         flex-direction: row;
     }
 
+    .scontato{
+        color: gray;
+        text-decoration: line-through;
+        
+    }
+
     
+    
+
 </style>
