@@ -14,18 +14,18 @@ export default {
   <div v-for="(element, index) in card" :key="index" class="card">
     <div class="contText">
       <div class="upPart">
-        <div class="nascondi">
+        <div class="nascondi up">
           <font-awesome-icon :icon="['far', 'user']" />
           <span>{{ element.tipo }}</span>
         </div>
-        <div class="nascondi">
+        <div class="nascondi up">
           <font-awesome-icon :icon="['far', 'clock']" />
           <span>{{ element.tempo }}</span>
         </div>
       </div>
       <div class="bottomPart">
         <h2>{{ element.titolo }}</h2>
-        <p class="nascondi">
+        <p class="nascondi bottom">
           {{ element.text }}
         </p>
       </div>
@@ -43,13 +43,16 @@ export default {
 
 .card {
   position: relative;
-  height: 300px;
-  width: 300px;
+  height: 350px;
+  width: 350px;
   background-color: grey;
   border-radius: 10px;
   color: rgb(180, 180, 180);
   &:hover .nascondi {
     display: block;
+    animation: visible 10s linear 1;
+  }
+  @keyframes visible {
   }
   &:hover {
     cursor: pointer;
@@ -93,6 +96,6 @@ export default {
   }
 }
 .nascondi {
-  display: none;
+  // position: absolute;
 }
 </style>

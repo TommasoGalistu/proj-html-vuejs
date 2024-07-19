@@ -83,7 +83,6 @@ export default {
     display: flex;
     flex-wrap: wrap;
     gap: 3rem;
-    justify-content: center;
   }
 }
 </style>
