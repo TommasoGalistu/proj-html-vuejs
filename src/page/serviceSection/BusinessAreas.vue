@@ -30,6 +30,11 @@ export default {
           :icon="service.icon"
           :title="service.title"
           :description="service.description"
+          :dividendo="2"
+          :gapTotale="20"
+          :colorTitle="'white'"
+          :colorText="'#949494'"
+          :backgroundColor="'#19191f'"
         />
       </div>
     </div>
