@@ -137,60 +137,60 @@ export const store = reactive({
             nome: "Black hooded sweatshirt",
             prezzoOriginale: "$200.00",
             prezzoAttuale: "$129.00",
-            img: "/public/clothes/black_hoodie.jpg",
+            img: "/clothes/black_hoodie.jpg",
         },
         {
             nome: "Black t-shirt with lamp print",
             prezzoAttuale: "$45.00",
-            img: "/public/clothes/black_tshirt.jpg",
+            img: "/clothes/black_tshirt.jpg",
         },
         {
             nome: "Blue hooded sweatshirt",
             prezzoOriginale: "$129.50",
             prezzoAttuale: "$89.90",
-            img: "/public/clothes/blue_hoodie.jpg",
+            img: "/clothes/blue_hoodie.jpg",
         },
         {
             nome: "Brown hooded sweatshirt",
             prezzoOriginale: "$75.00",
             prezzoAttuale: "$39.50",
-            img: "/public/clothes/brown_hoodie.jpg",
+            img: "/clothes/brown_hoodie.jpg",
         },
         {
             nome: "Gray hooded sweatshirt",
 
             prezzoAttuale: "$149.00",
-            img: "/public/clothes/gray_hoodie.jpg",
+            img: "/clothes/gray_hoodie.jpg",
         },
         {
             nome: "Navy Blue hooded sweatshirt",
 
             prezzoAttuale: "$79.00",
-            img: "/public/clothes/navy_blue_hoodie.jpg",
+            img: "/clothes/navy_blue_hoodie.jpg",
         },
         {
             nome: "Ninja square poster",
             prezzoOriginale: "$60.00",
             prezzoAttuale: "$35.00",
-            img: "/public/clothes/ninja_square_poster.jpg",
+            img: "/clothes/ninja_square_poster.jpg",
         },
         {
             nome: "Red hooded sweatshirt",
 
             prezzoAttuale: "$45.90",
-            img: "/public/clothes/red_hoodie.jpg",
+            img: "/clothes/red_hoodie.jpg",
         },
         {
             nome: "Skull square poster",
 
             prezzoAttuale: "$20.00",
-            img: "/public/clothes/skull_poster.jpg",
+            img: "/clothes/skull_poster.jpg",
         },
         {
             nome: "White ninja print t-shirt",
 
             prezzoAttuale: "$90.00",
-            img: "/public/clothes/white_ninja_print.jpg",
+            img: "/clothes/white_ninja_print.jpg",
         }
     ],
 
@@ -235,32 +235,32 @@ export const store = reactive({
     // inizio ale da 235 
     services: [
         {
-          icon: "/public/svg-1.svg",
+          icon: "/svg-1.svg",
           title: "Audit & Assurance",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
         },
         {
-          icon: "/public/svg-2.svg",
+          icon: "/svg-2.svg",
           title: "Financial Advisory",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
         },
         {
-          icon: "/public/svg-3.svg",
+          icon: "/svg-3.svg",
           title: "Analytics and M&A",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
         },
         {
-          icon: "/public/svg-4.svg",
+          icon: "/svg-4.svg",
           title: "Middle Marketing",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
         },
         {
-          icon: "/public/svg-5.svg",
+          icon: "/svg-5.svg",
           title: "Legal Consulting",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
         },
         {
-          icon: "/public/svg-6.svg",
+          icon: "/svg-6.svg",
           title: "Regulatory Risk",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
         }
