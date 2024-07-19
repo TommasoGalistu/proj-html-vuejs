@@ -39,7 +39,7 @@ export default {
           :title="element.title"
           :description="element.description"
           :dividendo="3"
-          :gapTotale="40"
+          :gapTotale="20"
           :colorTitle="'black'"
           :colorText="'#949494'"
           :backgroundColor="'#ebecef'"

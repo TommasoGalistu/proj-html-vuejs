@@ -80,6 +80,9 @@ export default {
   display: flex;
   flex-direction: column;
   // gap: 10px;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .svg-icon {
