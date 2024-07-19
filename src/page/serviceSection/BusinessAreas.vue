@@ -1,6 +1,17 @@
 <script>
+import { store } from "../../store.js";
+import ServiceCard from './ServiceCard.vue';
+
 export default {
   name: "BusinessAreas",
+  components: {
+    ServiceCard,
+  },
+  data() {
+    return {
+     services: store.services
+    };
+  }
 };
 </script>
 
@@ -13,64 +24,13 @@ export default {
 
       <!-- card -->
       <div class="cards">
-        <div class="card">
-          <div class="icon">📊</div>
-          <div class="content">
-            <h3>Audit & Assurance</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia.</p>
-          </div>
-          <div class="arrow">&rarr;</div>
-        </div>
-
-        <!-- card -->
-        <div class="card">
-          <div class="icon">📊</div>
-          <div class="content">
-            <h3>Financial Advisory</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia.</p>
-          </div>
-          <div class="arrow">&rarr;</div>
-        </div>
-
-        <!-- card -->
-        <div class="card">
-          <div class="icon">📊</div>
-          <div class="content">
-            <h3>Analytics and M&A</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia.</p>
-          </div>
-          <div class="arrow">&rarr;</div>
-        </div>
-
-        <!-- card -->
-        <div class="card">
-          <div class="icon">📊</div>
-          <div class="content">
-            <h3>Middle Marketing</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia.</p>
-          </div>
-          <div class="arrow">&rarr;</div>
-        </div>
-
-        <!-- card -->
-        <div class="card">
-          <div class="icon">📊</div>
-          <div class="content">
-            <h3>Legal Consulting</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia.</p>
-          </div>
-          <div class="arrow">&rarr;</div>
-        </div>
-
-        <!-- card -->
-        <div class="card">
-          <div class="icon">📊</div>
-          <div class="content">
-            <h3>Regulatory Risk</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia.</p>
-          </div>
-          <div class="arrow">&rarr;</div>
-        </div>
+        <ServiceCard
+          v-for="(service, index) in services"
+          :key="index"
+          :icon="service.icon"
+          :title="service.title"
+          :description="service.description"
+        />
       </div>
     </div>
   </section>

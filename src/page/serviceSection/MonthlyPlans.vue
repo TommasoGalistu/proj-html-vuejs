@@ -17,7 +17,7 @@ export default {
         <div class="plan">
           <div class="arrow">&rarr;</div>
           <div class="icon">
-           
+           <font-awesome-icon icon="bag-shopping" />
           </div>
           <h3>Standard</h3>
           <div class="price">$490 / mo</div>
@@ -34,7 +34,7 @@ export default {
         <div class="plan">
           <div class="arrow">&rarr;</div>
           <div class="icon">
-            
+            <font-awesome-icon icon="bag-shopping" />
           </div>
           <h3>Professional</h3>
           <div class="price">$890 / mo</div>
@@ -51,7 +51,7 @@ export default {
         <div class="plan">
           <div class="arrow">&rarr;</div>
           <div class="icon">
-            
+            <font-awesome-icon icon="bag-shopping" />
           </div>
           <h3>Ultimate</h3>
           <div class="price">$1390 / mo</div>
@@ -121,6 +121,10 @@ p {
   text-align: left;
   margin: 10px;
   position: relative;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
 }
 
 .icon {
@@ -175,4 +179,5 @@ ul li.not-included::after {
   content: '✘';
   color: #00a6a6;
 }
+
 </style>
