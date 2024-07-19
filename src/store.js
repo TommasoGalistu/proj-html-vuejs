@@ -14,7 +14,7 @@ export const store = reactive({
 
         {
             ricerca: ['events', 'social', 'technology'],
-            path: '/cuffie.avif',
+            path: '/card1.webp',
             tipo: 'Coding',
             tempo: '3 years',
             titolo: 'Portfolio item with intro with sidebar',
@@ -35,13 +35,13 @@ export const store = reactive({
             path: '/fiore.avif',
             tipo: 'Coding',
             tempo: '3 years',
-            titolo: 'Portfolio item with intro with sidebar',
+            titolo: 'Portfolio item with intro without sidebar',
             text: 'lorem ipsum bla bla bla sit consectetur adisipsiscing elit. Vestibulu...',
 
         },
         {
             ricerca: ['istitutional', 'technology', 'enviroment'],
-            path: '/ciliegie.jpg',
+            path: '/card2.jpg',
             tipo: 'Coding',
             tempo: '3 years',
             titolo: 'Portfolio item with intro with sidebar',
@@ -53,7 +53,7 @@ export const store = reactive({
             path: '/vaso.avif',
             tipo: 'Coding',
             tempo: '3 years',
-            titolo: 'Portfolio item with intro with sidebar',
+            titolo: 'Portfolio item without intro with sidebar',
             text: 'lorem ipsum bla bla bla sit consectetur adisipsiscing elit. Vestibulu...',
 
         },
@@ -62,7 +62,7 @@ export const store = reactive({
             path: '/avocado.jpg',
             tipo: 'Coding',
             tempo: '3 years',
-            titolo: 'Portfolio item with intro with sidebar',
+            titolo: 'Portfolio item without intro with sidebar',
             text: 'lorem ipsum bla bla bla sit consectetur adisipsiscing elit. Vestibulu...',
 
         },
