@@ -6,6 +6,7 @@ export default {
   data() {
     return {
       store,
+      valoreMenu: "",
     };
   },
   components: {
@@ -18,7 +19,21 @@ export default {
       array.forEach((element) => {
         element.active = false;
       });
+      this.valoreMenu = elementoCliccato.titolo;
+      console.log(this.valoreMenu);
       elementoCliccato.active = true;
+    },
+  },
+  computed: {
+    arrayCard() {
+      if (!this.valoreMenu || this.valoreMenu === "all") {
+        return this.store.cardHomePage;
+      } else {
+        return this.store.cardHomePage.filter((card) => {
+          console.log(card.ricerca.includes(this.valoreMenu));
+          return card.ricerca.includes(this.valoreMenu);
+        });
+      }
     },
   },
 };
@@ -40,7 +55,15 @@ export default {
       </ul>
     </div>
     <div class="contCard">
-      <CardActionProj />
+      <CardActionProj
+        v-for="(element, index) in arrayCard"
+        :key="index"
+        :dettagli="element.tipo"
+        :tempo="element.tempo"
+        :titolo="element.titolo"
+        :text="element.text"
+        :path="element.path"
+      />
     </div>
   </div>
 </template>

@@ -21,7 +21,7 @@ export const store = reactive({
 
         },
         {
-            ricerca: ['enviroment', 'innovation'],
+            ricerca: ['enviroment', 'innovation', 'technology'],
             path: '/cuffie2.avif',
             tipo: 'Coding',
             tempo: '3 years',
@@ -39,7 +39,7 @@ export const store = reactive({
 
         },
         {
-            ricerca: ['istitutional', 'technology'],
+            ricerca: ['istitutional', 'technology', 'enviroment'],
             path: '/ciliegie.jpg',
             tipo: 'Coding',
             tempo: '3 years',

@@ -3,38 +3,43 @@ import { store } from "../../store";
 export default {
   name: "CardActionProj",
   data() {
-    return {
-      card: store.cardHomePage,
-    };
+    return {};
+  },
+  props: {
+    dettagli: String,
+    tempo: String,
+    titolo: String,
+    text: String,
+    path: String,
   },
 };
 </script>
 
 <template>
-  <div v-for="(element, index) in card" :key="index" class="card">
+  <div class="card">
     <div class="contText">
       <!-- testo in cima -->
       <div class="upPart nascondi up visibility">
         <div>
           <font-awesome-icon :icon="['far', 'user']" />
-          <span>{{ element.tipo }}</span>
+          <span>{{ dettagli }}</span>
         </div>
         <div>
           <font-awesome-icon :icon="['far', 'clock']" />
-          <span>{{ element.tempo }}</span>
+          <span>{{ tempo }}</span>
         </div>
       </div>
       <!-- testo sotto -->
       <div class="bottomPart nascondi bottom">
-        <h2>{{ element.titolo }}</h2>
+        <h2>{{ titolo }}</h2>
         <p class="visibility">
-          {{ element.text }}
+          {{ text }}
         </p>
       </div>
     </div>
     <!-- immagine di sfondo -->
     <div class="contImg">
-      <img :src="element.path" alt="" />
+      <img :src="path" alt="" />
     </div>
   </div>
 </template>
