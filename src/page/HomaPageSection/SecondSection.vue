@@ -10,14 +10,17 @@ export default {
       <div class="contText">
         <h2>The Company</h2>
         <p>
-          FOr 12 years we have been providing audit and warranty, financial
-          advice, risk advice, taxes and related services to select client
+          For 12 years we have been providing audit and warranty, financial
+          advice, risk advice, taxes and related services to select client.
         </p>
         <div class="contCard">
           <!-- prima card -->
           <div class="card">
             <div class="content icona">
-              <font-awesome-icon :icon="['fas', 'hourglass-end']" />
+              <font-awesome-icon
+                class="icon"
+                :icon="['fas', 'hourglass-end']"
+              />
               <h3>Tradition</h3>
             </div>
             <div class="content">
@@ -26,7 +29,7 @@ export default {
           </div>
           <div class="card">
             <div class="content icona">
-              <font-awesome-icon :icon="['fas', 'lock']" />
+              <font-awesome-icon class="icon" :icon="['fas', 'lock']" />
               <h3>Tradition</h3>
             </div>
             <div class="content">
@@ -35,7 +38,7 @@ export default {
           </div>
           <div class="card">
             <div class="content icona">
-              <font-awesome-icon :icon="['fas', 'apple-whole']" />
+              <font-awesome-icon class="icon" :icon="['fas', 'apple-whole']" />
               <h3>Tradition</h3>
             </div>
             <div class="content">
@@ -44,7 +47,7 @@ export default {
           </div>
           <div class="card">
             <div class="content icona">
-              <font-awesome-icon :icon="['fas', 'user-tie']" />
+              <font-awesome-icon class="icon" :icon="['fas', 'user-tie']" />
               <h3>Tradition</h3>
             </div>
             <div class="content">
@@ -79,6 +82,32 @@ export default {
       h2 {
         font-size: 3rem;
         color: white;
+        padding: 1rem 0;
+      }
+      p {
+        padding: 1rem 0;
+      }
+      .contCard {
+        padding: 1rem 0;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        .card {
+          width: calc((100% / 2) - 1rem);
+
+          .content.icona {
+            display: flex;
+            align-items: center;
+            .icon {
+              padding-right: 1rem;
+              font-size: 2rem;
+              color: $colorStyleJamboHover;
+            }
+            h3 {
+              color: white;
+            }
+          }
+        }
       }
     }
     .contImg {
