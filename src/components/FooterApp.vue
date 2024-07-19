@@ -115,6 +115,9 @@ export default {
 @use "../style/partials/variable.scss" as *;
 @use "../style/partials/mixin.scss" as *;
 @use "../style/general.scss" as *;
+footer {
+  z-index: 10;
+}
 .color {
   color: grey;
 }
