@@ -1,7 +1,13 @@
 <script>
 import ServiceCard from "../serviceSection/ServiceCard.vue";
+import { store } from "../../store";
 export default {
   name: "SectionCard",
+  data() {
+    return {
+      store,
+    };
+  },
   components: {
     ServiceCard,
   },
@@ -25,7 +31,20 @@ export default {
         </p>
         <div class="button"><span>SEE ALL</span></div>
       </div>
-      <ServiceCard />
+      <div class="contCard">
+        <ServiceCard
+          v-for="(element, index) in store.card"
+          :key="index"
+          :icon="element.icon"
+          :title="element.title"
+          :description="element.description"
+          :dividendo="3"
+          :gapTotale="40"
+          :colorTitle="'black'"
+          :colorText="'#949494'"
+          :backgroundColor="'#ebecef'"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -68,6 +87,11 @@ export default {
       justify-content: center;
       align-items: center;
     }
+  }
+  .contCard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
   }
 }
 </style>
