@@ -34,6 +34,7 @@ export default {
       </div>
     </div>
     <div class="sfondo2">
+      <div class="sfuocatura"></div>
       <div class="container">
         <div class="contBanner">
           <div class="contImg">
@@ -97,21 +98,42 @@ export default {
 }
 .sfondo2 {
   background-color: #1b4965;
+  position: relative;
+  .sfuocatura {
+    top: 0;
+    left: 0px;
+    position: absolute;
+    filter: grayscale(70%);
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    // background: linear-gradient(
+    //   42deg,
+    //   rgba(22, 22, 22, 0.5) 52%,
+    //   rgba(203, 203, 203, 0) 70%
+    // );
+    background: linear-gradient(
+      90deg,
+      rgba(13, 25, 34) 10%,
+      rgba(237, 237, 237, 0) 70%
+    );
+  }
   .contBanner {
+    z-index: 5;
     height: 12rem;
     padding: 4rem 0;
-
+    background-color: transparent;
     display: flex;
     justify-content: space-around;
     align-items: center;
     overflow-x: auto;
 
-    //   debug
-    border: 1px solid white;
-
     .contImg {
+      height: 1.5rem;
       img {
-        filter: grayscale(100%) brightness(50%);
+        height: 100%;
+        z-index: 10;
+        filter: invert(1) brightness(0.8) grayscale(1);
       }
     }
   }
