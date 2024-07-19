@@ -13,7 +13,45 @@ export default {
           FOr 12 years we have been providing audit and warranty, financial
           advice, risk advice, taxes and related services to select client
         </p>
-        <div class="contCard"></div>
+        <div class="contCard">
+          <!-- prima card -->
+          <div class="card">
+            <div class="content icona">
+              <font-awesome-icon :icon="['fas', 'hourglass-end']" />
+              <h3>Tradition</h3>
+            </div>
+            <div class="content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="content icona">
+              <font-awesome-icon :icon="['fas', 'lock']" />
+              <h3>Tradition</h3>
+            </div>
+            <div class="content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="content icona">
+              <font-awesome-icon :icon="['fas', 'apple-whole']" />
+              <h3>Tradition</h3>
+            </div>
+            <div class="content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="content icona">
+              <font-awesome-icon :icon="['fas', 'user-tie']" />
+              <h3>Tradition</h3>
+            </div>
+            <div class="content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="contImg">
         <div class="sfuocatura"></div>
@@ -40,6 +78,7 @@ export default {
       padding-right: 2rem;
       h2 {
         font-size: 3rem;
+        color: white;
       }
     }
     .contImg {
