@@ -98,32 +98,32 @@ export const store = reactive({
     ],
     card: [
         {
-          icon: "/public/svg-1.svg",
+          icon: "/svg-1.svg",
           title: "Audit & Assurance",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
         },
         {
-          icon: "/public/svg-2.svg",
+          icon: "/svg-2.svg",
           title: "Financial Advisory",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
         },
         {
-          icon: "/public/svg-3.svg",
+          icon: "/svg-3.svg",
           title: "Analytics and M&A",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
         },
         {
-          icon: "/public/svg-4.svg",
+          icon: "/svg-4.svg",
           title: "Middle Marketing",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
         },
         {
-          icon: "/public/svg-5.svg",
+          icon: "/svg-5.svg",
           title: "Legal Consulting",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
         },
         {
-          icon: "/public/svg-6.svg",
+          icon: "/svg-6.svg",
           title: "Regulatory Risk",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
         }
