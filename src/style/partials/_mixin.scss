@@ -10,7 +10,7 @@
 
 // TOMMASO DALLA 10 ALLA 19
 @mixin button-styles($padding, $span-padding) {
-    display: inline;
+    display: inline-block;
     background-color: $colorStyleJambo;
     color: white;
     padding: $padding;

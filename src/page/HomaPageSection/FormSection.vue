@@ -1,8 +1,11 @@
 <script>
+import { store } from "../../store";
 export default {
   name: "FormSection",
   data() {
     return {
+      azienda: store.infoAzienda[0],
+
       formData: {
         name: "",
         email: "",
@@ -43,6 +46,8 @@ export default {
 </script>
 <template>
   <div class="sfondo">
+    <div class="imgSfondo"></div>
+
     <div class="container">
       <div class="contForm">
         <span>SEND A MESSAGE</span>
@@ -112,21 +117,20 @@ export default {
           <div class="iconStyle">
             <font-awesome-icon :icon="['fas', 'phone']" />
           </div>
-          <span>numero</span>
+          <span>{{ azienda.telefono }}</span>
         </div>
         <div class="contatti">
           <div class="iconStyle">
             <font-awesome-icon :icon="['fas', 'envelope']" />
           </div>
-          <span>email</span>
+          <span>{{ azienda.email }}</span>
         </div>
         <div class="contatti">
           <div class="iconStyle">
             <font-awesome-icon :icon="['fas', 'location-dot']" />
           </div>
-          <span>via</span>
+          <span>{{ azienda.luogo }}</span>
         </div>
-
         <div class="button"><span>VIEW MAP</span></div>
       </div>
     </div>
@@ -139,6 +143,7 @@ export default {
 @use "../../style/general.scss" as *;
 
 .sfondo {
+  position: relative;
   background-color: white;
   width: 100%;
 
@@ -146,22 +151,29 @@ export default {
     padding: 4rem 0;
     display: flex;
     gap: 3rem;
+    z-index: 10;
 
     .contForm {
       display: flex;
       flex-direction: column;
       gap: 1rem;
       width: 70%;
+      z-index: 10;
       span {
         color: $colorStyleJambo;
+        z-index: 10;
       }
       h2 {
         font-size: 3rem;
+        display: inline;
+        padding: 1rem 0;
+        z-index: 10;
       }
       .row {
         display: flex;
         gap: 1rem;
         padding-bottom: 1rem;
+        z-index: 10;
 
         & > div {
           flex: 1;
@@ -170,6 +182,7 @@ export default {
 
       .contTextArea {
         width: 100%;
+        z-index: 10;
         textarea {
           max-width: 100%;
           min-width: 100%;
@@ -208,6 +221,7 @@ export default {
       }
 
       button {
+        z-index: 10;
         // width: 100%;
         margin-top: 1rem;
         background-color: $colorStyleJambo;
@@ -225,22 +239,27 @@ export default {
     }
     .contContact {
       width: 30%;
+
       h2,
       p {
         padding-bottom: 1rem;
+        z-index: 10;
       }
 
       .button {
+        margin-top: 2rem;
         @include button-styles(0.5rem 1rem, 0.4rem 1);
       }
       .contatti {
-        padding: 1rem 0;
+        z-index: 10;
+        padding: 1.5rem 0;
         display: flex;
         align-items: center;
         gap: 0.5rem;
         color: $colorStyleJambo;
         cursor: pointer;
         .iconStyle {
+          z-index: 10;
           display: flex;
           align-items: center;
           font-size: 1.3rem;
@@ -256,5 +275,20 @@ export default {
       }
     }
   }
+}
+span {
+  z-index: 10;
+}
+// immagini sfondo in absolute
+.imgSfondo {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  top: 0rem;
+  left: 0rem;
+  height: 60rem;
+  background-repeat: no-repeat;
+  background-image: url("/public/prova.svg");
+  background-attachment: fixed;
 }
 </style>
