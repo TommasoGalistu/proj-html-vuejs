@@ -35,7 +35,8 @@ export default {
       <!-- card performance -->
       <div class="service-card">
         <div class="icon">
-          <font-awesome-icon icon="fa-solid fa-gauge-high" />
+          <!-- <font-awesome-icon icon="fa-solid fa-gauge-high" /> -->
+           <font-awesome-icon icon="bag-shopping" />
         </div>
         <h2>Performance</h2>
         <p>
