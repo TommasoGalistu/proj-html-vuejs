@@ -95,7 +95,7 @@ export default {
         background.appendChild(square);
 
         // Crea l'animazione usando il metodo animate
-        const duration = Math.random() * 30 + 20; // da 20 a 30 secondi
+        const duration = Math.random() * 80 + 20; // da 20 a 30 secondi
         const delay = Math.random() * 1; // da 0 a 5 secondi
 
         square.animate(
