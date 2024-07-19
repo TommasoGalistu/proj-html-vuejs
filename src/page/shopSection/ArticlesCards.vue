@@ -1,4 +1,7 @@
 <script>
+
+// importo store, store.clothes.length
+
 export default {
   name: "ArticlesCards",
   props: {
@@ -7,6 +10,7 @@ export default {
       required: true,
     },
   },
+  
 };
 </script>
 
@@ -15,13 +19,13 @@ export default {
     <a href="#"><div class="ShopCards">
         <div class="upper-img">
             <div v-if="elemento.prezzoOriginale" class="sale">
-                
+                <p>SALE!</p>
             </div>
             <img v-bind:src="elemento.img" alt="">
         </div>
 
         <div class="lower-price">
-                <h2> {{ elemento.nome }} </h2>
+            <h2> {{ elemento.nome }} </h2>
             <div class="scritte-container">
                 <span class="scontato">{{ elemento.prezzoOriginale }}</span><span class="attuale">{{ elemento.prezzoAttuale }}</span>
                 <a href="#"><font-awesome-icon icon="bag-shopping"/></a>
@@ -51,8 +55,10 @@ export default {
     .ShopCards{
         height: 380px;
         width: 280px;
-        background-color: yellow;
+        background-color: white;
         border-radius: 10px;
+        border: 1px solid black;
+        
     }
 
 .upper-img {
@@ -62,6 +68,9 @@ export default {
 
     .lower-price h2{
         padding-top: 20px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow:ellipsis ;
     }
     .upper-img img{
         height: 100%;
@@ -84,7 +93,7 @@ export default {
 
     .scritte-container{
         width: 100%;
-        height: 100%;
+        height: 80%;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -100,7 +109,7 @@ export default {
         width: 60px;
         height: 30px;
         position: absolute;
-        background-color: aqua;
+        background-color: #058283;
         border-top-right-radius: 8px;
         border-bottom-right-radius:8px;
         margin-top: 30px;
@@ -108,11 +117,19 @@ export default {
         flex-direction: row;
     }
 
+    .sale p{
+        padding-top: 5px;
+        color: white;
+        padding-left: 5px;
+    }
+
     .scontato{
         color: gray;
         text-decoration: line-through;
         
     }
+
+    
 
     
     
