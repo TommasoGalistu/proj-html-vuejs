@@ -1,6 +1,10 @@
 <script>
+import ServiceCard from "../serviceSection/ServiceCard.vue";
 export default {
   name: "SectionCard",
+  components: {
+    ServiceCard,
+  },
 };
 </script>
 
@@ -21,6 +25,7 @@ export default {
         </p>
         <div class="button"><span>SEE ALL</span></div>
       </div>
+      <ServiceCard />
     </div>
   </div>
 </template>

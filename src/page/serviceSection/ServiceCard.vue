@@ -4,21 +4,19 @@ export default {
   props: {
     icon: {
       type: String,
-      number: Number,
     },
     title: {
       type: String,
     },
     description: {
       type: String,
-    }
+    },
   },
   data() {
     return {
       dividendo: this.icon.number,
-    }
-  }
-  
+    };
+  },
 };
 </script>
 
@@ -40,7 +38,7 @@ export default {
   border-radius: 8px;
   padding: 20px;
   width: calc((100% / 2) - 20px);
-  position: relative; 
+  position: relative;
   text-align: left;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -60,7 +58,7 @@ export default {
 h3 {
   margin: 0;
   color: #fff;
-  font-family: Inter,sans-serif;
+  font-family: Inter, sans-serif;
   line-height: 1.2;
   margin: 1.5rem 0;
   word-wrap: break-word;

@@ -96,8 +96,42 @@ export const store = reactive({
             active: false
         }
     ],
+    card: [
+        {
+          icon: "/public/svg-1.svg",
+          title: "Audit & Assurance",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
+        },
+        {
+          icon: "/public/svg-2.svg",
+          title: "Financial Advisory",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
+        },
+        {
+          icon: "/public/svg-3.svg",
+          title: "Analytics and M&A",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
+        },
+        {
+          icon: "/public/svg-4.svg",
+          title: "Middle Marketing",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
+        },
+        {
+          icon: "/public/svg-5.svg",
+          title: "Legal Consulting",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
+        },
+        {
+          icon: "/public/svg-6.svg",
+          title: "Regulatory Risk",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
+        }
+      ],
 
-// inizio paolo da 100 a 200 compreso
+
+
+// inizio paolo da 134 a 200 compreso
     clothes: [
         {
             nome: "Black hooded sweatshirt",
@@ -198,7 +232,7 @@ export const store = reactive({
 
 
 
-    // inizio ale da 201 
+    // inizio ale da 235 
     services: [
         {
           icon: "/public/svg-1.svg",
