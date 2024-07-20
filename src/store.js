@@ -194,7 +194,7 @@ export const store = reactive({
 
 
 // inizio paolo da 100 a 200 compreso
-selectionValue: '',
+selectionValue: 'menu_order',
 
 
 
