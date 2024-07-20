@@ -17,7 +17,7 @@ export default {
     class="sorting"
     aria-label="Shop order"
   >
-    <option value="menu_order" selected>Default sorting</option>
+    <option value="menu_order">Default sorting</option>
     <option value="popularity">Sort by popularity</option>
     <option value="rating">Sort by average rating</option>
     <option value="date">Sort by latest</option>
