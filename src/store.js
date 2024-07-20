@@ -204,10 +204,10 @@ selectionValue: '',
             nome: "Black hooded sweatshirt",
             prezzoOriginale: 200,
             prezzoAttuale: 129,
-            img: "/public/clothes/black_hoodie.jpg",
+            img: "/clothes/black_hoodie.jpg",
             rating: 10,
             date: 2,
-            color: ['black','long sleeve','with hood','with print'],
+            type: ['black','long sleeve','with hood','with print', 'tshirts'],
             
 
         },
@@ -216,10 +216,10 @@ selectionValue: '',
             nome: "Black t-shirt with lamp print",
             prezzoAttuale: 45,
             prezzoOriginale: "",
-            img: "/public/clothes/black_tshirt.jpg",
+            img: "/clothes/black_tshirt.jpg",
             rating: 9,
             date: 4,
-            color:['black','shirt','skull','with print'],
+            type:['black','shirt','skull','with print'],
             
         },
         {
@@ -227,10 +227,10 @@ selectionValue: '',
             nome: "Blue hooded sweatshirt",
             prezzoOriginale: 129,
             prezzoAttuale: 89.90,
-            img: "/public/clothes/blue_hoodie.jpg",
+            img: "/clothes/blue_hoodie.jpg",
             rating: 2,
             date: 6,
-            color: ['blue','long sleeve','with hood','with print'],
+            type: ['blue','long sleeve','with hood','with print'],
             
         },
         {
@@ -238,10 +238,10 @@ selectionValue: '',
             nome: "Brown hooded sweatshirt",
             prezzoOriginale: 75,
             prezzoAttuale: 39.50,
-            img: "/public/clothes/brown_hoodie.jpg",
+            img: "/clothes/brown_hoodie.jpg",
             rating: 4,
             date: 10,
-            color:['brown','long sleeve','with hood','with print'],
+            type:['brown','long sleeve','with hood','with print'],
             
         },
         {
@@ -249,10 +249,10 @@ selectionValue: '',
             nome: "Gray hooded sweatshirt",
             prezzoOriginale: "",
             prezzoAttuale: 149,
-            img: "/public/clothes/gray_hoodie.jpg",
+            img: "/clothes/gray_hoodie.jpg",
             rating: 1,
             date: 8,
-            color: ['gray','long sleeve','with hood','with print'],
+            type: ['gray','long sleeve','with hood','with print', 'Hoodies'],
             
         },
         {
@@ -260,10 +260,10 @@ selectionValue: '',
             nome: "Navy Blue hooded sweatshirt",
             prezzoOriginale: "",
             prezzoAttuale: 79,
-            img: "/public/clothes/navy_blue_hoodie.jpg",
+            img: "/clothes/navy_blue_hoodie.jpg",
             rating: 5,
             date: 9,
-            color: ['blue','long sleeve','with hood','with print'],
+            type: ['blue','long sleeve','with hood','with print', 'Hoodies'],
             
         },
         {
@@ -271,10 +271,10 @@ selectionValue: '',
             nome: "Ninja square poster",
             prezzoOriginale: 60.00,
             prezzoAttuale: 35.00,
-            img: "/public/clothes/ninja_square_poster.jpg",
+            img: "/clothes/ninja_square_poster.jpg",
             rating: 8,
             date: 7,
-            color: ['ninja','house'],
+            type: ['ninja','house', 'hoodies'],
             
         },
         {
@@ -282,33 +282,34 @@ selectionValue: '',
             nome: "Red hooded sweatshirt",
             prezzoOriginale: "",
             prezzoAttuale: 45.90,
-            img: "/public/clothes/red_hoodie.jpg",
+            img: "/clothes/red_hoodie.jpg",
             rating: 3,
             date: 3,
-            color: ['red','long sleeve','with hood','with print']
+            type: ['red','long sleeve','with hood','with print', 'clouting']
         },
         {
             id: 9,
             nome: "Skull square poster",
             prezzoOriginale: "",
             prezzoAttuale: 20.00,
-            img: "/public/clothes/skull_poster.jpg",
+            img: "/clothes/skull_poster.jpg",
             rating: 7,
             date: 5,
-            color: ['skull','house']
+            type: ['skull','house', 'clouting']
         },
         {
             id: 10,
             nome: "White ninja print t-shirt",
             prezzoOriginale: "",
             prezzoAttuale: 90.00,
-            img: "/public/clothes/white_ninja_print.jpg",
+            img: "/clothes/white_ninja_print.jpg",
             rating: 6,
             date: 1,
-            color: ['white', 'ninja','shirt','with print']
+            type: ['white', 'ninja','shirt','with print', 'clouting']
         }
     ],
     colorClothes: ['Black', 'Blue', 'Brown', 'Gray', 'House', 'Long Sleeve', 'Ninja', 'Red', 'Shirt', 'Skull', 'White', 'With Hood', 'With Print'],
+    typeClothes: ['Clouting', 'Hoodies', 'Tshirts'],
     
 
 

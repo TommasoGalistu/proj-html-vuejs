@@ -22,6 +22,9 @@ export default {
     };
   },
   methods: {
+    filterCapi(titoloValore) {
+      this.comparazione = titoloValore.toLowerCase();
+    },
     filterClothes(valore) {
       this.comparazione = valore.toLowerCase();
     },
@@ -37,7 +40,7 @@ export default {
           if (!this.comparazione) {
             return vestito && vestito.id < 10;
           } else {
-            return vestito.color.includes(this.comparazione);
+            return vestito.type.includes(this.comparazione);
           }
         });
       } else {
@@ -64,6 +67,9 @@ export default {
             });
         }
       }
+    },
+    vestitiScontati() {
+      return this.vestiti;
     },
   },
 };
@@ -94,23 +100,17 @@ export default {
       <div class="spaced"></div>
       <div class="contOnSale">
         <ForSale
-          v-for="(vestito, index) in vestiti"
+          v-for="(vestito, index) in vestitiScontati"
           :key="index"
           :elemento="vestito"
         />
       </div>
       <div class="contFolders">
-        <a href="">
-          <font-awesome-icon :icon="['fas', 'folder']" />
-          <h4>Clothing (8)</h4>
+        <font-awesome-icon :icon="['fas', 'folder']" />
+        <div v-for="(titolo, index) in store.typeClothes" :key="index">
+          <h4 @click="filterCapi(titolo)" class="tButton">{{ titolo }}(8)</h4>
           <br />
-          <h4 class="moved">Hoodies (6)</h4>
-          <br />
-          <h4 class="moved">Tshirts (2)</h4>
-          <br />
-          <h4>Decor (2)</h4>
-          <br />
-        </a>
+        </div>
       </div>
       <div class="productTags">
         <h2>Product Tags</h2>
@@ -138,7 +138,9 @@ export default {
 .spaced {
   margin: 100px;
 }
-
+.tbutton {
+  cursor: pointer;
+}
 button {
   border: none;
   color: rgb(52, 52, 52);
@@ -155,6 +157,7 @@ button {
 
 button:hover {
   background-color: aqua;
+  cursor: pointer;
 }
 
 .productTags {
