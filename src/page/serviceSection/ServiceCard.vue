@@ -64,6 +64,7 @@ export default {
       <h3 :style="colorTitle">{{ title }}</h3>
       <p :style="colorText">{{ description }}</p>
     </div>
+    <div class="contArrow"></div>
     <font-awesome-icon class="arrow" :icon="['fas', 'arrow-right']" />
   </div>
 </template>
@@ -85,24 +86,18 @@ export default {
     animation: upper 0.5s;
     animation-fill-mode: forwards;
   }
-  &:hover .arrow {
-    animation: radarWave 0.3s;
+  &:hover .contArrow {
+    animation: radarWave 1s ease-in-out infinite;
   }
   @keyframes radarWave {
-    0% {
-      padding: 0;
-      opacity: 1;
-      border: 2px solid blue;
+    to {
+      transform: scale(30);
     }
-    50% {
-      padding: 10px;
-      opacity: 0.5;
-      background-color: blue;
+    0% {
+      opacity: 1;
     }
     100% {
-      padding: 20px;
       opacity: 0;
-      background-color: transparent;
     }
   }
   @keyframes upper {
@@ -140,7 +135,8 @@ p {
 
 .arrow {
   position: absolute;
-  top: 20px;
+
+  top: 25px;
   right: 43px;
   width: 21px;
   height: 21px;
@@ -148,6 +144,21 @@ p {
   color: #00a6a6;
   // background-color: blue;
 
+  border-radius: 50%;
+}
+.contArrow {
+  position: absolute;
+  top: 34px;
+  right: 53px;
+  border: 1px solid #00a6a6;
+  height: 1px;
+  width: 1px;
+  font-size: 1.5rem;
+  color: #00a6a6;
+  // background-color: blue;
+  background-color: #00a6a6;
+
+  // padding: 20px;
   border-radius: 50%;
 }
 </style>
