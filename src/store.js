@@ -207,7 +207,7 @@ selectionValue: 'menu_order',
             img: "/clothes/black_hoodie.jpg",
             rating: 10,
             date: 2,
-            type: ['black','long sleeve','with hood','with print', 'tshirts'],
+            type: ['black','long sleeve','with hood','with print','clothing', 'hoodies'],
             
 
         },
@@ -219,7 +219,7 @@ selectionValue: 'menu_order',
             img: "/clothes/black_tshirt.jpg",
             rating: 9,
             date: 4,
-            type:['black','shirt','skull','with print'],
+            type:['black','shirt','skull','with print','clothing', 'tshirts'],
             
         },
         {
@@ -230,7 +230,7 @@ selectionValue: 'menu_order',
             img: "/clothes/blue_hoodie.jpg",
             rating: 2,
             date: 6,
-            type: ['blue','long sleeve','with hood','with print'],
+            type: ['blue','long sleeve','with hood','with print','clothing', 'hoodies'],
             
         },
         {
@@ -241,7 +241,7 @@ selectionValue: 'menu_order',
             img: "/clothes/brown_hoodie.jpg",
             rating: 4,
             date: 10,
-            type:['brown','long sleeve','with hood','with print'],
+            type:['brown','long sleeve','with hood','with print','clothing', 'hoodies'],
             
         },
         {
@@ -252,7 +252,7 @@ selectionValue: 'menu_order',
             img: "/clothes/gray_hoodie.jpg",
             rating: 1,
             date: 8,
-            type: ['gray','long sleeve','with hood','with print', 'Hoodies'],
+            type: ['gray','long sleeve','with hood','with print', 'hoodies','clothing', 'hoodies'],
             
         },
         {
@@ -263,7 +263,7 @@ selectionValue: 'menu_order',
             img: "/clothes/navy_blue_hoodie.jpg",
             rating: 5,
             date: 9,
-            type: ['blue','long sleeve','with hood','with print', 'Hoodies'],
+            type: ['blue','long sleeve','with hood','with print', 'hoodies','clothing', 'hoodies'],
             
         },
         {
@@ -274,7 +274,7 @@ selectionValue: 'menu_order',
             img: "/clothes/ninja_square_poster.jpg",
             rating: 8,
             date: 7,
-            type: ['ninja','house', 'hoodies'],
+            type: ['ninja','house', ],
             
         },
         {
@@ -285,7 +285,7 @@ selectionValue: 'menu_order',
             img: "/clothes/red_hoodie.jpg",
             rating: 3,
             date: 3,
-            type: ['red','long sleeve','with hood','with print', 'clouting']
+            type: ['red','long sleeve','with hood','with print', 'clothing', 'hoodies']
         },
         {
             id: 9,
@@ -295,7 +295,7 @@ selectionValue: 'menu_order',
             img: "/clothes/skull_poster.jpg",
             rating: 7,
             date: 5,
-            type: ['skull','house', 'clouting']
+            type: ['skull','house',]
         },
         {
             id: 10,
@@ -305,11 +305,11 @@ selectionValue: 'menu_order',
             img: "/clothes/white_ninja_print.jpg",
             rating: 6,
             date: 1,
-            type: ['white', 'ninja','shirt','with print', 'clouting']
+            type: ['white', 'ninja','shirt','with print', 'clothing', 'tshirts']
         }
     ],
     colorClothes: ['Black', 'Blue', 'Brown', 'Gray', 'House', 'Long Sleeve', 'Ninja', 'Red', 'Shirt', 'Skull', 'White', 'With Hood', 'With Print'],
-    typeClothes: ['Clouting', 'Hoodies', 'Tshirts'],
+    typeClothes: ['Clothing', 'Hoodies', 'Tshirts'],
     
 
 

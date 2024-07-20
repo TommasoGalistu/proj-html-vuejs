@@ -19,6 +19,7 @@ export default {
       store,
       vestiti: store.clothes,
       comparazione: "",
+      paginaAttiva: true,
     };
   },
   methods: {
@@ -28,6 +29,9 @@ export default {
     filterClothes(valore) {
       this.comparazione = valore.toLowerCase();
     },
+    togglePagina(PaginaUno) {
+      this.paginaAttiva = PaginaUno;
+    }
   },
   computed: {
     // dati di contenitore uno
@@ -122,20 +126,25 @@ export default {
     <section class="articles">
       <div class="results">
         <span
-          ><font-awesome-icon icon="fa-solid fa-bars" /> Showing N-N of N
+          ><font-awesome-icon icon="fa-solid fa-bars" /> Showing  of N
           results
         </span>
         <ArticlesSorting />
+        
       </div>
-      <!-- mettere un contenitore e modificare css -->
-      <div class="contenitoreCards uno">
+      
+      <div v-if="paginaAttiva" class="contenitoreCardsUno">
         <ArticlesCards
           v-for="(vestito, index) in dataFilter"
           :key="index"
           :elemento="vestito"
         />
       </div>
-      <div class="contenitoreCards due"></div>
+      <div v-else class="contenitoreCardsDue">Ciao</div>
+      <div class="numeroPagina">
+        <button @click="togglePagina(true)" class="bottoniPagina">1</button>
+        <button @click="togglePagina(false)" class="bottoniPagina">2</button>
+      </div>
     </section>
     <section class="prices">
       <h3>Filter by price</h3>
@@ -151,7 +160,7 @@ export default {
       <div class="contFolders">
         <font-awesome-icon :icon="['fas', 'folder']" />
         <div v-for="(titolo, index) in store.typeClothes" :key="index">
-          <h4 @click="filterCapi(titolo)" class="tButton">{{ titolo }}(8)</h4>
+          <h4 @click="filterCapi(titolo)" class="tButton">{{ titolo }}</h4>
           <br />
         </div>
       </div>
@@ -159,7 +168,7 @@ export default {
         <h2>Product Tags</h2>
         <div class="manyTags">
           <div class="col1">
-            <button
+            <button class="bottoniTag"
               @click="filterClothes(button)"
               v-for="(button, index) in store.colorClothes"
               :key="index"
@@ -169,6 +178,7 @@ export default {
           </div>
         </div>
       </div>
+      
     </section>
   </div>
 </template>
@@ -178,13 +188,36 @@ export default {
 @use "../style/partials/mixin.scss" as *;
 @use "../style/general.scss" as *;
 
+.bottoniPagina{
+  border: none;
+  color: rgb(52, 52, 52);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 30px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.bottoniPagina:active{
+  background-color: green;
+}
+
+.bottoniPagina:hover{
+  color: red;
+  background-color: none;
+}
+
 .spaced {
   margin: 100px;
 }
 .tbutton {
   cursor: pointer;
 }
-button {
+.bottoniTag {
   border: none;
   color: rgb(52, 52, 52);
   padding: 10px 20px;
@@ -198,7 +231,7 @@ button {
   background-color: rgb(188, 188, 188);
 }
 
-button:hover {
+.bottoniTag:hover {
   background-color: aqua;
   cursor: pointer;
 }
@@ -258,11 +291,22 @@ button:hover {
   height: 300px;
 }
 
-.contenitoreCards {
+.contenitoreCardsUno,.contenitoreCardsDue {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
 }
+
+
+
+.contenitoreCardsUno:active{
+  display: block;
+}
+
+.contenitoreCardsDue:active{
+  display: block;
+}
+
 
 .container {
   background-color: white;
