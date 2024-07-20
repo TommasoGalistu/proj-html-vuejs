@@ -17,7 +17,7 @@ export default {
         <div class="card">
           <div class="contTitle">
             <div class="contImg">
-              <img src="/public/logo.svg" alt="" />
+              <img src="/logo.svg" alt="" />
             </div>
             <div class="text">
               <span

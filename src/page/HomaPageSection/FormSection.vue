@@ -288,7 +288,8 @@ span {
   left: 0rem;
   height: 60rem;
   background-repeat: no-repeat;
-  background-image: url("/public/prova.svg");
+  background-image: url("/prova.svg");
+
   background-attachment: fixed;
 }
 </style>
