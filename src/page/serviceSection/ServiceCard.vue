@@ -64,7 +64,7 @@ export default {
       <h3 :style="colorTitle">{{ title }}</h3>
       <p :style="colorText">{{ description }}</p>
     </div>
-    <div class="arrow">&rarr;</div>
+    <font-awesome-icon class="arrow" :icon="['fas', 'arrow-right']" />
   </div>
 </template>
 
@@ -82,6 +82,36 @@ export default {
   // gap: 10px;
   &:hover {
     cursor: pointer;
+    animation: upper 0.5s;
+    animation-fill-mode: forwards;
+  }
+  &:hover .arrow {
+    animation: radarWave 0.3s;
+  }
+  @keyframes radarWave {
+    0% {
+      padding: 0;
+      opacity: 1;
+      border: 2px solid blue;
+    }
+    50% {
+      padding: 10px;
+      opacity: 0.5;
+      background-color: blue;
+    }
+    100% {
+      padding: 20px;
+      opacity: 0;
+      background-color: transparent;
+    }
+  }
+  @keyframes upper {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
   }
 }
 
@@ -111,9 +141,14 @@ p {
 .arrow {
   position: absolute;
   top: 20px;
-  right: 20px;
+  right: 43px;
+  width: 21px;
+  height: 21px;
   font-size: 1.5rem;
   color: #00a6a6;
+  // background-color: blue;
+
+  border-radius: 50%;
 }
 </style>
 
