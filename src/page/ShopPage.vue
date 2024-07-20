@@ -30,6 +30,7 @@ export default {
     },
   },
   computed: {
+    // dati di contenitore uno
     dataFilter() {
       console.log(this.store.selectionValue);
       if (
@@ -68,6 +69,45 @@ export default {
         }
       }
     },
+    // data contenitore 2
+    // dataFilter() {
+    //   console.log(this.store.selectionValue);
+    //   if (
+    //     !this.store.selectionValue ||
+    //     this.store.selectionValue === "menu_order"
+    //   ) {
+    //     return this.vestiti.filter((vestito) => {
+    //       if (!this.comparazione) {
+    //         return vestito && vestito.id > 10;
+    //       } else {
+    //         return vestito.type.includes(this.comparazione);
+    //       }
+    //     });
+    //   } else {
+    //     switch (this.store.selectionValue) {
+    //       case "popularity":
+    //         return this.store.clothes.sort((a, b) => {
+    //           return a.rating - b.rating;
+    //         });
+    //       case "date":
+    //         return this.store.clothes.sort((a, b) => {
+    //           return a.date - b.date;
+    //         });
+    //       case "price":
+    //         return this.store.clothes.sort((a, b) => {
+    //           return a.prezzoAttuale - b.prezzoAttuale;
+    //         });
+    //       case "price-reverse":
+    //         return this.store.clothes.sort((a, b) => {
+    //           return b.prezzoAttuale - a.prezzoAttuale;
+    //         });
+    //       case "rating":
+    //         return this.store.clothes.sort((a, b) => {
+    //           return a.rating - b.rating;
+    //         });
+    //     }
+    //   }
+    // },
     vestitiScontati() {
       return this.vestiti.filter((vestito) => {
         return vestito.prezzoOriginale;
@@ -88,13 +128,14 @@ export default {
         <ArticlesSorting />
       </div>
       <!-- mettere un contenitore e modificare css -->
-      <div class="contenitoreCards">
+      <div class="contenitoreCards uno">
         <ArticlesCards
           v-for="(vestito, index) in dataFilter"
           :key="index"
           :elemento="vestito"
         />
       </div>
+      <div class="contenitoreCards due"></div>
     </section>
     <section class="prices">
       <h3>Filter by price</h3>
