@@ -89,6 +89,7 @@ export default {
   &:hover .contArrow {
     animation: radarWave 1s ease-in-out infinite;
   }
+
   @keyframes radarWave {
     to {
       transform: scale(30);
