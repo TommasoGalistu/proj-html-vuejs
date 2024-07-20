@@ -193,11 +193,11 @@ export const store = reactive({
 
 
 
-
-
-
-
 // inizio paolo da 100 a 200 compreso
+selectionValue: '',
+
+
+
     clothes: [
         {
             nome: "Black hooded sweatshirt",

@@ -24,19 +24,24 @@ export default {
   methods: {
     filterClothes(valore) {
       this.comparazione = valore.toLowerCase();
-      console.log(valore.toLowerCase());
     },
   },
   computed: {
     dataFilter() {
-      return this.vestiti.filter((vestito) => {
-        if (!this.comparazione) {
-          return vestito;
-        } else {
-          console.log(vestito.color.includes(this.comparazione));
-          return vestito.color.includes(this.comparazione);
-        }
-      });
+      console.log(this.store.selectionValue);
+      if (
+        !this.store.selectionValue ||
+        this.store.selectionValue === "menu_order"
+      ) {
+        return this.vestiti.filter((vestito) => {
+          if (!this.comparazione) {
+            return vestito;
+          } else {
+            return vestito.color.includes(this.comparazione);
+          }
+        });
+      } else {
+      }
     },
   },
 };
