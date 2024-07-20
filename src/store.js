@@ -204,7 +204,8 @@ export const store = reactive({
             prezzoOriginale: "$200.00",
             prezzoAttuale: "$129.00",
             img: "/public/clothes/black_hoodie.jpg",
-            rating: "10",
+            rating: 10,
+            date: 2,
             color: ['black','long sleeve','with hood','with print'],
             
 
@@ -214,7 +215,8 @@ export const store = reactive({
             prezzoAttuale: "$45.00",
             prezzoOriginale: "",
             img: "/public/clothes/black_tshirt.jpg",
-            rating: "9",
+            rating: 9,
+            date: 4,
             color:['black','shirt','skull','with print'],
             
         },
@@ -223,7 +225,8 @@ export const store = reactive({
             prezzoOriginale: "$129.50",
             prezzoAttuale: "$89.90",
             img: "/public/clothes/blue_hoodie.jpg",
-            rating: "2",
+            rating: 2,
+            date: 6,
             color: ['blue','long sleeve','with hood','with print'],
             
         },
@@ -232,7 +235,8 @@ export const store = reactive({
             prezzoOriginale: "$75.00",
             prezzoAttuale: "$39.50",
             img: "/public/clothes/brown_hoodie.jpg",
-            rating: "4",
+            rating: 4,
+            date: 10,
             color:['brown','long sleeve','with hood','with print'],
             
         },
@@ -241,7 +245,8 @@ export const store = reactive({
             prezzoOriginale: "",
             prezzoAttuale: "$149.00",
             img: "/public/clothes/gray_hoodie.jpg",
-            rating: "1",
+            rating: 1,
+            date: 8,
             color: ['gray','long sleeve','with hood','with print'],
             
         },
@@ -250,7 +255,8 @@ export const store = reactive({
             prezzoOriginale: "",
             prezzoAttuale: "$79.00",
             img: "/public/clothes/navy_blue_hoodie.jpg",
-            rating: "5",
+            rating: 5,
+            date: 9,
             color: ['blue','long sleeve','with hood','with print'],
             
         },
@@ -259,7 +265,8 @@ export const store = reactive({
             prezzoOriginale: "$60.00",
             prezzoAttuale: "$35.00",
             img: "/public/clothes/ninja_square_poster.jpg",
-            rating: "8",
+            rating: 8,
+            date: 7,
             color: ['ninja','house'],
             
         },
@@ -268,7 +275,8 @@ export const store = reactive({
             prezzoOriginale: "",
             prezzoAttuale: "$45.90",
             img: "/public/clothes/red_hoodie.jpg",
-            rating: "3",
+            rating: 3,
+            date: 3,
             color: ['red','long sleeve','with hood','with print']
         },
         {
@@ -276,7 +284,8 @@ export const store = reactive({
             prezzoOriginale: "",
             prezzoAttuale: "$20.00",
             img: "/public/clothes/skull_poster.jpg",
-            rating: "7",
+            rating: 7,
+            date: 5,
             color: ['skull','house']
         },
         {
@@ -284,11 +293,13 @@ export const store = reactive({
             prezzoOriginale: "",
             prezzoAttuale: "$90.00",
             img: "/public/clothes/white_ninja_print.jpg",
-            rating: "6",
+            rating: 6,
+            date: 1,
             color: ['white', 'ninja','shirt','with print']
         }
     ],
     colorClothes: ['Black', 'Blue', 'Brown', 'Gray', 'House', 'Long Sleeve', 'Ninja', 'Red', 'Shirt', 'Skull', 'White', 'With Hood', 'With Print'],
+    
 
 
 
