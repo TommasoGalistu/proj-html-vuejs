@@ -200,6 +200,7 @@ selectionValue: '',
 
     clothes: [
         {
+            id: 1,
             nome: "Black hooded sweatshirt",
             prezzoOriginale: 200,
             prezzoAttuale: 129,
@@ -211,6 +212,7 @@ selectionValue: '',
 
         },
         {
+            id: 2,
             nome: "Black t-shirt with lamp print",
             prezzoAttuale: 45,
             prezzoOriginale: "",
@@ -221,6 +223,7 @@ selectionValue: '',
             
         },
         {
+            id: 3,
             nome: "Blue hooded sweatshirt",
             prezzoOriginale: 129,
             prezzoAttuale: 89.90,
@@ -231,6 +234,7 @@ selectionValue: '',
             
         },
         {
+            id: 4,
             nome: "Brown hooded sweatshirt",
             prezzoOriginale: 75,
             prezzoAttuale: 39.50,
@@ -241,6 +245,7 @@ selectionValue: '',
             
         },
         {
+            id: 5,
             nome: "Gray hooded sweatshirt",
             prezzoOriginale: "",
             prezzoAttuale: 149,
@@ -251,6 +256,7 @@ selectionValue: '',
             
         },
         {
+            id: 6,
             nome: "Navy Blue hooded sweatshirt",
             prezzoOriginale: "",
             prezzoAttuale: 79,
@@ -261,6 +267,7 @@ selectionValue: '',
             
         },
         {
+            id: 7,
             nome: "Ninja square poster",
             prezzoOriginale: 60.00,
             prezzoAttuale: 35.00,
@@ -271,6 +278,7 @@ selectionValue: '',
             
         },
         {
+            id: 8,
             nome: "Red hooded sweatshirt",
             prezzoOriginale: "",
             prezzoAttuale: 45.90,
@@ -280,6 +288,7 @@ selectionValue: '',
             color: ['red','long sleeve','with hood','with print']
         },
         {
+            id: 9,
             nome: "Skull square poster",
             prezzoOriginale: "",
             prezzoAttuale: 20.00,
@@ -289,6 +298,7 @@ selectionValue: '',
             color: ['skull','house']
         },
         {
+            id: 10,
             nome: "White ninja print t-shirt",
             prezzoOriginale: "",
             prezzoAttuale: 90.00,

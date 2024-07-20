@@ -35,7 +35,7 @@ export default {
       ) {
         return this.vestiti.filter((vestito) => {
           if (!this.comparazione) {
-            return vestito;
+            return vestito && vestito.id < 10;
           } else {
             return vestito.color.includes(this.comparazione);
           }
