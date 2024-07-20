@@ -22,7 +22,7 @@ export default{
 
 <template>
     <a href="#">
-        <div v-if="elemento.prezzoOriginale" class="onSale">
+        <nav v-if="elemento.prezzoOriginale" class="onSale">
             <div class="leftSale">
                 <div class="upPart">
                     <h4>{{ elemento.nome }}</h4>
@@ -38,7 +38,7 @@ export default{
                 </div>
             </div>
 
-        </div>
+        </nav>
     </a>
     
 
@@ -110,6 +110,7 @@ export default{
         border-bottom: 1px solid grey;
         display: flex;
         flex-direction: row;
+        
 
     }
 

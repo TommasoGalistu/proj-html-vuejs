@@ -74,55 +74,58 @@ export default {
       }
     },
     // data contenitore 2
-    // dataFilter() {
-    //   console.log(this.store.selectionValue);
-    //   if (
-    //     !this.store.selectionValue ||
-    //     this.store.selectionValue === "menu_order"
-    //   ) {
-    //     return this.vestiti.filter((vestito) => {
-    //       if (!this.comparazione) {
-    //         return vestito && vestito.id > 10;
-    //       } else {
-    //         return vestito.type.includes(this.comparazione);
-    //       }
-    //     });
-    //   } else {
-    //     switch (this.store.selectionValue) {
-    //       case "popularity":
-    //         return this.store.clothes.sort((a, b) => {
-    //           return a.rating - b.rating;
-    //         });
-    //       case "date":
-    //         return this.store.clothes.sort((a, b) => {
-    //           return a.date - b.date;
-    //         });
-    //       case "price":
-    //         return this.store.clothes.sort((a, b) => {
-    //           return a.prezzoAttuale - b.prezzoAttuale;
-    //         });
-    //       case "price-reverse":
-    //         return this.store.clothes.sort((a, b) => {
-    //           return b.prezzoAttuale - a.prezzoAttuale;
-    //         });
-    //       case "rating":
-    //         return this.store.clothes.sort((a, b) => {
-    //           return a.rating - b.rating;
-    //         });
-    //     }
-    //   }
-    // },
+    dataFilter2() {
+      console.log(this.store.selectionValue);
+      if (
+        !this.store.selectionValue ||
+        this.store.selectionValue === "menu_order"
+      ) {
+        return this.vestiti.filter((vestito) => {
+          if (!this.comparazione) {
+            return vestito && vestito.id > 10;
+          } else {
+            return vestito.type.includes(this.comparazione);
+          }
+        });
+      } else {
+        switch (this.store.selectionValue) {
+          case "popularity":
+            return this.store.clothes.sort((a, b) => {
+              return a.rating - b.rating;
+            });
+          case "date":
+            return this.store.clothes.sort((a, b) => {
+              return a.date - b.date;
+            });
+          case "price":
+            return this.store.clothes.sort((a, b) => {
+              return a.prezzoAttuale - b.prezzoAttuale;
+            });
+          case "price-reverse":
+            return this.store.clothes.sort((a, b) => {
+              return b.prezzoAttuale - a.prezzoAttuale;
+            });
+          case "rating":
+            return this.store.clothes.sort((a, b) => {
+              return a.rating - b.rating;
+            });
+        }
+      }
+    },
     vestitiScontati() {
       return this.vestiti.filter((vestito) => {
         return vestito.prezzoOriginale;
       });
     },
-  },
+  }
 };
 </script>
 
 <template>
+  <div class="blueBG"></div>
   <div class="container">
+    
+    
     <section class="articles">
       <div class="results">
         <span
@@ -140,7 +143,12 @@ export default {
           :elemento="vestito"
         />
       </div>
-      <div v-else class="contenitoreCardsDue">Ciao</div>
+      <div v-else class="contenitoreCardsDue">
+        <ArticlesCards 
+        v-for="(vestito, index) in dataFilter2"
+          :key="index"
+          :elemento="vestito"/>
+      </div>
       <div class="numeroPagina">
         <button @click="togglePagina(true)" class="bottoniPagina">1</button>
         <button @click="togglePagina(false)" class="bottoniPagina">2</button>
@@ -158,9 +166,9 @@ export default {
         />
       </div>
       <div class="contFolders">
-        <font-awesome-icon :icon="['fas', 'folder']" />
+        
         <div v-for="(titolo, index) in store.typeClothes" :key="index">
-          <h4 @click="filterCapi(titolo)" class="tButton">{{ titolo }}</h4>
+          <a href="#"><font-awesome-icon :icon="['fas', 'folder']" /><span @click="filterCapi(titolo)" class="tButton">{{ titolo }}</span></a>
           <br />
         </div>
       </div>
@@ -188,6 +196,17 @@ export default {
 @use "../style/partials/mixin.scss" as *;
 @use "../style/general.scss" as *;
 
+
+.blueBG{
+  background-color: #112b46;
+  
+  height: 150px;
+  width: 100%;
+  position: absolute;
+  margin-bottom: 200px;
+  margin-right: 200px;
+}
+
 .bottoniPagina{
   border: none;
   color: rgb(52, 52, 52);
@@ -212,7 +231,7 @@ export default {
 }
 
 .spaced {
-  margin: 100px;
+  margin: 50px;
 }
 .tbutton {
   cursor: pointer;
@@ -267,23 +286,35 @@ export default {
 }
 
 .fa-folder {
-  background-color: blue;
+  color: #112b46;;
   font-size: 30px;
+  padding-right: 10px;
 }
 
 .contOnSale {
   width: 100%;
   height: 600px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 .contFolders {
   width: 100%;
   height: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.contFolders h4 {
+.contFolders span {
   font-size: 20px;
   background-color: white;
+
+}
+
+.contFolders span:hover{
+  color: red;
+  opacity: 0.7;
 }
 
 .productCategories {
