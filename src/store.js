@@ -205,7 +205,9 @@ export const store = reactive({
             prezzoAttuale: "$129.00",
             img: "/public/clothes/black_hoodie.jpg",
             rating: "10",
-            color: ['black']
+            color: ['black','long sleeve','with hood','with print'],
+            
+
         },
         {
             nome: "Black t-shirt with lamp print",
@@ -213,7 +215,8 @@ export const store = reactive({
             prezzoOriginale: "",
             img: "/public/clothes/black_tshirt.jpg",
             rating: "9",
-            color:['black']
+            color:['black','shirt','skull','with print'],
+            
         },
         {
             nome: "Blue hooded sweatshirt",
@@ -221,7 +224,8 @@ export const store = reactive({
             prezzoAttuale: "$89.90",
             img: "/public/clothes/blue_hoodie.jpg",
             rating: "2",
-            color: ['blue']
+            color: ['blue','long sleeve','with hood','with print'],
+            
         },
         {
             nome: "Brown hooded sweatshirt",
@@ -229,7 +233,8 @@ export const store = reactive({
             prezzoAttuale: "$39.50",
             img: "/public/clothes/brown_hoodie.jpg",
             rating: "4",
-            color:['brown']
+            color:['brown','long sleeve','with hood','with print'],
+            
         },
         {
             nome: "Gray hooded sweatshirt",
@@ -237,7 +242,8 @@ export const store = reactive({
             prezzoAttuale: "$149.00",
             img: "/public/clothes/gray_hoodie.jpg",
             rating: "1",
-            color: ['gray']
+            color: ['gray','long sleeve','with hood','with print'],
+            
         },
         {
             nome: "Navy Blue hooded sweatshirt",
@@ -245,7 +251,8 @@ export const store = reactive({
             prezzoAttuale: "$79.00",
             img: "/public/clothes/navy_blue_hoodie.jpg",
             rating: "5",
-            color: ['blue']
+            color: ['blue','long sleeve','with hood','with print'],
+            
         },
         {
             nome: "Ninja square poster",
@@ -253,7 +260,8 @@ export const store = reactive({
             prezzoAttuale: "$35.00",
             img: "/public/clothes/ninja_square_poster.jpg",
             rating: "8",
-            color: ['ninja']
+            color: ['ninja','house'],
+            
         },
         {
             nome: "Red hooded sweatshirt",
@@ -261,7 +269,7 @@ export const store = reactive({
             prezzoAttuale: "$45.90",
             img: "/public/clothes/red_hoodie.jpg",
             rating: "3",
-            color: ['red']
+            color: ['red','long sleeve','with hood','with print']
         },
         {
             nome: "Skull square poster",
@@ -269,7 +277,7 @@ export const store = reactive({
             prezzoAttuale: "$20.00",
             img: "/public/clothes/skull_poster.jpg",
             rating: "7",
-            color: ['skull']
+            color: ['skull','house']
         },
         {
             nome: "White ninja print t-shirt",
@@ -277,7 +285,7 @@ export const store = reactive({
             prezzoAttuale: "$90.00",
             img: "/public/clothes/white_ninja_print.jpg",
             rating: "6",
-            color: ['white', 'ninja']
+            color: ['white', 'ninja','shirt','with print']
         }
     ],
     colorClothes: ['Black', 'Blue', 'Brown', 'Gray', 'House', 'Long Sleeve', 'Ninja', 'Red', 'Shirt', 'Skull', 'White', 'With Hood', 'With Print'],
