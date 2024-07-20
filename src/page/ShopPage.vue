@@ -20,6 +20,16 @@ export default {
       vestiti: store.clothes,
     };
   },
+  methods: {
+    filterClothes(valore) {
+      console.log(valore.toLowerCase());
+    },
+  },
+  computed: {
+    dataFilter() {
+      return this.vestiti;
+    },
+  },
 };
 </script>
 
@@ -36,62 +46,50 @@ export default {
       <!-- mettere un contenitore e modificare css -->
       <div class="contenitoreCards">
         <ArticlesCards
-        v-for="(vestito, index) in vestiti"
-        :key="index"
-        :elemento="vestito"/>
+          v-for="(vestito, index) in dataFilter"
+          :key="index"
+          :elemento="vestito"
+        />
       </div>
-      
     </section>
     <section class="prices">
       <h3>Filter by price</h3>
-      <Slider/>
+      <Slider />
       <div class="spaced"></div>
       <div class="contOnSale">
-        <ForSale v-for="(vestito, index) in vestiti"
-        :key="index"
-        :elemento="vestito"/>
+        <ForSale
+          v-for="(vestito, index) in vestiti"
+          :key="index"
+          :elemento="vestito"
+        />
       </div>
       <div class="contFolders">
-      <a href="">
-        <font-awesome-icon icon="fa-regular fa-folder"/>
-        <h4>Clothing (8)</h4> 
-        <br>
-        <h4 class="moved">Hoodies (6)</h4>  
-        <br>
-        <h4 class="moved">Tshirts (2)</h4> 
-        <br>
-        <h4>Decor (2)</h4> 
-        <br>
-      </a>
+        <a href="">
+          <font-awesome-icon icon="fa-regular fa-folder" />
+          <h4>Clothing (8)</h4>
+          <br />
+          <h4 class="moved">Hoodies (6)</h4>
+          <br />
+          <h4 class="moved">Tshirts (2)</h4>
+          <br />
+          <h4>Decor (2)</h4>
+          <br />
+        </a>
       </div>
       <div class="productTags">
         <h2>Product Tags</h2>
         <div class="manyTags">
           <div class="col1">
-            <button>Black</button>
-            <button>Blue</button>
-            <button>Brown</button>
-            <button>Gray</button>
-            <button>House</button>
-          </div>
-          <div class="col2">
-            <button>Long Sleeve</button>
-            <button>Ninja</button>
-            <button>Red</button>
-            <button>Shirt</button>
-          </div>
-          
-          <div class="col3">
-            <button>Skull</button>
-            <button>White</button>
-            <button>With Hood</button>
-            <button>With print</button>
+            <button
+              @click="filterClothes(button)"
+              v-for="(button, index) in store.colorClothes"
+              :key="index"
+            >
+              {{ button }}
+            </button>
           </div>
         </div>
       </div>
-      
-      
-      
     </section>
   </div>
 </template>
@@ -101,11 +99,11 @@ export default {
 @use "../style/partials/mixin.scss" as *;
 @use "../style/general.scss" as *;
 
-.spaced{
+.spaced {
   margin: 100px;
 }
 
-button{
+button {
   border: none;
   color: rgb(52, 52, 52);
   padding: 10px 20px;
@@ -116,20 +114,19 @@ button{
   border-radius: 5px;
   margin: 1px 2px rgb(188, 188, 188);
   cursor: pointer;
-  background-color: rgb(188, 188, 188);  
+  background-color: rgb(188, 188, 188);
 }
 
-button:hover{
+button:hover {
   background-color: aqua;
 }
 
-.productTags{
+.productTags {
   width: 100%;
   height: 190px;
-  
 }
 
-.manyTags{
+.manyTags {
   height: 90%;
   width: 100%;
   display: flex;
@@ -138,53 +135,48 @@ button:hover{
   justify-content: flex-start;
 }
 
-.col1,.col2,.col3{
-  height: 33%;
-  width: 100%;
+.col1 {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
-
-
-.productTags h2{
+.productTags h2 {
   color: black;
   margin-bottom: 15px;
 }
 
-.moved{
+.moved {
   padding-left: 20px;
 }
 
-.fa-folder{
+.fa-folder {
   background-color: blue;
   font-size: 30px;
 }
 
-.contOnSale{
+.contOnSale {
   width: 100%;
   height: 600px;
 }
 
-.contFolders{
+.contFolders {
   width: 100%;
   height: 180px;
- 
 }
 
-.contFolders h4{
+.contFolders h4 {
   font-size: 20px;
   background-color: white;
 }
 
-.productCategories{
+.productCategories {
   width: 100%;
   height: 300px;
- 
 }
 
-.contenitoreCards{
+.contenitoreCards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
@@ -223,7 +215,5 @@ section {
 
 .prices {
   width: 30%;
-  
 }
-
 </style>

@@ -205,6 +205,7 @@ export const store = reactive({
             prezzoAttuale: "$129.00",
             img: "/public/clothes/black_hoodie.jpg",
             rating: "10",
+            color: ['black']
         },
         {
             nome: "Black t-shirt with lamp print",
@@ -212,6 +213,7 @@ export const store = reactive({
             prezzoOriginale: "",
             img: "/public/clothes/black_tshirt.jpg",
             rating: "9",
+            color:['black']
         },
         {
             nome: "Blue hooded sweatshirt",
@@ -219,6 +221,7 @@ export const store = reactive({
             prezzoAttuale: "$89.90",
             img: "/public/clothes/blue_hoodie.jpg",
             rating: "2",
+            color: ['blue']
         },
         {
             nome: "Brown hooded sweatshirt",
@@ -226,6 +229,7 @@ export const store = reactive({
             prezzoAttuale: "$39.50",
             img: "/public/clothes/brown_hoodie.jpg",
             rating: "4",
+            color:['brown']
         },
         {
             nome: "Gray hooded sweatshirt",
@@ -233,6 +237,7 @@ export const store = reactive({
             prezzoAttuale: "$149.00",
             img: "/public/clothes/gray_hoodie.jpg",
             rating: "1",
+            color: ['gray']
         },
         {
             nome: "Navy Blue hooded sweatshirt",
@@ -240,6 +245,7 @@ export const store = reactive({
             prezzoAttuale: "$79.00",
             img: "/public/clothes/navy_blue_hoodie.jpg",
             rating: "5",
+            color: ['blue']
         },
         {
             nome: "Ninja square poster",
@@ -247,6 +253,7 @@ export const store = reactive({
             prezzoAttuale: "$35.00",
             img: "/public/clothes/ninja_square_poster.jpg",
             rating: "8",
+            color: ['ninja']
         },
         {
             nome: "Red hooded sweatshirt",
@@ -254,6 +261,7 @@ export const store = reactive({
             prezzoAttuale: "$45.90",
             img: "/public/clothes/red_hoodie.jpg",
             rating: "3",
+            color: ['red']
         },
         {
             nome: "Skull square poster",
@@ -261,6 +269,7 @@ export const store = reactive({
             prezzoAttuale: "$20.00",
             img: "/public/clothes/skull_poster.jpg",
             rating: "7",
+            color: ['skull']
         },
         {
             nome: "White ninja print t-shirt",
@@ -268,8 +277,10 @@ export const store = reactive({
             prezzoAttuale: "$90.00",
             img: "/public/clothes/white_ninja_print.jpg",
             rating: "6",
+            color: ['white', 'ninja']
         }
     ],
+    colorClothes: ['Black', 'Blue', 'Brown', 'Gray', 'House', 'Long Sleeve', 'Ninja', 'Red', 'Shirt', 'Skull', 'White', 'With Hood', 'With Print'],
 
 
 
@@ -342,7 +353,7 @@ export const store = reactive({
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia."
         }
       ]
-});
+})
 
 
 
