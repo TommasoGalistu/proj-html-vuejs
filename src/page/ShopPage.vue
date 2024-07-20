@@ -18,16 +18,25 @@ export default {
     return {
       store,
       vestiti: store.clothes,
+      comparazione: "",
     };
   },
   methods: {
     filterClothes(valore) {
+      this.comparazione = valore.toLowerCase();
       console.log(valore.toLowerCase());
     },
   },
   computed: {
     dataFilter() {
-      return this.vestiti;
+      return this.vestiti.filter((vestito) => {
+        if (!this.comparazione) {
+          return vestito;
+        } else {
+          console.log(vestito.color.includes(this.comparazione));
+          return vestito.color.includes(this.comparazione);
+        }
+      });
     },
   },
 };
@@ -65,7 +74,7 @@ export default {
       </div>
       <div class="contFolders">
         <a href="">
-          <font-awesome-icon icon="fa-regular fa-folder" />
+          <font-awesome-icon :icon="['fas', 'folder']" />
           <h4>Clothing (8)</h4>
           <br />
           <h4 class="moved">Hoodies (6)</h4>
