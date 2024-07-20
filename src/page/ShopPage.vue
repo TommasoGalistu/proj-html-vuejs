@@ -69,7 +69,9 @@ export default {
       }
     },
     vestitiScontati() {
-      return this.vestiti;
+      return this.vestiti.filter((vestito) => {
+        return;
+      });
     },
   },
 };
