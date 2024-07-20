@@ -27,7 +27,7 @@ export default {
         <div class="lower-price">
             <h2> {{ elemento.nome }} </h2>
             <div class="scritte-container">
-                <span class="scontato">{{ elemento.prezzoOriginale }}</span><span class="attuale">{{ elemento.prezzoAttuale }}</span>
+                <span class="scontato"><span class="dollaro" v-if="elemento.prezzoOriginale">$</span>{{ elemento.prezzoOriginale }}<span class="dollaro" v-if="elemento.prezzoOriginale">.0</span></span><span class="attuale"><span class="dollaro" v-if="elemento.prezzoAttuale">$</span>{{ elemento.prezzoAttuale }}<span class="dollaro" v-if="elemento.prezzoAttuale">.0</span></span>
                 <a href="#"><font-awesome-icon icon="bag-shopping"/></a>
             </div>
 
@@ -61,16 +61,19 @@ export default {
         
     }
 
+
 .upper-img {
   height: 70%;
   width: 100%;
 }
 
     .lower-price h2{
-        padding-top: 20px;
+        padding-top: 10px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow:ellipsis ;
+        
+        width: 80%;
     }
     .upper-img img{
         height: 100%;
