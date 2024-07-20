@@ -7,7 +7,6 @@ import ForSale from "./shopSection/ForSale.vue";
 
 export default {
   name: "ShopPage",
-  methods: {},
   components: {
     ArticlesCards,
     ArticlesSorting,
@@ -31,6 +30,9 @@ export default {
     },
     togglePagina(PaginaUno) {
       this.paginaAttiva = PaginaUno;
+    },
+    cardCounter(contenitoreCardsUno) {
+      console.log(contenitoreCardsUno);
     }
   },
   computed: {
@@ -82,7 +84,7 @@ export default {
       ) {
         return this.vestiti.filter((vestito) => {
           if (!this.comparazione) {
-            return vestito && vestito.id > 10;
+            return vestito && vestito.id >= 10;
           } else {
             return vestito.type.includes(this.comparazione);
           }
@@ -141,6 +143,7 @@ export default {
           v-for="(vestito, index) in dataFilter"
           :key="index"
           :elemento="vestito"
+
         />
       </div>
       <div v-else class="contenitoreCardsDue">

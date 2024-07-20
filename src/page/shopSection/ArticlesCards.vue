@@ -68,10 +68,12 @@ export default {
 }
 
     .lower-price h2{
-        padding-top: 20px;
+        padding-top: 10px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow:ellipsis ;
+        
+        width: 80%;
     }
     .upper-img img{
         height: 100%;
