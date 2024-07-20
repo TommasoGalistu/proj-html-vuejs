@@ -70,7 +70,7 @@ export default {
     },
     vestitiScontati() {
       return this.vestiti.filter((vestito) => {
-        return;
+        return vestito.prezzoOriginale;
       });
     },
   },
