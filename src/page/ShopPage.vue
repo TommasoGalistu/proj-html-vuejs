@@ -41,6 +41,28 @@ export default {
           }
         });
       } else {
+        switch (this.store.selectionValue) {
+          case "popularity":
+            return this.store.clothes.sort((a, b) => {
+              return a.rating - b.rating;
+            });
+          case "date":
+            return this.store.clothes.sort((a, b) => {
+              return a.date - b.date;
+            });
+          case "price":
+            return this.store.clothes.sort((a, b) => {
+              return a.prezzoAttuale - b.prezzoAttuale;
+            });
+          case "price-reverse":
+            return this.store.clothes.sort((a, b) => {
+              return b.prezzoAttuale - a.prezzoAttuale;
+            });
+          case "rating":
+            return this.store.clothes.sort((a, b) => {
+              return a.rating - b.rating;
+            });
+        }
       }
     },
   },
