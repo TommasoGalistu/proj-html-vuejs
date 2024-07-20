@@ -17,12 +17,12 @@ export default {
     class="sorting"
     aria-label="Shop order"
   >
-    <option value="menu_order">Default sorting</option>
+    <option value="menu_order" selected>Default sorting</option>
     <option value="popularity">Sort by popularity</option>
     <option value="rating">Sort by average rating</option>
     <option value="date">Sort by latest</option>
     <option value="price">Sort by price: low to high</option>
-    <option value="price-reverse">SOrt by price: high to low</option>
+    <option value="price-reverse">Sort by price: high to low</option>
   </select>
 </template>
 
