@@ -97,6 +97,8 @@ export default {
 
           .content.icona {
             display: flex;
+            cursor: pointer;
+
             align-items: center;
             .icon {
               padding-right: 1rem;

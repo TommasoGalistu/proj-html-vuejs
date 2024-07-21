@@ -259,6 +259,11 @@ export default {
         gap: 0.5rem;
         color: $colorStyleJambo;
         cursor: pointer;
+        &:hover .iconStyle {
+          color: white;
+          background-color: $colorStyleJambo;
+        }
+
         .iconStyle {
           z-index: 5;
           display: flex;
@@ -268,10 +273,6 @@ export default {
           padding: 0.7rem;
           background-color: #d9f2f2;
           border-radius: 50%;
-          &:hover {
-            color: white;
-            background-color: $colorStyleJambo;
-          }
         }
       }
     }

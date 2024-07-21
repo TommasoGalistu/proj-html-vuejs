@@ -139,7 +139,7 @@ header {
     justify-content: space-between;
     .contImg {
       height: 2.8rem;
-
+      cursor: pointer;
       img {
         height: 100%;
       }

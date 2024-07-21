@@ -22,7 +22,7 @@ export default {
 
       // Posizione dell'elemento
       const rect = element.getBoundingClientRect();
-      console.log(rect);
+
       // Altezza della viewport
       const windowHeight =
         window.innerHeight || document.documentElement.clientHeight;
@@ -34,26 +34,29 @@ export default {
       }
     },
     animateNumbers() {
+      // passo i dati da aggiornare
       this.animateNumber(128, "certNumber");
       this.animateNumber(230, "emploNumber");
       this.animateNumber(517, "customNumber");
       this.animateNumber(94, "countrNumber");
     },
+    // funzione di animazione
     animateNumber(endNumber, dataKey) {
       const start = 0;
       const duration = 2000; // Durata dell'animazione in millisecondi
       const startTime = performance.now();
 
       const animate = (currentTime) => {
+        // tempo trascorso da inizio animazione
         const elapsedTime = currentTime - startTime;
         const progress = Math.min(elapsedTime / duration, 1);
         this[dataKey] = Math.floor(progress * endNumber);
-
+        // verifica se l'animazione non è completa
         if (progress < 1) {
           requestAnimationFrame(animate);
         }
       };
-
+      // inizia l'animazione, funzione nativa del browser
       requestAnimationFrame(animate);
     },
   },
@@ -202,6 +205,7 @@ export default {
 
     .contImg {
       height: 1.5rem;
+      cursor: pointer;
       img {
         height: 100%;
         z-index: 10;
