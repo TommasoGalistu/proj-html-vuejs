@@ -13,7 +13,7 @@ export const store = reactive({
 
         {
             ricerca: ['events', 'social', 'technology'],
-            path: '/cuffie.avif',
+            path: '/card1.webp',
             tipo: 'Coding',
             tempo: '3 years',
             titolo: 'Portfolio item with intro with sidebar',
@@ -40,7 +40,7 @@ export const store = reactive({
         },
         {
             ricerca: ['istitutional', 'technology'],
-            path: '/ciliegie.jpg',
+            path: '/card2.jpg',
             tipo: 'Coding',
             tempo: '3 years',
             titolo: 'Portfolio item with intro with sidebar',
