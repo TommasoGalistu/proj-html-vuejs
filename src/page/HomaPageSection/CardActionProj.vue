@@ -56,7 +56,7 @@ export default {
   border-radius: 10px;
   color: rgb(180, 180, 180);
   &:hover .contText {
-    filter: blur(100%);
+    // inserire filtro
   }
   &:hover .nascondi.up {
     animation: up 0.5s ease-out;
@@ -69,31 +69,24 @@ export default {
   &:hover .visibility {
     visibility: visible;
     opacity: 1;
-    transition: opacity 1s ease-out, visibility 1s ease-out;
+    transition: opacity 1s ease-out, visibility ease-out;
   }
+  // animazione parte superiore
   @keyframes up {
     0% {
-      top: -27px;
-      left: 50%;
-      transform: translate(-50%);
+      top: -81px;
     }
     100% {
-      top: 30px;
-      left: 50%;
-      transform: translate(-50%);
+      top: -45px;
     }
   }
+  // animazione parte inferiore
   @keyframes bottom {
     0% {
-      bottom: -26px;
-      left: 50%;
-      transform: translate(-50%);
+      bottom: -70px;
     }
     100% {
-      width: 80%;
-      bottom: 30px;
-      left: 50%;
-      transform: translate(-50%);
+      bottom: -25px;
     }
   }
   &:hover {
@@ -101,7 +94,6 @@ export default {
   }
   .contText {
     position: absolute;
-
     top: 0;
     left: 0;
     height: 100%;
@@ -111,7 +103,6 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 2rem 0;
 
     .upPart {
       display: flex;
@@ -123,6 +114,7 @@ export default {
       }
     }
     .bottomPart {
+      display: block;
       h2 {
         padding: 1rem 0;
         color: white;
@@ -144,13 +136,13 @@ export default {
   position: absolute;
 }
 .nascondi.up {
-  top: -27px;
+  top: -81px;
   left: 50%;
   transform: translate(-50%);
 }
 .nascondi.bottom {
   width: 80%;
-  bottom: -26px;
+  bottom: -70px;
   left: 50%;
   transform: translate(-50%);
 }

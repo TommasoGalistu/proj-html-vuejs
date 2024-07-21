@@ -39,6 +39,9 @@ export default {
       this.paginaAttiva = PaginaUno;
       this.counter = this.cardCounter(this.paginaAttiva);
     },
+    cardCounter(contenitoreCardsUno) {
+      console.log(contenitoreCardsUno);
+    },
     
 
   },
@@ -143,8 +146,6 @@ window.onload = function() {
 <template>
   <div class="blueBG"></div>
   <div class="container">
-    
-    
     <section class="articles">
       <div class="results">
         <span
@@ -152,7 +153,6 @@ window.onload = function() {
           result{{ counter==1 ? "": "s" }}
         </span>
         <ArticlesSorting />
-        
       </div>
       
       <div ref="pageOne" v-show="paginaAttiva" class="contenitoreCardsUno">
@@ -160,14 +160,14 @@ window.onload = function() {
           v-for="(vestito, index) in dataFilter"
           :key="index"
           :elemento="vestito"
-
         />
       </div>
       <div ref="pageTwo" v-show="!paginaAttiva" class="contenitoreCardsDue">
         <ArticlesCards 
         v-for="(vestito, index) in dataFilter2"
           :key="index"
-          :elemento="vestito"/>
+          :elemento="vestito"
+        />
       </div>
       <div class="numeroPagina">
         <button @click="togglePagina(true)" class="bottoniPagina">1</button>
@@ -186,9 +186,14 @@ window.onload = function() {
         />
       </div>
       <div class="contFolders">
-        
         <div v-for="(titolo, index) in store.typeClothes" :key="index">
-          <a href="#"><font-awesome-icon :icon="['fas', 'folder']" /><span @click="filterCapi(titolo)" class="tButton">{{ titolo }}</span></a>
+          <a href="#"
+            ><font-awesome-icon :icon="['fas', 'folder']" /><span
+              @click="filterCapi(titolo)"
+              class="tButton"
+              >{{ titolo }}</span
+            ></a
+          >
           <br />
         </div>
       </div>
@@ -196,7 +201,8 @@ window.onload = function() {
         <h2>Product Tags</h2>
         <div class="manyTags">
           <div class="col1">
-            <button class="bottoniTag"
+            <button
+              class="bottoniTag"
               @click="filterClothes(button)"
               v-for="(button, index) in store.colorClothes"
               :key="index"
@@ -206,7 +212,6 @@ window.onload = function() {
           </div>
         </div>
       </div>
-      
     </section>
   </div>
 </template>
@@ -216,18 +221,17 @@ window.onload = function() {
 @use "../style/partials/mixin.scss" as *;
 @use "../style/general.scss" as *;
 
-
-.blueBG{
+.blueBG {
   background-color: #112b46;
-  
-  height: 150px;
+
+  height: 136px;
   width: 100%;
   position: absolute;
   margin-bottom: 200px;
   margin-right: 200px;
 }
 
-.bottoniPagina{
+.bottoniPagina {
   border: none;
   color: rgb(52, 52, 52);
   padding: 10px 20px;
@@ -241,11 +245,11 @@ window.onload = function() {
   background-color: white;
 }
 
-.bottoniPagina:active{
+.bottoniPagina:active {
   background-color: green;
 }
 
-.bottoniPagina:hover{
+.bottoniPagina:hover {
   color: red;
   background-color: none;
 }
@@ -277,7 +281,7 @@ window.onload = function() {
 
 .productTags {
   width: 100%;
-  height: 190px;
+  // height: 190px;
 }
 
 .manyTags {
@@ -306,7 +310,7 @@ window.onload = function() {
 }
 
 .fa-folder {
-  color: #112b46;;
+  color: #112b46;
   font-size: 30px;
   padding-right: 10px;
 }
@@ -329,10 +333,9 @@ window.onload = function() {
 .contFolders span {
   font-size: 20px;
   background-color: white;
-
 }
 
-.contFolders span:hover{
+.contFolders span:hover {
   color: red;
   opacity: 0.7;
 }
@@ -342,28 +345,27 @@ window.onload = function() {
   height: 300px;
 }
 
-.contenitoreCardsUno,.contenitoreCardsDue {
+.contenitoreCardsUno,
+.contenitoreCardsDue {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
 }
 
-
-
-.contenitoreCardsUno:active{
+.contenitoreCardsUno:active {
   display: block;
 }
 
-.contenitoreCardsDue:active{
+.contenitoreCardsDue:active {
   display: block;
 }
-
 
 .container {
   background-color: white;
-  height: 210vh;
+  gap: 2rem;
   display: flex;
   flex-direction: row;
+  padding-bottom: 4rem;
 }
 
 section {
@@ -376,6 +378,7 @@ section {
   background-color: white;
   display: flex;
   flex-direction: column;
+  gap: 2rem;
 }
 
 .results {

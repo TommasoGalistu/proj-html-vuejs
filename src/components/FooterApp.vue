@@ -17,7 +17,7 @@ export default {
         <div class="card">
           <div class="contTitle">
             <div class="contImg">
-              <img src="/public/logo.svg" alt="" />
+              <img src="/logo.svg" alt="" />
             </div>
             <div class="text">
               <span
@@ -116,12 +116,14 @@ export default {
 @use "../style/partials/mixin.scss" as *;
 @use "../style/general.scss" as *;
 footer {
-  z-index: 10;
+  z-index: 15;
 }
 .color {
   color: grey;
 }
+
 .sfondo {
+  z-index: 15;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -130,7 +132,7 @@ footer {
   width: 100%;
   background-color: #0d1b2a;
   .container.primo {
-    z-index: 10;
+    z-index: 15;
     color: grey;
     padding: 4rem 0;
     display: flex;

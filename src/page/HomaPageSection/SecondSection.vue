@@ -135,7 +135,7 @@ export default {
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: url("/public/about-4.jpg");
+        background-image: url("/about-4.jpg");
         background-size: contain;
         background-attachment: fixed;
         background-position: right -4%;
