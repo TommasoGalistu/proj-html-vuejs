@@ -279,6 +279,7 @@ export default {
 span {
   z-index: 10;
 }
+
 // immagini sfondo in absolute
 .imgSfondo {
   position: absolute;

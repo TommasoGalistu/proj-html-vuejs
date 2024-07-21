@@ -121,6 +121,7 @@ footer {
 .color {
   color: grey;
 }
+
 .sfondo {
   display: flex;
   flex-direction: column;
