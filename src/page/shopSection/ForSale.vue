@@ -25,11 +25,11 @@ export default{
         <nav v-if="elemento.prezzoOriginale" class="onSale">
             <div class="leftSale">
                 <div class="upPart">
-                    <h4>{{ elemento.nome }}</h4>
+                    <h4> {{ elemento.nome }}</h4>
                 </div>
                 <div class="bottomPart">
-                    <span class="scontato">{{ elemento.prezzoOriginale }}</span>
-                    <span>{{ elemento.prezzoAttuale }}</span>
+                    <span class="scontato"> ${{ elemento.prezzoOriginale }}.0</span>
+                    <span> ${{ elemento.prezzoAttuale }}.0</span>
                 </div>
             </div>
             <div class="rightSale">

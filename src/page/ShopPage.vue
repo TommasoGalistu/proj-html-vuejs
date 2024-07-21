@@ -22,28 +22,40 @@ export default {
       counter: 0,
     };
   },
+  beforeRouteEnter(to, from, next){
+    next(vm => {
+      vm.togglePagina(true);
+    });
+  },
   methods: {
     filterCapi(titoloValore) {
       this.comparazione = titoloValore.toLowerCase();
+      
     },
     filterClothes(valore) {
       this.comparazione = valore.toLowerCase();
     },
     cardCounter(paginaAttiva) {
-      let contatore = paginaAttiva
-        ? this.$refs.pageOne.childNodes.length
-        : this.$refs.pageTwo.childNodes.length;
-      contatore -= 2;
+      let contatore = (paginaAttiva
+        ? this.$refs.pageOne.children.length
+        : this.$refs.pageTwo.children.length);
       console.log(contatore);
-      return contatore;
+      this.counter = contatore;
     },
     togglePagina(PaginaUno) {
       this.paginaAttiva = PaginaUno;
-      this.counter = this.cardCounter(this.paginaAttiva);
     },
-    cardCounter(contenitoreCardsUno) {
-      console.log(contenitoreCardsUno);
+  },
+  watch: {
+    paginaAttiva() {
+      this.$nextTick(this.cardCounter(this.paginaAttiva));
     },
+    dataFilter(){
+      this.$nextTick(() => {this.cardCounter(this.paginaAttiva)});
+    }
+  },
+  mounted() {
+    this.$nextTick(this.cardCounter(this.paginaAttiva));
   },
   computed: {
     // dati di contenitore uno
@@ -56,7 +68,7 @@ export default {
         return this.vestiti.filter((vestito) => {
           if (!this.comparazione) {
             return vestito && vestito.id < 10;
-          } else {
+          } else {  
             return vestito.type.includes(this.comparazione);
           }
         });
@@ -132,15 +144,6 @@ export default {
   },
 };
 
-// window.onload = function() {
-//   let button1 = document.querySelector(".numeroPagina").children[0];
-//   console.log(button1);
-//   button1.dispatchEvent(event = new MouseEvent('click', {
-//           bubbles: true,
-//           cancelable: true,
-//           view: window
-//         }));
-// };
 </script>
 
 <template>
