@@ -1,8 +1,37 @@
 <script>
 export default {
   name: "BannerSection",
-  data() {},
-  methods: {},
+  data() {
+    return {
+      certNumber: 128,
+      emploNumber: 230,
+      customNumber: 517,
+      countrNumber: 94,
+      isAnimate: false,
+    };
+  },
+  methods: {
+    counterNumber(num) {
+      // riferimento elemento dom vue
+      let element = this.$refs.number;
+      // posizione elemento
+      let rect = element.getBoundingClientRect();
+      // grandezza view
+      let windowHeight =
+        window.innerHeight || document.documentElement.clientHeigh;
+      console.log(windowHeight);
+
+      if (rect.top <= windowHeight && !this.hasAnimated) {
+        return 0;
+      }
+    },
+  },
+  mounted() {
+    window.addEventListener("scroll", this.counterNumber);
+  },
+  // beforeDestroy(){
+  //   window.addEventListener('scroll')
+  // }
 };
 </script>
 <template>
@@ -16,19 +45,27 @@ export default {
       </div>
       <div class="contNumber">
         <div class="number">
-          <span><strong>128</strong></span>
+          <span ref="number"
+            ><strong>{{ counterNumber(certNumber) }}</strong></span
+          >
           <p>Certifications</p>
         </div>
         <div class="number">
-          <span><strong>230</strong></span>
+          <span
+            ><strong>{{ counterNumber(emploNumber) }}</strong></span
+          >
           <p>Employees</p>
         </div>
         <div class="number">
-          <span><strong>517</strong></span>
+          <span
+            ><strong>{{ counterNumber(customNumber) }}</strong></span
+          >
           <p>Customers</p>
         </div>
         <div class="number">
-          <span><strong>94</strong></span>
+          <span
+            ><strong>{{ counterNumber(countrNumber) }}</strong></span
+          >
           <p>Countries Served</p>
         </div>
       </div>
