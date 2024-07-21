@@ -206,7 +206,14 @@ footer {
     .hoverClass {
       &:hover {
         cursor: pointer;
+        color: $colorStyleJamboHover;
       }
+    }
+  }
+  .contText {
+    &:hover {
+      cursor: pointer;
+      color: $colorStyleJamboHover;
     }
   }
 }
