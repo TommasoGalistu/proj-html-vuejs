@@ -72,7 +72,7 @@ export default {
   }
 
   .container {
-    padding: 4rem 0;
+    padding: 1rem 0;
     text-align: center;
 
     .contText {
@@ -85,6 +85,7 @@ export default {
 
     .contNumber {
       padding: 1rem 0;
+      padding-bottom: 4rem;
       display: flex;
       justify-content: space-between;
 

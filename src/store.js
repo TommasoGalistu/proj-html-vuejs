@@ -6,6 +6,7 @@ export const store = reactive({
             telefono: '+1(305) 1234-5678',
             email: 'hello@example.com',
             orariApertura: 'Mon - Sat - 9:00 - 18:00',
+            luogo: 'Main Avenue, 123',
         }
     ],
     // card nella terza sezione di home chiamate da metodo

@@ -151,29 +151,29 @@ export default {
     padding: 4rem 0;
     display: flex;
     gap: 3rem;
-    z-index: 10;
+    z-index: 5;
 
     .contForm {
       display: flex;
       flex-direction: column;
       gap: 1rem;
       width: 70%;
-      z-index: 10;
+      z-index: 5;
       span {
         color: $colorStyleJambo;
-        z-index: 10;
+        z-index: 5;
       }
       h2 {
         font-size: 3rem;
         display: inline;
         padding: 1rem 0;
-        z-index: 10;
+        z-index: 5;
       }
       .row {
         display: flex;
         gap: 1rem;
         padding-bottom: 1rem;
-        z-index: 10;
+        z-index: 5;
 
         & > div {
           flex: 1;
@@ -182,7 +182,7 @@ export default {
 
       .contTextArea {
         width: 100%;
-        z-index: 10;
+        z-index: 5;
         textarea {
           max-width: 100%;
           min-width: 100%;
@@ -195,6 +195,7 @@ export default {
           font-size: 16px;
           background-color: #ececec;
           border: none;
+          z-index: 5;
           &:focus {
             outline: none;
             box-shadow: none;
@@ -221,7 +222,7 @@ export default {
       }
 
       button {
-        z-index: 10;
+        z-index: 5;
         // width: 100%;
         margin-top: 1rem;
         background-color: $colorStyleJambo;
@@ -243,7 +244,7 @@ export default {
       h2,
       p {
         padding-bottom: 1rem;
-        z-index: 10;
+        z-index: 5;
       }
 
       .button {
@@ -251,7 +252,7 @@ export default {
         @include button-styles(0.5rem 1rem, 0.4rem 1);
       }
       .contatti {
-        z-index: 10;
+        z-index: 5;
         padding: 1.5rem 0;
         display: flex;
         align-items: center;
@@ -259,7 +260,7 @@ export default {
         color: $colorStyleJambo;
         cursor: pointer;
         .iconStyle {
-          z-index: 10;
+          z-index: 5;
           display: flex;
           align-items: center;
           font-size: 1.3rem;
@@ -277,7 +278,7 @@ export default {
   }
 }
 span {
-  z-index: 10;
+  z-index: 5;
 }
 
 // immagini sfondo in absolute
@@ -287,7 +288,7 @@ span {
   width: 100%;
   top: 0rem;
   left: 0rem;
-  height: 60rem;
+  height: 42.8rem;
   background-repeat: no-repeat;
   background-image: url("/prova.svg");
 
