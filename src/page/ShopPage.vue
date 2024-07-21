@@ -16,10 +16,14 @@ export default {
   data() {
     return {
       store,
-      vestiti: store.clothes,
+      originalClothes: store.clothes,
+      vestiti: [...store.clothes],
       comparazione: "",
       paginaAttiva: true,
       counter: 0,
+      minPrice: 20,
+      maxPrice: 150,
+      
     };
   },
   beforeRouteEnter(to, from, next){
@@ -45,6 +49,10 @@ export default {
     togglePagina(PaginaUno) {
       this.paginaAttiva = PaginaUno;
     },
+    rangeUpdate(range){
+      this.minPrice = range.lowerFilter;
+      this.maxPrice = range.upperFilter;
+    }
   },
   watch: {
     paginaAttiva() {
@@ -52,6 +60,9 @@ export default {
     },
     dataFilter(){
       this.$nextTick(() => {this.cardCounter(this.paginaAttiva)});
+    },
+    rangeUpdate(){
+      this.dataFilter();
     }
   },
   mounted() {
@@ -60,14 +71,22 @@ export default {
   computed: {
     // dati di contenitore uno
     dataFilter() {
-      console.log(this.store.selectionValue);
+      this.vestiti = [...this.originalClothes];
+      for (let i=this.vestiti.length -1; i >= 0; i--){
+        if (this.vestiti[i].prezzoAttuale < this.minPrice || this.vestiti[i].prezzoAttuale > this.maxPrice){
+          this.vestiti.splice(i, 1);
+        }
+      }
       if (
         !this.store.selectionValue ||
         this.store.selectionValue === "menu_order"
       ) {
-        return this.vestiti.filter((vestito) => {
+         return this.vestiti.filter((vestito) => {
           if (!this.comparazione) {
-            return vestito && vestito.id < 10;
+            if (this.vestiti.length >= 10) 
+              return vestito && vestito.id < 10;
+            else
+              return vestito;
           } else {  
             return vestito.type.includes(this.comparazione);
           }
@@ -105,8 +124,11 @@ export default {
         this.store.selectionValue === "menu_order"
       ) {
         return this.vestiti.filter((vestito) => {
-          if (!this.comparazione) {
-            return vestito && vestito.id >= 10;
+          if (!this.comparazione) { 
+            if (this.vestiti.length >= 10) 
+              return vestito && vestito.id >= 10;
+            else
+              return undefined;
           } else {
             return vestito.type.includes(this.comparazione);
           }
@@ -179,7 +201,7 @@ export default {
     </section>
     <section class="prices">
       <h3>Filter by price</h3>
-      <Slider />
+      <Slider ref="slider" @range-updated="rangeUpdate"/>
       <div class="spaced"></div>
       <div class="contOnSale">
         <ForSale

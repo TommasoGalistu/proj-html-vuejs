@@ -28,8 +28,8 @@ export default{
                     <h4> {{ elemento.nome }}</h4>
                 </div>
                 <div class="bottomPart">
-                    <span class="scontato"> ${{ elemento.prezzoOriginale }}.0</span>
-                    <span> ${{ elemento.prezzoAttuale }}.0</span>
+                    <span class="scontato"> ${{ elemento.prezzoOriginale }}.00</span>
+                    <span> ${{ elemento.prezzoAttuale }}.00</span>
                 </div>
             </div>
             <div class="rightSale">

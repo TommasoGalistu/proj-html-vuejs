@@ -29,13 +29,13 @@ export default {
             ><span class="dollaro" v-if="elemento.prezzoOriginale">$</span
             >{{ elemento.prezzoOriginale
             }}<span class="dollaro" v-if="elemento.prezzoOriginale"
-              >.0</span
+              >.00</span
             ></span
           ><span class="attuale"
             ><span class="dollaro" v-if="elemento.prezzoAttuale">$</span
             >{{ elemento.prezzoAttuale
             }}<span class="dollaro" v-if="elemento.prezzoAttuale"
-              >.0</span
+              >.00</span
             ></span
           >
           <a href="#"><font-awesome-icon icon="bag-shopping" /></a>
