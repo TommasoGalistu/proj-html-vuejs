@@ -3,31 +3,63 @@ export default {
   name: "BannerSection",
   data() {
     return {
-      certNumber: 128,
-      emploNumber: 230,
-      customNumber: 517,
-      countrNumber: 94,
+      certNumber: 0,
+      emploNumber: 0,
+      customNumber: 0,
+      countrNumber: 0,
+      // certNumber: 128,
+      // emploNumber: 230,
+      // customNumber: 517,
+      // countrNumber: 94,
       isAnimate: false,
     };
   },
   methods: {
-    counterNumber(num) {
-      // riferimento elemento dom vue
-      let element = this.$refs.number;
-      // posizione elemento
-      let rect = element.getBoundingClientRect();
-      // grandezza view
-      let windowHeight =
-        window.innerHeight || document.documentElement.clientHeigh;
-      console.log(windowHeight);
+    startAnimation() {
+      // Riferimento all'elemento DOM Vue
+      const element = this.$refs.rifSpan;
+      if (!element) return;
 
-      if (rect.top <= windowHeight && !this.hasAnimated) {
-        return 0;
+      // Posizione dell'elemento
+      const rect = element.getBoundingClientRect();
+      console.log(rect);
+      // Altezza della viewport
+      const windowHeight =
+        window.innerHeight || document.documentElement.clientHeight;
+
+      // Controlla se l'elemento è visibile nella viewport
+      if (rect.top <= windowHeight && !this.isAnimate) {
+        this.isAnimate = true;
+        this.animateNumbers();
       }
+    },
+    animateNumbers() {
+      this.animateNumber(128, "certNumber");
+      this.animateNumber(230, "emploNumber");
+      this.animateNumber(517, "customNumber");
+      this.animateNumber(94, "countrNumber");
+    },
+    animateNumber(endNumber, dataKey) {
+      const start = 0;
+      const duration = 2000; // Durata dell'animazione in millisecondi
+      const startTime = performance.now();
+
+      const animate = (currentTime) => {
+        const elapsedTime = currentTime - startTime;
+        const progress = Math.min(elapsedTime / duration, 1);
+        this[dataKey] = Math.floor(progress * endNumber);
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      };
+
+      requestAnimationFrame(animate);
     },
   },
   mounted() {
-    window.addEventListener("scroll", this.counterNumber);
+    this.startAnimation();
+    window.addEventListener("scroll", this.startAnimation);
   },
   // beforeDestroy(){
   //   window.addEventListener('scroll')
@@ -43,28 +75,29 @@ export default {
           Our goal is to exceed ecpectations by delivering the best job possible
         </p>
       </div>
+
       <div class="contNumber">
         <div class="number">
-          <span ref="number"
-            ><strong>{{ counterNumber(certNumber) }}</strong></span
+          <span ref="rifSpan"
+            ><strong>{{ certNumber }}</strong></span
           >
           <p>Certifications</p>
         </div>
         <div class="number">
           <span
-            ><strong>{{ counterNumber(emploNumber) }}</strong></span
+            ><strong>{{ emploNumber }}</strong></span
           >
           <p>Employees</p>
         </div>
         <div class="number">
           <span
-            ><strong>{{ counterNumber(customNumber) }}</strong></span
+            ><strong>{{ customNumber }}</strong></span
           >
           <p>Customers</p>
         </div>
         <div class="number">
           <span
-            ><strong>{{ counterNumber(countrNumber) }}</strong></span
+            ><strong>{{ countrNumber }}</strong></span
           >
           <p>Countries Served</p>
         </div>
