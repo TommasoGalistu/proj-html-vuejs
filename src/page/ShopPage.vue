@@ -19,6 +19,7 @@ export default {
       vestiti: store.clothes,
       comparazione: "",
       paginaAttiva: true,
+      counter: 0,
     };
   },
   methods: {
@@ -28,12 +29,18 @@ export default {
     filterClothes(valore) {
       this.comparazione = valore.toLowerCase();
     },
+    cardCounter(paginaAttiva) {
+      let contatore = paginaAttiva ? this.$refs.pageOne.childNodes.length : this.$refs.pageTwo.childNodes.length;
+      contatore -= 2;
+      console.log(contatore);
+      return contatore; 
+    },
     togglePagina(PaginaUno) {
       this.paginaAttiva = PaginaUno;
+      this.counter = this.cardCounter(this.paginaAttiva);
     },
-    cardCounter(contenitoreCardsUno) {
-      console.log(contenitoreCardsUno);
-    }
+    
+
   },
   computed: {
     // dati di contenitore uno
@@ -121,6 +128,16 @@ export default {
     },
   }
 };
+
+window.onload = function() {
+  let button1 = document.querySelector(".numeroPagina").children[0];
+  console.log(button1);
+  button1.dispatchEvent(event = new MouseEvent('click', {
+          bubbles: true,
+          cancelable: true,
+          view: window
+        }));
+};
 </script>
 
 <template>
@@ -131,14 +148,14 @@ export default {
     <section class="articles">
       <div class="results">
         <span
-          ><font-awesome-icon icon="fa-solid fa-bars" /> Showing  of N
-          results
+          ><font-awesome-icon icon="fa-solid fa-bars" /> Showing  {{ counter }}
+          result{{ counter==1 ? "": "s" }}
         </span>
         <ArticlesSorting />
         
       </div>
       
-      <div v-if="paginaAttiva" class="contenitoreCardsUno">
+      <div ref="pageOne" v-show="paginaAttiva" class="contenitoreCardsUno">
         <ArticlesCards
           v-for="(vestito, index) in dataFilter"
           :key="index"
@@ -146,7 +163,7 @@ export default {
 
         />
       </div>
-      <div v-else class="contenitoreCardsDue">
+      <div ref="pageTwo" v-show="!paginaAttiva" class="contenitoreCardsDue">
         <ArticlesCards 
         v-for="(vestito, index) in dataFilter2"
           :key="index"
