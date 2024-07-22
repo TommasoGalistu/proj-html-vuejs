@@ -30,7 +30,7 @@ export default {
           <div class="card">
             <div class="content icona">
               <font-awesome-icon class="icon" :icon="['fas', 'lock']" />
-              <h3>Tradition</h3>
+              <h3>Security</h3>
             </div>
             <div class="content">
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -39,7 +39,7 @@ export default {
           <div class="card">
             <div class="content icona">
               <font-awesome-icon class="icon" :icon="['fas', 'apple-whole']" />
-              <h3>Tradition</h3>
+              <h3>Certificate</h3>
             </div>
             <div class="content">
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -48,7 +48,7 @@ export default {
           <div class="card">
             <div class="content icona">
               <font-awesome-icon class="icon" :icon="['fas', 'user-tie']" />
-              <h3>Tradition</h3>
+              <h3>Expertise</h3>
             </div>
             <div class="content">
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
