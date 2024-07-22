@@ -40,8 +40,8 @@ export default {
           :description="element.description"
           :dividendo="3"
           :gapTotale="20"
-          :colorTitle="'black'"
-          :colorText="'#949494'"
+          :colorTitle="black"
+          :colorText="`#949494`"
           :backgroundColor="'#ebecef'"
         />
       </div>
@@ -82,7 +82,7 @@ export default {
       font-size: 1.3rem;
     }
     .button {
-      @include button-styles(0.5rem 1rem, 0.4rem 1);
+      @include button-styles(0.5rem 1rem, 0.5rem);
       display: flex;
       justify-content: center;
       align-items: center;

@@ -63,8 +63,10 @@ export default {
           console.log("non lo so");
       }
     },
+
     changePhoto(e) {
       const container = this.$refs.container;
+
       let elementoCliccato = e.target;
       // elimino active
       for (let i = 0; i < container.childNodes.length; i++) {
@@ -79,11 +81,11 @@ export default {
       // Ottieni il numero dell'elemento cliccato
       let numeroPulsante =
         Array.from(container.children).indexOf(elementoCliccato) + 1;
-
+      this.isActive = false;
       // Switch statement per eseguire azioni basate sul numero del pulsante
       this.caroselloAuto(numeroPulsante);
     },
-
+    // animazione quadrati che si muovono nello spazio
     animazione(number) {
       const background = this.$refs.sfondoAnimato;
 
@@ -140,6 +142,7 @@ export default {
   },
   mounted() {
     this.animazione(30);
+    this.caroselloAuto();
   },
 };
 </script>
@@ -219,7 +222,7 @@ export default {
         padding-bottom: 3rem;
       }
       .button {
-        @include button-styles(0.5rem 1rem, 0.4rem 1);
+        @include button-styles(0.5rem 1rem, 0.4rem);
       }
     }
   }

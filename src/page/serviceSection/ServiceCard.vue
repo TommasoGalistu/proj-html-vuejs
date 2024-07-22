@@ -91,13 +91,16 @@ export default {
   }
 
   @keyframes radarWave {
-    to {
-      transform: scale(30);
-    }
     0% {
+      border: 1px solid #00a6a6;
+      background-color: #00a6a6;
+      transform: scale(1);
       opacity: 1;
     }
     100% {
+      border: 1px solid #00a6a6;
+      background-color: #00a6a6;
+      transform: scale(10);
       opacity: 0;
     }
   }
@@ -149,15 +152,14 @@ p {
 }
 .contArrow {
   position: absolute;
-  top: 34px;
+  top: 32px;
   right: 53px;
-  border: 1px solid #00a6a6;
-  height: 1px;
-  width: 1px;
+
+  height: 4px;
+  width: 4px;
   font-size: 1.5rem;
   color: #00a6a6;
   // background-color: blue;
-  background-color: #00a6a6;
 
   // padding: 20px;
   border-radius: 50%;

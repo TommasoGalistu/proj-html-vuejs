@@ -244,15 +244,9 @@ export default {
       h2,
       p {
         padding-bottom: 1rem;
-        z-index: 5;
       }
 
-      .button {
-        margin-top: 2rem;
-        @include button-styles(0.5rem 1rem, 0.4rem 1);
-      }
       .contatti {
-        z-index: 5;
         padding: 1.5rem 0;
         display: flex;
         align-items: center;
@@ -265,7 +259,6 @@ export default {
         }
 
         .iconStyle {
-          z-index: 5;
           display: flex;
           align-items: center;
           font-size: 1.3rem;
@@ -277,6 +270,11 @@ export default {
       }
     }
   }
+}
+.button {
+  z-index: 20;
+  @include button-styles(0.5rem 1rem, 0.4rem);
+  margin-top: 2rem;
 }
 span {
   z-index: 5;
