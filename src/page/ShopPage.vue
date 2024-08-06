@@ -16,148 +16,220 @@ export default {
   data() {
     return {
       store,
-      originalClothes: store.clothes,
-      vestiti: [...store.clothes],
+      // dati nuovi filtrati
+      vestiti: "",
+      // filtro per type
+      filtroType: "",
+      // filtro per caratteristiche
+      filtroCarat: "",
       comparazione: "",
       paginaAttiva: true,
       counter: 0,
-      minPrice: 20,
-      maxPrice: 150,
-      
     };
   },
-  beforeRouteEnter(to, from, next){
-    next(vm => {
-      vm.togglePagina(true);
-    });
-  },
+
   methods: {
-    filterCapi(titoloValore) {
-      this.comparazione = titoloValore.toLowerCase();
-      
+    primaPagina() {
+      this.paginaAttiva = true;
+    },
+    secondaPagina() {
+      this.paginaAttiva = false;
+    },
+    filterCapi(valore) {
+      if (valore !== "All") {
+        this.filtroType = valore;
+      } else {
+        this.filtroType = "";
+      }
     },
     filterClothes(valore) {
-      this.comparazione = valore.toLowerCase();
+      if (valore !== "All") {
+        this.filtroCarat = valore;
+      } else {
+        this.filtroCarat = "";
+      }
     },
-    cardCounter(paginaAttiva) {
-      let contatore = (paginaAttiva
-        ? this.$refs.pageOne.children.length
-        : this.$refs.pageTwo.children.length);
-      console.log(contatore);
-      this.counter = contatore;
-    },
-    togglePagina(PaginaUno) {
-      this.paginaAttiva = PaginaUno;
-    },
-    rangeUpdate(range){
-      this.minPrice = range.lowerFilter;
-      this.maxPrice = range.upperFilter;
-    }
+    // filterCapi(titoloValore) {
+    //   this.comparazione = titoloValore.toLowerCase();
+    // },
+    // filterClothes(valore) {
+    //   this.comparazione = valore.toLowerCase();
+    // },
+    // cardCounter(paginaAttiva) {
+    //   let contatore = (paginaAttiva
+    //     ? this.$refs.pageOne.children.length
+    //     : this.$refs.pageTwo.children.length);
+    //   console.log(contatore);
+    //   this.counter = contatore;
+    // },
+    // togglePagina(PaginaUno) {
+    //   this.paginaAttiva = PaginaUno;
+    // },
+    // rangeUpdate(range) {
+    //   this.minPrice = range.lowerFilter;
+    //   this.maxPrice = range.upperFilter;
+    // },
   },
-  watch: {
-    paginaAttiva() {
-      this.$nextTick(this.cardCounter(this.paginaAttiva));
-    },
-    dataFilter(){
-      this.$nextTick(() => {this.cardCounter(this.paginaAttiva)});
-    },
-    rangeUpdate(){
-      this.dataFilter();
-    }
-  },
+  // watch: {
+  //   // paginaAttiva() {
+  //   //   this.$nextTick(this.cardCounter(this.paginaAttiva));
+  //   // },
+  //   // dataFilter(){
+  //   //   this.$nextTick(() => {this.cardCounter(this.paginaAttiva)});
+  //   // },
+  //   rangeUpdate() {
+  //     this.dataFilter();
+  //   },
+  // },
   mounted() {
-    this.$nextTick(this.cardCounter(this.paginaAttiva));
+    // this.$nextTick(this.cardCounter(this.paginaAttiva));
   },
   computed: {
-    // dati di contenitore uno
+    // dati della prima pagina
     dataFilter() {
-      this.vestiti = [...this.originalClothes];
-      for (let i=this.vestiti.length -1; i >= 0; i--){
-        if (this.vestiti[i].prezzoAttuale < this.minPrice || this.vestiti[i].prezzoAttuale > this.maxPrice){
-          this.vestiti.splice(i, 1);
-        }
+      // filtro per mettere in oridine i capi
+      switch (this.store.selectionValue) {
+        case "menu_order":
+          this.vestiti = this.store.clothes;
+          break;
+        case "popularity":
+          this.vestiti = this.store.clothes.sort((a, b) => {
+            return b.popularity - a.popularity;
+          });
+          break;
+        case "date":
+          this.vestiti = this.store.clothes.sort((a, b) => {
+            return a.date - b.date;
+          });
+          break;
+        case "price":
+          this.vestiti = this.store.clothes.sort((a, b) => {
+            return a.prezzoAttuale - b.prezzoAttuale;
+          });
+          break;
+        case "price-reverse":
+          this.vestiti = this.store.clothes.sort((a, b) => {
+            return b.prezzoAttuale - a.prezzoAttuale;
+          });
+          break;
+        case "rating":
+          this.vestiti = this.store.clothes.sort((a, b) => {
+            return b.rating - a.rating;
+          });
+          break;
       }
-      if (
-        !this.store.selectionValue ||
-        this.store.selectionValue === "menu_order"
-      ) {
-         return this.vestiti.filter((vestito) => {
-          if (!this.comparazione) {
-            if (this.vestiti.length >= 10) 
-              return vestito && vestito.id < 10;
-            else
-              return vestito;
-          } else {  
-            return vestito.type.includes(this.comparazione);
-          }
+      // se selezione il filtro del tipo di vestiario
+      if (this.filtroType) {
+        this.vestiti = this.store.clothes.filter((vestito) => {
+          return vestito.type.includes(this.filtroType);
+        });
+      }
+      // se seleziono caratteristiche aggiuntive
+      if (this.filtroCarat) {
+        this.vestiti = this.store.clothes.filter((vestito) => {
+          return vestito.type.includes(this.filtroCarat);
+        });
+      }
+      // se sono nella prima pagina o nella seconda
+      if (this.paginaAttiva) {
+        this.vestiti = this.vestiti.filter((vestito, index) => {
+          return index < 9;
         });
       } else {
-        switch (this.store.selectionValue) {
-          case "popularity":
-            return this.store.clothes.sort((a, b) => {
-              return a.rating - b.rating;
-            });
-          case "date":
-            return this.store.clothes.sort((a, b) => {
-              return a.date - b.date;
-            });
-          case "price":
-            return this.store.clothes.sort((a, b) => {
-              return a.prezzoAttuale - b.prezzoAttuale;
-            });
-          case "price-reverse":
-            return this.store.clothes.sort((a, b) => {
-              return b.prezzoAttuale - a.prezzoAttuale;
-            });
-          case "rating":
-            return this.store.clothes.sort((a, b) => {
-              return a.rating - b.rating;
-            });
-        }
+        this.vestiti = this.vestiti.filter((vestito, index) => {
+          return index > 8;
+        });
       }
+      this.counter = this.vestiti.length;
+      return this.vestiti;
+      // for (let i = 0; i < this.vestiti.length - 1; i++) {
+      //   const element = array[i];
+      // }
+      // for (let i = this.vestiti.length - 1; i >= 0; i--) {
+      //   if (
+      //     this.vestiti[i].prezzoAttuale < this.minPrice ||
+      //     this.vestiti[i].prezzoAttuale > this.maxPrice
+      //   ) {
+      //     this.vestiti.splice(i, 1);
+      //   }
+      // }
+      // if (
+      //   !this.store.selectionValue ||
+      //   this.store.selectionValue === "menu_order"
+      // ) {
+      //   return this.vestiti.filter((vestito) => {
+      //     if (!this.comparazione) {
+      //       if (this.vestiti.length >= 10) return vestito && vestito.id < 10;
+      //       else return vestito;
+      //     } else {
+      //       return vestito.type.includes(this.comparazione);
+      //     }
+      //   });
+      // } else {
+      //   switch (this.store.selectionValue) {
+      //     case "popularity":
+      //       return this.store.clothes.sort((a, b) => {
+      //         return a.rating - b.rating;
+      //       });
+      //     case "date":
+      //       return this.store.clothes.sort((a, b) => {
+      //         return a.date - b.date;
+      //       });
+      //     case "price":
+      //       return this.store.clothes.sort((a, b) => {
+      //         return a.prezzoAttuale - b.prezzoAttuale;
+      //       });
+      //     case "price-reverse":
+      //       return this.store.clothes.sort((a, b) => {
+      //         return b.prezzoAttuale - a.prezzoAttuale;
+      //       });
+      //     case "rating":
+      //       return this.store.clothes.sort((a, b) => {
+      //         return a.rating - b.rating;
+      //       });
+      //   }
+      // }
     },
     // data contenitore 2
-    dataFilter2() {
-      console.log(this.store.selectionValue);
-      if (
-        !this.store.selectionValue ||
-        this.store.selectionValue === "menu_order"
-      ) {
-        return this.vestiti.filter((vestito) => {
-          if (!this.comparazione) { 
-            if (this.vestiti.length >= 10) 
-              return vestito && vestito.id >= 10;
-            else
-              return undefined;
-          } else {
-            return vestito.type.includes(this.comparazione);
-          }
-        });
-      } else {
-        switch (this.store.selectionValue) {
-          case "popularity":
-            return this.store.clothes.sort((a, b) => {
-              return a.rating - b.rating;
-            });
-          case "date":
-            return this.store.clothes.sort((a, b) => {
-              return a.date - b.date;
-            });
-          case "price":
-            return this.store.clothes.sort((a, b) => {
-              return a.prezzoAttuale - b.prezzoAttuale;
-            });
-          case "price-reverse":
-            return this.store.clothes.sort((a, b) => {
-              return b.prezzoAttuale - a.prezzoAttuale;
-            });
-          case "rating":
-            return this.store.clothes.sort((a, b) => {
-              return a.rating - b.rating;
-            });
-        }
-      }
-    },
+    // dataFilter2() {
+    //   console.log(this.store.selectionValue);
+    //   if (
+    //     !this.store.selectionValue ||
+    //     this.store.selectionValue === "menu_order"
+    //   ) {
+    //     return this.vestiti.filter((vestito) => {
+    //       if (!this.comparazione) {
+    //         if (this.vestiti.length >= 10) return vestito && vestito.id >= 10;
+    //         else return undefined;
+    //       } else {
+    //         return vestito.type.includes(this.comparazione);
+    //       }
+    //     });
+    //   } else {
+    //     switch (this.store.selectionValue) {
+    //       case "popularity":
+    //         return this.store.clothes.sort((a, b) => {
+    //           return a.rating - b.rating;
+    //         });
+    //       case "date":
+    //         return this.store.clothes.sort((a, b) => {
+    //           return a.date - b.date;
+    //         });
+    //       case "price":
+    //         return this.store.clothes.sort((a, b) => {
+    //           return a.prezzoAttuale - b.prezzoAttuale;
+    //         });
+    //       case "price-reverse":
+    //         return this.store.clothes.sort((a, b) => {
+    //           return b.prezzoAttuale - a.prezzoAttuale;
+    //         });
+    //       case "rating":
+    //         return this.store.clothes.sort((a, b) => {
+    //           return a.rating - b.rating;
+    //         });
+    //     }
+    //   }
+    // },
     vestitiScontati() {
       return this.vestiti.filter((vestito) => {
         return vestito.prezzoOriginale;
@@ -165,7 +237,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <template>
@@ -180,28 +251,34 @@ export default {
         <ArticlesSorting />
       </div>
 
-      <div ref="pageOne" v-show="paginaAttiva" class="contenitoreCardsUno">
+      <div v-if="paginaAttiva" class="contenitoreCardsUno">
         <ArticlesCards
           v-for="(vestito, index) in dataFilter"
           :key="index"
           :elemento="vestito"
         />
       </div>
-      <div ref="pageTwo" v-show="!paginaAttiva" class="contenitoreCardsDue">
+      <div v-else class="contenitoreCardsDue">
         <ArticlesCards
-          v-for="(vestito, index) in dataFilter2"
+          v-for="(vestito, index) in dataFilter"
           :key="index"
           :elemento="vestito"
         />
       </div>
       <div class="numeroPagina">
-        <button @click="togglePagina(true)" class="bottoniPagina">1</button>
-        <button @click="togglePagina(false)" class="bottoniPagina">2</button>
+        <button @click="primaPagina()" class="bottoniPagina">1</button>
+        <button
+          v-if="vestiti.length > 8"
+          @click="secondaPagina()"
+          class="bottoniPagina"
+        >
+          2
+        </button>
       </div>
     </section>
     <section class="prices">
       <h3>Filter by price</h3>
-      <Slider ref="slider" @range-updated="rangeUpdate"/>
+      <Slider ref="slider" @range-updated="rangeUpdate" />
       <div class="spaced"></div>
       <div class="contOnSale">
         <ForSale
@@ -212,14 +289,11 @@ export default {
       </div>
       <div class="contFolders">
         <div v-for="(titolo, index) in store.typeClothes" :key="index">
-          <a href="#"
-            ><font-awesome-icon :icon="['fas', 'folder']" /><span
-              @click="filterCapi(titolo)"
-              class="tButton"
-              >{{ titolo }}</span
-            ></a
+          <font-awesome-icon :icon="['fas', 'folder']" /><span
+            @click="filterCapi(titolo)"
+            class="tButton"
+            >{{ titolo }}</span
           >
-          <br />
         </div>
       </div>
       <div class="productTags">
@@ -228,11 +302,11 @@ export default {
           <div class="col1">
             <button
               class="bottoniTag"
-              @click="filterClothes(button)"
-              v-for="(button, index) in store.colorClothes"
+              @click="filterClothes(text)"
+              v-for="(text, index) in store.colorClothes"
               :key="index"
             >
-              {{ button }}
+              {{ text }}
             </button>
           </div>
         </div>

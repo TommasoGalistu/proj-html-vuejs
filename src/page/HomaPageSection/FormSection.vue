@@ -273,8 +273,8 @@ export default {
 }
 .button {
   z-index: 20;
-  @include button-styles(0.5rem 1rem, 0.4rem);
   margin-top: 2rem;
+  @include button-styles(0.5rem 1rem, 0.4rem);
 }
 span {
   z-index: 5;
