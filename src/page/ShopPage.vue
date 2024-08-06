@@ -23,7 +23,7 @@ export default {
       // filtro per caratteristiche
       filtroCarat: "",
       // numero visibile all'utente
-      sliderValue: 100,
+      sliderValue: 149,
       comparazione: "",
       paginaAttiva: true,
       counter: 0,
@@ -98,6 +98,12 @@ export default {
       if (this.filtroCarat) {
         this.vestiti = this.store.clothes.filter((vestito) => {
           return vestito.type.includes(this.filtroCarat);
+        });
+      }
+      // se seleziono il filtro prezzo
+      if (this.sliderValue < 149) {
+        this.vestiti = this.store.clothes.filter((vestito) => {
+          return vestito.prezzoAttuale <= this.sliderValue;
         });
       }
       // se sono nella prima pagina o nella seconda
@@ -212,8 +218,8 @@ export default {
       <input
         type="range"
         min="1"
-        max="100"
-        value="100"
+        max="149"
+        value="149"
         v-model="sliderValue"
       /><br />
       <strong>{{ sliderValue }} €</strong>
