@@ -5,7 +5,8 @@ export default {
   data() {
     return {
       store,
-
+      numberCarosello: 1,
+      settCarosello: "",
       TextPos1: {
         top: "25%",
         left: "5%",
@@ -24,6 +25,16 @@ export default {
 
   methods: {
     caroselloAuto(numPulsante) {
+      const container = this.$refs.container;
+
+      // elimino active
+      for (let i = 0; i < container.childNodes.length; i++) {
+        if (container.childNodes[i].classList.contains("active")) {
+          container.childNodes[i].classList.remove("active");
+        }
+      }
+      // aggiungo l'active
+      container.childNodes[numPulsante - 1].classList.add("active");
       switch (numPulsante) {
         case 1:
           // posizione testo e immagine
@@ -65,11 +76,19 @@ export default {
             this.store.textJambo[numPulsante - 1].titleEvidenziato;
           this.textInsert.text = this.store.textJambo[numPulsante - 1].text;
           break;
-        default:
-          console.log("non lo so");
       }
     },
-
+    avvioCarosello() {
+      this.settCarosello = setInterval(() => {
+        if (this.numberCarosello <= 3) {
+          this.caroselloAuto(this.numberCarosello);
+        } else {
+          this.numberCarosello = 1;
+          this.caroselloAuto(this.numberCarosello);
+        }
+        this.numberCarosello++;
+      }, 5000);
+    },
     changePhoto(e) {
       const container = this.$refs.container;
 
@@ -88,6 +107,7 @@ export default {
       let numeroPulsante =
         Array.from(container.children).indexOf(elementoCliccato) + 1;
       this.isActive = false;
+      clearInterval(this.settCarosello);
       // Switch statement per eseguire azioni basate sul numero del pulsante
       this.caroselloAuto(numeroPulsante);
     },
@@ -148,7 +168,8 @@ export default {
   },
   mounted() {
     this.animazione(30);
-    this.caroselloAuto();
+
+    this.avvioCarosello();
   },
 };
 </script>
