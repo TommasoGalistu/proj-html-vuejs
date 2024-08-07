@@ -31,6 +31,7 @@ export default {
           this.styleJambo.justifyContent = "unset";
           this.TextPos1.top = "25%";
           this.TextPos1.left = "5%";
+          this.TextPos1.width = "50%";
           // contenuto testo
           this.TextPos1.textAlign = "left";
           this.textInsert.title = this.store.textJambo[numPulsante - 1].title;
