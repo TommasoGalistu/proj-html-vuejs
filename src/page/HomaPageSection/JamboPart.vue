@@ -7,12 +7,12 @@ export default {
       store,
       numberCarosello: 1,
       settCarosello: "",
+      // style degli elementi jambo nella prima posizione
       TextPos1: {
         top: "25%",
         left: "5%",
       },
       styleJambo: {
-        // prima posizione
         justifyContent: "unset",
       },
       textInsert: {
@@ -165,6 +165,9 @@ export default {
         );
       }
     },
+    prova() {
+      console.log("prova giusta");
+    },
   },
   mounted() {
     this.animazione(30);
@@ -186,7 +189,7 @@ export default {
           <p class="colorGreen">
             {{ textInsert.text }}
           </p>
-          <div class="button"><span>Get in touch</span></div>
+          <div @click="prova()" class="button"><span>Get in touch</span></div>
         </div>
         <div class="contImg">
           <img src="/bg-parallax.png" alt="" />
@@ -231,9 +234,7 @@ export default {
       height: 127%;
       position: relative;
       bottom: 7%;
-      // position: absolute;
-      // bottom: -147px;
-      z-index: 10;
+      z-index: 1;
 
       img {
         height: 100%;
@@ -257,6 +258,7 @@ export default {
         padding-bottom: 3rem;
       }
       .button {
+        z-index: 10;
         @include button-styles(0.5rem 1rem, 0.4rem);
       }
     }
@@ -275,6 +277,8 @@ export default {
     background-color: grey;
     border-radius: 30px;
     margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 10;
 
     &:hover {
       cursor: pointer;
