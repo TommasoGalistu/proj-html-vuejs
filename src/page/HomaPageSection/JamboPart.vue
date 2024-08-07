@@ -5,16 +5,15 @@ export default {
   data() {
     return {
       store,
-      jamboPos1: {
-        right: "-110rem",
-        left: "",
-      },
-      TextPos1: {
-        top: "12rem",
-        left: "0",
-        textAlign: "",
-      },
 
+      TextPos1: {
+        top: "25%",
+        left: "5%",
+      },
+      styleJambo: {
+        // prima posizione
+        justifyContent: "unset",
+      },
       textInsert: {
         title: store.textJambo[0].title,
         titleEvidenziato: store.textJambo[0].titleEvidenziato,
@@ -27,10 +26,12 @@ export default {
     caroselloAuto(numPulsante) {
       switch (numPulsante) {
         case 1:
-          this.jamboPos1.right = "-110rem";
-          this.jamboPos1.left = "";
-          this.TextPos1.top = "12rem";
-          this.TextPos1.left = "0";
+          // posizione testo e immagine
+
+          this.styleJambo.justifyContent = "unset";
+          this.TextPos1.top = "25%";
+          this.TextPos1.left = "5%";
+          // contenuto testo
           this.TextPos1.textAlign = "left";
           this.textInsert.title = this.store.textJambo[numPulsante - 1].title;
           this.textInsert.titleEvidenziato =
@@ -38,22 +39,26 @@ export default {
           this.textInsert.text = this.store.textJambo[numPulsante - 1].text;
           break;
         case 2:
-          this.jamboPos1.right = "-60.5rem";
-          this.jamboPos1.left = "";
-          this.TextPos1.top = "11rem";
-          this.TextPos1.left = "18rem";
+          // posizione testo e immagine
+          this.styleJambo.justifyContent = "center";
+
+          this.TextPos1.top = "25%";
+          this.TextPos1.left = "28%";
+          this.TextPos1.width = "40%";
           this.TextPos1.textAlign = "center";
+          // contenuto testo
           this.textInsert.title = this.store.textJambo[numPulsante - 1].title;
           this.textInsert.titleEvidenziato =
             this.store.textJambo[numPulsante - 1].titleEvidenziato;
           this.textInsert.text = this.store.textJambo[numPulsante - 1].text;
           break;
         case 3:
-          this.jamboPos1.right = "";
-          this.jamboPos1.left = "-110rem";
-          this.TextPos1.top = "12rem";
-          this.TextPos1.left = "39rem";
+          // posizione testo e immagine
+          this.styleJambo.justifyContent = "end";
+          this.TextPos1.top = "29%";
+          this.TextPos1.left = "50%";
           this.TextPos1.textAlign = "left";
+          // contenuto testo
           this.textInsert.title = this.store.textJambo[numPulsante - 1].title;
           this.textInsert.titleEvidenziato =
             this.store.textJambo[numPulsante - 1].titleEvidenziato;
@@ -152,10 +157,7 @@ export default {
 <template>
   <div ref="sfondoAnimato" class="sfondoAnimato">
     <div class="container">
-      <div class="jambo">
-        <div class="contImg" :style="jamboPos1">
-          <img src="/bg-parallax.png" alt="" />
-        </div>
+      <div class="jambo" :style="styleJambo">
         <div class="contText" :style="TextPos1">
           <h2>{{ textInsert.title }}</h2>
           <h2 class="colorGreen">{{ textInsert.titleEvidenziato }}</h2>
@@ -163,6 +165,9 @@ export default {
             {{ textInsert.text }}
           </p>
           <div class="button"><span>Get in touch</span></div>
+        </div>
+        <div class="contImg">
+          <img src="/bg-parallax.png" alt="" />
         </div>
       </div>
     </div>
@@ -194,12 +199,18 @@ export default {
   .jambo {
     position: relative;
     height: 100vh;
+    width: 100%;
     color: black;
+    display: flex;
+    // justify-content: space-around;
+    justify-content: center;
 
     .contImg {
-      height: 133%;
-      position: absolute;
-      bottom: -147px;
+      height: 127%;
+      position: relative;
+      bottom: 7%;
+      // position: absolute;
+      // bottom: -147px;
       z-index: 10;
 
       img {
@@ -209,7 +220,9 @@ export default {
     .contText {
       z-index: 10;
       position: absolute;
-      width: 47%;
+      width: 50%;
+      top: 25%;
+      left: 0;
       .colorGreen {
         color: $colorStyleJambo;
         padding-bottom: 1.5rem;
