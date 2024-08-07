@@ -118,53 +118,6 @@ export default {
       }
       this.counter = this.vestiti.length;
       return this.vestiti;
-      // for (let i = 0; i < this.vestiti.length - 1; i++) {
-      //   const element = array[i];
-      // }
-      // for (let i = this.vestiti.length - 1; i >= 0; i--) {
-      //   if (
-      //     this.vestiti[i].prezzoAttuale < this.minPrice ||
-      //     this.vestiti[i].prezzoAttuale > this.maxPrice
-      //   ) {
-      //     this.vestiti.splice(i, 1);
-      //   }
-      // }
-      // if (
-      //   !this.store.selectionValue ||
-      //   this.store.selectionValue === "menu_order"
-      // ) {
-      //   return this.vestiti.filter((vestito) => {
-      //     if (!this.comparazione) {
-      //       if (this.vestiti.length >= 10) return vestito && vestito.id < 10;
-      //       else return vestito;
-      //     } else {
-      //       return vestito.type.includes(this.comparazione);
-      //     }
-      //   });
-      // } else {
-      //   switch (this.store.selectionValue) {
-      //     case "popularity":
-      //       return this.store.clothes.sort((a, b) => {
-      //         return a.rating - b.rating;
-      //       });
-      //     case "date":
-      //       return this.store.clothes.sort((a, b) => {
-      //         return a.date - b.date;
-      //       });
-      //     case "price":
-      //       return this.store.clothes.sort((a, b) => {
-      //         return a.prezzoAttuale - b.prezzoAttuale;
-      //       });
-      //     case "price-reverse":
-      //       return this.store.clothes.sort((a, b) => {
-      //         return b.prezzoAttuale - a.prezzoAttuale;
-      //       });
-      //     case "rating":
-      //       return this.store.clothes.sort((a, b) => {
-      //         return a.rating - b.rating;
-      //       });
-      //   }
-      // }
     },
 
     vestitiScontati() {
@@ -265,9 +218,9 @@ export default {
 @use "../style/general.scss" as *;
 
 .blueBG {
-  background-color: #112b46;
+  background-color: #142b41;
 
-  height: 136px;
+  height: 135px;
   width: 100%;
   position: absolute;
   margin-bottom: 200px;
@@ -390,9 +343,9 @@ export default {
 
 .contenitoreCardsUno,
 .contenitoreCardsDue {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gapCardShop;
 }
 
 .contenitoreCardsUno:active {
@@ -407,7 +360,7 @@ export default {
   background-color: white;
   gap: 2rem;
   display: flex;
-  flex-direction: row;
+
   padding-bottom: 4rem;
 }
 
@@ -417,18 +370,18 @@ section {
 }
 
 .articles {
-  width: 70%;
+  width: 90%;
+  padding-right: 2rem;
   background-color: white;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .results {
   width: 100%;
   height: 3%;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
 }
 

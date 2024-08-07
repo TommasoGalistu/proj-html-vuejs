@@ -13,39 +13,37 @@ export default {
 </script>
 
 <template>
-  <a href="#"
-    ><div class="ShopCards">
-      <div class="upper-img">
-        <div v-if="elemento.prezzoOriginale" class="sale">
-          <p>SALE!</p>
-        </div>
-        <img v-bind:src="elemento.img" alt="" />
+  <div class="ShopCards">
+    <div class="upper-img">
+      <div v-if="elemento.prezzoOriginale" class="sale">
+        <p>SALE!</p>
       </div>
+      <img v-bind:src="elemento.img" alt="" />
+    </div>
 
-      <div class="lower-price">
-        <h2>{{ elemento.nome }}</h2>
-        <div class="scritte-container">
-          <span class="scontato"
-            ><span class="dollaro" v-if="elemento.prezzoOriginale">$</span
-            >{{ elemento.prezzoOriginale
-            }}<span class="dollaro" v-if="elemento.prezzoOriginale"
-              >.00</span
-            ></span
-          ><span class="attuale"
-            ><span class="dollaro" v-if="elemento.prezzoAttuale">$</span
-            >{{ elemento.prezzoAttuale
-            }}<span class="dollaro" v-if="elemento.prezzoAttuale"
-              >.00</span
-            ></span
-          >
-          <a href="#"><font-awesome-icon icon="bag-shopping" /></a>
-        </div>
-      </div></div
-  ></a>
+    <div class="lower-price">
+      <h2>{{ elemento.nome }}</h2>
+      <div class="scritte-container">
+        <span class="scontato"
+          ><span class="dollaro" v-if="elemento.prezzoOriginale">$</span
+          >{{ elemento.prezzoOriginale
+          }}<span class="dollaro" v-if="elemento.prezzoOriginale"
+            >.00</span
+          ></span
+        ><span class="attuale"
+          ><span class="dollaro" v-if="elemento.prezzoAttuale">$</span
+          >{{ elemento.prezzoAttuale
+          }}<span class="dollaro" v-if="elemento.prezzoAttuale">.00</span></span
+        >
+        <font-awesome-icon icon="bag-shopping" />
+      </div>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
 @use "src/style/general.scss" as *;
+@use "src/style/partials/variable.scss" as *;
 
 a {
   text-decoration: none;
@@ -60,7 +58,7 @@ a {
 }
 .ShopCards {
   height: 360px;
-  width: 260px;
+  width: calc((100% / 3) - $gapCardShop);
   background-color: white;
   border-radius: 10px;
   border: 1px solid black;
