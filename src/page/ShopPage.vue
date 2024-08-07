@@ -27,6 +27,7 @@ export default {
       comparazione: "",
       paginaAttiva: true,
       counter: 0,
+      numberButtonActive: 0,
     };
   },
 
@@ -44,12 +45,13 @@ export default {
         this.filtroType = "";
       }
     },
-    filterClothes(valore) {
+    filterClothes(valore, index) {
       if (valore !== "All") {
         this.filtroCarat = valore;
       } else {
         this.filtroCarat = "";
       }
+      this.numberButtonActive = index;
     },
   },
 
@@ -176,13 +178,17 @@ export default {
         v-model="sliderValue"
       /><br />
       <strong>{{ sliderValue }} €</strong>
-      <div class="spaced"></div>
-      <div class="contOnSale">
-        <ForSale
-          v-for="(vestito, index) in vestitiScontati"
-          :key="index"
-          :elemento="vestito"
-        />
+      <div class="contSale">
+        <div class="center">
+          <h2>SALE Clothes!!!</h2>
+        </div>
+        <div class="contOnSale">
+          <ForSale
+            v-for="(vestito, index) in vestitiScontati"
+            :key="index"
+            :elemento="vestito"
+          />
+        </div>
       </div>
       <div class="contFolders">
         <div v-for="(titolo, index) in store.typeClothes" :key="index">
@@ -199,9 +205,10 @@ export default {
           <div class="col1">
             <button
               class="bottoniTag"
-              @click="filterClothes(text)"
+              @click="filterClothes(text, index)"
               v-for="(text, index) in store.colorClothes"
               :key="index"
+              :class="{ activeButton: index === numberButtonActive }"
             >
               {{ text }}
             </button>
@@ -313,9 +320,9 @@ export default {
 
 .contOnSale {
   width: 100%;
-  height: 600px;
+  height: 200px;
   overflow-y: scroll;
-  scroll-behavior: smooth;
+  margin-bottom: 1rem;
 }
 
 .contFolders {
@@ -391,5 +398,21 @@ section {
 
 .prices {
   width: 30%;
+}
+
+.center {
+  text-align: center;
+  padding: 0.5rem;
+}
+.contSale {
+  margin: 1rem 0;
+  border-radius: 20px;
+  background-color: rgb(240, 240, 240);
+  border: 1px solid black;
+}
+
+.activeButton {
+  background-color: $colorStyleJambo;
+  color: white;
 }
 </style>
