@@ -75,6 +75,7 @@ export default {
   color: grey;
   .container {
     display: flex;
+
     .contText {
       width: 50%;
       padding: 3rem 0;
@@ -116,10 +117,9 @@ export default {
       width: 50%;
       position: relative;
 
-      height: 80vh;
       .sfuocatura {
         top: 0;
-        left: 64px;
+        left: 80px;
         position: absolute;
         filter: grayscale(70%);
         z-index: 1;

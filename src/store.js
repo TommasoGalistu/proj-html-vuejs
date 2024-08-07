@@ -1,6 +1,7 @@
 import { reactive } from "vue";
 
 export const store = reactive({
+  // dati header
   infoAzienda: [
     {
       telefono: "+1(305) 1234-5678",
@@ -9,6 +10,7 @@ export const store = reactive({
       luogo: "Main Avenue, 123",
     },
   ],
+  // dati pagina home
   // card nella terza sezione di home chiamate da metodo
   cardHomePage: [
     {
@@ -145,10 +147,48 @@ export const store = reactive({
       text: "Do not miss the opportunity to achieve better results and solidity in the market.",
     },
   ],
-
-  // inizio paolo da 100 a 200 compreso
+  // card pagina services
+  services: [
+    {
+      icon: "/public/svg-1.svg",
+      title: "Audit & Assurance",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia.",
+    },
+    {
+      icon: "/public/svg-2.svg",
+      title: "Financial Advisory",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia.",
+    },
+    {
+      icon: "/public/svg-3.svg",
+      title: "Analytics and M&A",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia.",
+    },
+    {
+      icon: "/public/svg-4.svg",
+      title: "Middle Marketing",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia.",
+    },
+    {
+      icon: "/public/svg-5.svg",
+      title: "Legal Consulting",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia.",
+    },
+    {
+      icon: "/public/svg-6.svg",
+      title: "Regulatory Risk",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia.",
+    },
+  ],
+  // inizio dati pagina shop
   selectionValue: "menu_order",
-
+  // dati vestiti
   clothes: [
     {
       id: 1,
@@ -303,6 +343,7 @@ export const store = reactive({
       type: ["Clothing", "Tshirts", "Ninja", "White", "With Print"],
     },
   ],
+  // dati menu caratteristiche
   colorClothes: [
     "All",
     "Black",
@@ -319,45 +360,6 @@ export const store = reactive({
     "With Hood",
     "With Print",
   ],
+  // dati menu filtro con icona
   typeClothes: ["All", "Clothing", "Hoodies", "Tshirts"],
-
-  // inizio ale da 201
-  services: [
-    {
-      icon: "/public/svg-1.svg",
-      title: "Audit & Assurance",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia.",
-    },
-    {
-      icon: "/public/svg-2.svg",
-      title: "Financial Advisory",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia.",
-    },
-    {
-      icon: "/public/svg-3.svg",
-      title: "Analytics and M&A",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia.",
-    },
-    {
-      icon: "/public/svg-4.svg",
-      title: "Middle Marketing",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia.",
-    },
-    {
-      icon: "/public/svg-5.svg",
-      title: "Legal Consulting",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia.",
-    },
-    {
-      icon: "/public/svg-6.svg",
-      title: "Regulatory Risk",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia.",
-    },
-  ],
 });
