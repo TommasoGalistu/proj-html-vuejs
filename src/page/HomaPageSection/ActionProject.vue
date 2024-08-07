@@ -104,6 +104,7 @@ export default {
   .contCard {
     width: 100%;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 3rem;
   }

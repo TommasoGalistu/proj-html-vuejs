@@ -50,14 +50,12 @@ export default {
 
 .card {
   position: relative;
-  height: 350px;
-  width: 350px;
+  height: 330px;
+  width: 330px;
   background-color: grey;
   border-radius: 10px;
   color: rgb(180, 180, 180);
-  &:hover .contText {
-    // inserire filtro
-  }
+
   &:hover .nascondi.up {
     animation: up 0.5s ease-out;
     animation-fill-mode: forwards;
@@ -69,7 +67,7 @@ export default {
   &:hover .visibility {
     visibility: visible;
     opacity: 1;
-    transition: opacity 1s ease-out, visibility ease-out;
+    transition: opacity 1.5s ease-out, visibility ease-out;
   }
   // animazione parte superiore
   @keyframes up {
@@ -83,10 +81,10 @@ export default {
   // animazione parte inferiore
   @keyframes bottom {
     0% {
-      bottom: -70px;
+      bottom: -40px;
     }
     100% {
-      bottom: -25px;
+      bottom: -10px;
     }
   }
   &:hover {
@@ -142,7 +140,7 @@ export default {
 }
 .nascondi.bottom {
   width: 80%;
-  bottom: -70px;
+  bottom: -40px;
   left: 50%;
   transform: translate(-50%);
 }
