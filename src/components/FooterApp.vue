@@ -14,7 +14,7 @@ export default {
   <footer>
     <div class="sfondo">
       <div class="container primo">
-        <div class="card">
+        <div class="card info">
           <div class="contTitle">
             <div class="contImg">
               <img src="/logo.svg" alt="" />
@@ -143,6 +143,8 @@ footer {
       }
     }
     .card {
+      text-align: center;
+
       li {
         padding: 0.6rem 0;
         cursor: pointer;
@@ -166,6 +168,9 @@ footer {
         }
       }
       width: calc(100% / 4);
+    }
+    .card.info {
+      text-align: left;
     }
     .hoverEff {
       &:hover {
