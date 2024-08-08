@@ -6,6 +6,7 @@ export default {
 
 <template>
   <div class="sfondo">
+    <div class="sfuocatura"></div>
     <div class="container">
       <div class="contText">
         <h2>The Company</h2>
@@ -57,8 +58,9 @@ export default {
         </div>
       </div>
       <div class="contImg">
-        <div class="sfuocatura"></div>
-        <div class="fixed-image"></div>
+        <div class="fixed-image">
+          <!-- <img src="/about-4.jpg" alt="" /> -->
+        </div>
       </div>
     </div>
   </div>
@@ -73,6 +75,21 @@ export default {
   width: 100%;
   background-color: #0d1b2a;
   color: grey;
+  position: relative;
+  .sfuocatura {
+    top: 0;
+    left: 0;
+    position: absolute;
+    filter: grayscale(70%);
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      30deg,
+      rgba(34, 58, 84, 0.5) 33%,
+      rgba(55, 114, 176, 0.3) 56%
+    );
+  }
   .container {
     display: flex;
 
@@ -115,35 +132,25 @@ export default {
     }
     .contImg {
       width: 50%;
+
       position: relative;
 
-      .sfuocatura {
-        top: 0;
-        left: 80px;
-        position: absolute;
-        filter: grayscale(70%);
-        z-index: 1;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          42deg,
-          rgba(22, 22, 22, 0.5) 52%,
-          rgba(203, 203, 203, 0) 70%
-        );
-      }
       .fixed-image {
-        position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
         height: 100%;
+
+        // z-index: -1;
+        // img {
+        //   height: 100%;
+        //   object-fit: cover;
+        // }
+        background-color: #0d1b2a;
         background-image: url("/about-4.jpg");
         background-size: contain;
         background-attachment: fixed;
-        background-position: right -4%;
+        background-position: center right 148px;
         background-repeat: no-repeat;
-
-        // z-index: -1;
+        position: relative;
       }
     }
   }
