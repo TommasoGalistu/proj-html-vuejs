@@ -19,7 +19,7 @@ export const store = reactive({
       tipo: "Coding",
       tempo: "3 years",
       titolo: "Portfolio item with intro with sidebar",
-      text: "lorem ipsum bla bla bla sit consectetur adisipsiscing elit. Vestibulu...",
+      text: "lorem ipsum bla bla bla sit consectetur adisipsiscing elit.",
     },
     {
       ricerca: ["enviroment", "innovation"],
@@ -27,7 +27,7 @@ export const store = reactive({
       tipo: "Coding",
       tempo: "3 years",
       titolo: "Portfolio item with intro with sidebar",
-      text: "lorem ipsum bla bla bla sit consectetur adisipsiscing elit. Vestibulu...",
+      text: "lorem ipsum bla bla bla sit consectetur adisipsiscing elit.",
     },
     {
       ricerca: ["social", "technology", "innovation"],
@@ -35,7 +35,7 @@ export const store = reactive({
       tipo: "Coding",
       tempo: "3 years",
       titolo: "Portfolio item with intro with sidebar",
-      text: "lorem ipsum bla bla bla sit consectetur adisipsiscing elit. Vestibulu...",
+      text: "lorem ipsum bla bla bla sit consectetur adisipsiscing elit.",
     },
     {
       ricerca: ["istitutional", "technology"],
@@ -43,7 +43,7 @@ export const store = reactive({
       tipo: "Coding",
       tempo: "3 years",
       titolo: "Portfolio item with intro with sidebar",
-      text: "lorem ipsum bla bla bla sit consectetur adisipsiscing elit. Vestibulu...",
+      text: "lorem ipsum bla bla bla sit consectetur adisipsiscing elit.",
     },
     {
       ricerca: ["enviroment", "events", "istitutional"],
@@ -51,7 +51,7 @@ export const store = reactive({
       tipo: "Coding",
       tempo: "3 years",
       titolo: "Portfolio item with intro with sidebar",
-      text: "lorem ipsum bla bla bla sit consectetur adisipsiscing elit. Vestibulu...",
+      text: "lorem ipsum bla bla bla sit consectetur adisipsiscing elit.",
     },
     {
       ricerca: ["enviroment", "innovation"],
@@ -59,7 +59,7 @@ export const store = reactive({
       tipo: "Coding",
       tempo: "3 years",
       titolo: "Portfolio item with intro with sidebar",
-      text: "lorem ipsum bla bla bla sit consectetur adisipsiscing elit. Vestibulu...",
+      text: "lorem ipsum bla bla bla sit consectetur adisipsiscing elit.",
     },
   ],
   menu: [
@@ -92,6 +92,7 @@ export const store = reactive({
       active: false,
     },
   ],
+  // card sezione sotto jambo home
   card: [
     {
       icon: "/svg-1.svg",

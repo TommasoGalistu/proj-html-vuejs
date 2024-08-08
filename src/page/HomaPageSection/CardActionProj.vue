@@ -67,24 +67,24 @@ export default {
   &:hover .visibility {
     visibility: visible;
     opacity: 1;
-    transition: opacity 1.5s ease-out, visibility ease-out;
+    transition: opacity 1s ease-out, visibility ease-out;
   }
   // animazione parte superiore
   @keyframes up {
     0% {
-      top: -81px;
+      top: 0px;
     }
     100% {
-      top: -45px;
+      top: 30px;
     }
   }
   // animazione parte inferiore
   @keyframes bottom {
     0% {
-      bottom: -40px;
+      bottom: 0px;
     }
     100% {
-      bottom: -10px;
+      bottom: 30px;
     }
   }
   &:hover {
@@ -114,7 +114,7 @@ export default {
     .bottomPart {
       display: block;
       h2 {
-        padding: 1rem 0;
+        padding-bottom: 0.5rem;
         color: white;
       }
     }
@@ -134,13 +134,13 @@ export default {
   position: absolute;
 }
 .nascondi.up {
-  top: -81px;
+  top: 0px;
   left: 50%;
   transform: translate(-50%);
 }
 .nascondi.bottom {
   width: 80%;
-  bottom: -40px;
+  bottom: 0px;
   left: 50%;
   transform: translate(-50%);
 }
