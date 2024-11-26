@@ -22,3 +22,5 @@ Problemi riscontrati
 Durante lo sviluppo del progetto, ho incontrato diversi ostacoli, specialmente nella parte delle animazioni complesse della home page. Un esempio riguarda il movimento dei quadrati animati che avrebbero dovuto muoversi in modo fluido e dinamico. Inizialmente, alcuni colleghi suggerirono di utilizzare una registrazione dello schermo come sfondo animato, ma ho rifiutato questa soluzione, poiché limitava la personalizzazione e la reattività della pagina.
 
 Ho deciso di affrontare il problema in modo incrementale, animando un quadrato alla volta, migliorando gradualmente il controllo sul movimento e perfezionando l'animazione. Questa metodologia mi ha permesso non solo di ottenere il risultato desiderato, ma anche di migliorare la mia comprensione delle animazioni in CSS e della gestione degli eventi in Vue.js.
+
+Guarda il progetto da computer: https://projectgalistu.netlify.app/
